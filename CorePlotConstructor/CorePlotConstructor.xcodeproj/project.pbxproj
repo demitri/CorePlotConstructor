@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395818099E6A0092D6BC /* DMTabBar.m */; };
+		A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */; };
+		A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE717F805D9002BA46A /* MainMenu.xib */; };
+		A6BA39621809A24A0092D6BC /* XYGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA39601809A24A0092D6BC /* XYGraphViewController.m */; };
+		A6BA39631809A24A0092D6BC /* XYGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6BA39611809A24A0092D6BC /* XYGraphViewController.xib */; };
+		A6BA39681809A4BE0092D6BC /* xy_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6BA39671809A4BE0092D6BC /* xy_data.plist */; };
+		A6BA396A1809CEDC0092D6BC /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6C2FC1717F823B0002BA46A /* CorePlot.framework */; };
+		A6C2FBD317F805D9002BA46A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2FBD217F805D9002BA46A /* Cocoa.framework */; };
+		A6C2FBDD17F805D9002BA46A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBDB17F805D9002BA46A /* InfoPlist.strings */; };
+		A6C2FBDF17F805D9002BA46A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FBDE17F805D9002BA46A /* main.m */; };
+		A6C2FBE317F805D9002BA46A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE117F805D9002BA46A /* Credits.rtf */; };
+		A6C2FBE617F805D9002BA46A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FBE517F805D9002BA46A /* AppDelegate.m */; };
+		A6C2FBEB17F805D9002BA46A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBEA17F805D9002BA46A /* Images.xcassets */; };
+		A6C2FBF217F805DA002BA46A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2FBF117F805DA002BA46A /* XCTest.framework */; };
+		A6C2FBF317F805DA002BA46A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2FBD217F805D9002BA46A /* Cocoa.framework */; };
+		A6C2FBFB17F805DA002BA46A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBF917F805DA002BA46A /* InfoPlist.strings */; };
+		A6C2FBFD17F805DA002BA46A /* CorePlotConstructorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FBFC17F805DA002BA46A /* CorePlotConstructorTests.m */; };
+		A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FC0717F80739002BA46A /* ScatterPlotViewController.m */; };
+		A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FC0A17F80770002BA46A /* MainWindowController.m */; };
+		A6C2FC1817F823B0002BA46A /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2FC1717F823B0002BA46A /* CorePlot.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6C2FBF417F805DA002BA46A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6C2FBC717F805D9002BA46A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6C2FBCE17F805D9002BA46A;
+			remoteInfo = CorePlotConstructor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6BA39691809CED00092D6BC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A6BA396A1809CEDC0092D6BC /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A6BA395718099E6A0092D6BC /* DMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBar.h; sourceTree = "<group>"; };
+		A6BA395818099E6A0092D6BC /* DMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBar.m; sourceTree = "<group>"; };
+		A6BA395918099E6A0092D6BC /* DMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBarItem.h; sourceTree = "<group>"; };
+		A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBarItem.m; sourceTree = "<group>"; };
+		A6BA395F1809A24A0092D6BC /* XYGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphViewController.h; sourceTree = "<group>"; };
+		A6BA39601809A24A0092D6BC /* XYGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphViewController.m; sourceTree = "<group>"; };
+		A6BA39611809A24A0092D6BC /* XYGraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYGraphViewController.xib; sourceTree = "<group>"; };
+		A6BA39671809A4BE0092D6BC /* xy_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xy_data.plist; sourceTree = "<group>"; };
+		A6C2FBCF17F805D9002BA46A /* CorePlotConstructor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CorePlotConstructor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C2FBD217F805D9002BA46A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A6C2FBD517F805D9002BA46A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A6C2FBD617F805D9002BA46A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A6C2FBD717F805D9002BA46A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A6C2FBDA17F805D9002BA46A /* CorePlotConstructor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CorePlotConstructor-Info.plist"; sourceTree = "<group>"; };
+		A6C2FBDC17F805D9002BA46A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6C2FBDE17F805D9002BA46A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6C2FBE017F805D9002BA46A /* CorePlotConstructor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CorePlotConstructor-Prefix.pch"; sourceTree = "<group>"; };
+		A6C2FBE217F805D9002BA46A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A6C2FBE417F805D9002BA46A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6C2FBE517F805D9002BA46A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6C2FBE817F805D9002BA46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A6C2FBEA17F805D9002BA46A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6C2FBF017F805DA002BA46A /* CorePlotConstructorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorePlotConstructorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C2FBF117F805DA002BA46A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A6C2FBF817F805DA002BA46A /* CorePlotConstructorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CorePlotConstructorTests-Info.plist"; sourceTree = "<group>"; };
+		A6C2FBFA17F805DA002BA46A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A6C2FBFC17F805DA002BA46A /* CorePlotConstructorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorePlotConstructorTests.m; sourceTree = "<group>"; };
+		A6C2FC0617F80739002BA46A /* ScatterPlotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScatterPlotViewController.h; path = CorePlotConstructor/ScatterPlotViewController.h; sourceTree = "<group>"; };
+		A6C2FC0717F80739002BA46A /* ScatterPlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScatterPlotViewController.m; path = CorePlotConstructor/ScatterPlotViewController.m; sourceTree = "<group>"; };
+		A6C2FC0917F80770002BA46A /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		A6C2FC0A17F80770002BA46A /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		A6C2FC1717F823B0002BA46A /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = CorePlotConstructor/CorePlot.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6C2FBCC17F805D9002BA46A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FC1817F823B0002BA46A /* CorePlot.framework in Frameworks */,
+				A6C2FBD317F805D9002BA46A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C2FBED17F805DA002BA46A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FBF317F805DA002BA46A /* Cocoa.framework in Frameworks */,
+				A6C2FBF217F805DA002BA46A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6BA395D18099E6F0092D6BC /* DMTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA395718099E6A0092D6BC /* DMTabBar.h */,
+				A6BA395818099E6A0092D6BC /* DMTabBar.m */,
+				A6BA395918099E6A0092D6BC /* DMTabBarItem.h */,
+				A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */,
+			);
+			name = DMTabBar;
+			sourceTree = "<group>";
+		};
+		A6BA39641809A2540092D6BC /* Graph Types */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA39651809A25D0092D6BC /* XYGraph */,
+			);
+			name = "Graph Types";
+			sourceTree = "<group>";
+		};
+		A6BA39651809A25D0092D6BC /* XYGraph */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA395F1809A24A0092D6BC /* XYGraphViewController.h */,
+				A6BA39601809A24A0092D6BC /* XYGraphViewController.m */,
+				A6BA39611809A24A0092D6BC /* XYGraphViewController.xib */,
+			);
+			name = XYGraph;
+			sourceTree = "<group>";
+		};
+		A6BA39661809A4AE0092D6BC /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A6BA39671809A4BE0092D6BC /* xy_data.plist */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		A6C2FBC617F805D9002BA46A = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBD817F805D9002BA46A /* CorePlotConstructor */,
+				A6C2FBF617F805DA002BA46A /* CorePlotConstructorTests */,
+				A6C2FBD117F805D9002BA46A /* Frameworks */,
+				A6C2FBD017F805D9002BA46A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6C2FBD017F805D9002BA46A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBCF17F805D9002BA46A /* CorePlotConstructor.app */,
+				A6C2FBF017F805DA002BA46A /* CorePlotConstructorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6C2FBD117F805D9002BA46A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FC1717F823B0002BA46A /* CorePlot.framework */,
+				A6C2FBD217F805D9002BA46A /* Cocoa.framework */,
+				A6C2FBF117F805DA002BA46A /* XCTest.framework */,
+				A6C2FBD417F805D9002BA46A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6C2FBD417F805D9002BA46A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBD517F805D9002BA46A /* AppKit.framework */,
+				A6C2FBD617F805D9002BA46A /* CoreData.framework */,
+				A6C2FBD717F805D9002BA46A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A6C2FBD817F805D9002BA46A /* CorePlotConstructor */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBE417F805D9002BA46A /* AppDelegate.h */,
+				A6C2FBE517F805D9002BA46A /* AppDelegate.m */,
+				A6C2FC0917F80770002BA46A /* MainWindowController.h */,
+				A6C2FC0A17F80770002BA46A /* MainWindowController.m */,
+				A6BA39641809A2540092D6BC /* Graph Types */,
+				A6C2FC0C17F8077B002BA46A /* Plot Types */,
+				A6C2FBE717F805D9002BA46A /* MainMenu.xib */,
+				A6BA39661809A4AE0092D6BC /* data */,
+				A6BA395D18099E6F0092D6BC /* DMTabBar */,
+				A6C2FBEA17F805D9002BA46A /* Images.xcassets */,
+				A6C2FBD917F805D9002BA46A /* Supporting Files */,
+			);
+			path = CorePlotConstructor;
+			sourceTree = "<group>";
+		};
+		A6C2FBD917F805D9002BA46A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBDA17F805D9002BA46A /* CorePlotConstructor-Info.plist */,
+				A6C2FBDB17F805D9002BA46A /* InfoPlist.strings */,
+				A6C2FBDE17F805D9002BA46A /* main.m */,
+				A6C2FBE017F805D9002BA46A /* CorePlotConstructor-Prefix.pch */,
+				A6C2FBE117F805D9002BA46A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6C2FBF617F805DA002BA46A /* CorePlotConstructorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBFC17F805DA002BA46A /* CorePlotConstructorTests.m */,
+				A6C2FBF717F805DA002BA46A /* Supporting Files */,
+			);
+			path = CorePlotConstructorTests;
+			sourceTree = "<group>";
+		};
+		A6C2FBF717F805DA002BA46A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FBF817F805DA002BA46A /* CorePlotConstructorTests-Info.plist */,
+				A6C2FBF917F805DA002BA46A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6C2FC0C17F8077B002BA46A /* Plot Types */ = {
+			isa = PBXGroup;
+			children = (
+				A6C2FC0617F80739002BA46A /* ScatterPlotViewController.h */,
+				A6C2FC0717F80739002BA46A /* ScatterPlotViewController.m */,
+			);
+			name = "Plot Types";
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6C2FBCE17F805D9002BA46A /* CorePlotConstructor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6C2FC0017F805DA002BA46A /* Build configuration list for PBXNativeTarget "CorePlotConstructor" */;
+			buildPhases = (
+				A6C2FBCB17F805D9002BA46A /* Sources */,
+				A6C2FBCC17F805D9002BA46A /* Frameworks */,
+				A6C2FBCD17F805D9002BA46A /* Resources */,
+				A6BA39691809CED00092D6BC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CorePlotConstructor;
+			productName = CorePlotConstructor;
+			productReference = A6C2FBCF17F805D9002BA46A /* CorePlotConstructor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6C2FBEF17F805DA002BA46A /* CorePlotConstructorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6C2FC0317F805DA002BA46A /* Build configuration list for PBXNativeTarget "CorePlotConstructorTests" */;
+			buildPhases = (
+				A6C2FBEC17F805DA002BA46A /* Sources */,
+				A6C2FBED17F805DA002BA46A /* Frameworks */,
+				A6C2FBEE17F805DA002BA46A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6C2FBF517F805DA002BA46A /* PBXTargetDependency */,
+			);
+			name = CorePlotConstructorTests;
+			productName = CorePlotConstructorTests;
+			productReference = A6C2FBF017F805DA002BA46A /* CorePlotConstructorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6C2FBC717F805D9002BA46A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Demitri Muna";
+				TargetAttributes = {
+					A6C2FBEF17F805DA002BA46A = {
+						TestTargetID = A6C2FBCE17F805D9002BA46A;
+					};
+				};
+			};
+			buildConfigurationList = A6C2FBCA17F805D9002BA46A /* Build configuration list for PBXProject "CorePlotConstructor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6C2FBC617F805D9002BA46A;
+			productRefGroup = A6C2FBD017F805D9002BA46A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6C2FBCE17F805D9002BA46A /* CorePlotConstructor */,
+				A6C2FBEF17F805DA002BA46A /* CorePlotConstructorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6C2FBCD17F805D9002BA46A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FBDD17F805D9002BA46A /* InfoPlist.strings in Resources */,
+				A6BA39631809A24A0092D6BC /* XYGraphViewController.xib in Resources */,
+				A6C2FBEB17F805D9002BA46A /* Images.xcassets in Resources */,
+				A6C2FBE317F805D9002BA46A /* Credits.rtf in Resources */,
+				A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */,
+				A6BA39681809A4BE0092D6BC /* xy_data.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C2FBEE17F805DA002BA46A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FBFB17F805DA002BA46A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6C2FBCB17F805D9002BA46A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */,
+				A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */,
+				A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */,
+				A6C2FBE617F805D9002BA46A /* AppDelegate.m in Sources */,
+				A6C2FBDF17F805D9002BA46A /* main.m in Sources */,
+				A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */,
+				A6BA39621809A24A0092D6BC /* XYGraphViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C2FBEC17F805DA002BA46A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C2FBFD17F805DA002BA46A /* CorePlotConstructorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6C2FBF517F805DA002BA46A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6C2FBCE17F805D9002BA46A /* CorePlotConstructor */;
+			targetProxy = A6C2FBF417F805DA002BA46A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6C2FBDB17F805D9002BA46A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2FBDC17F805D9002BA46A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A6C2FBE117F805D9002BA46A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2FBE217F805D9002BA46A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A6C2FBE717F805D9002BA46A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2FBE817F805D9002BA46A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A6C2FBF917F805DA002BA46A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2FBFA17F805DA002BA46A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6C2FBFE17F805DA002BA46A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A6C2FBFF17F805DA002BA46A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A6C2FC0117F805DA002BA46A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/demitri/Development/CorePlotConstructor/CorePlotConstructor,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlotConstructor/CorePlotConstructor-Prefix.pch";
+				INFOPLIST_FILE = "CorePlotConstructor/CorePlotConstructor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A6C2FC0217F805DA002BA46A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/demitri/Development/CorePlotConstructor/CorePlotConstructor,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlotConstructor/CorePlotConstructor-Prefix.pch";
+				INFOPLIST_FILE = "CorePlotConstructor/CorePlotConstructor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A6C2FC0417F805DA002BA46A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CorePlotConstructor.app/Contents/MacOS/CorePlotConstructor";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlotConstructor/CorePlotConstructor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CorePlotConstructorTests/CorePlotConstructorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A6C2FC0517F805DA002BA46A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CorePlotConstructor.app/Contents/MacOS/CorePlotConstructor";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CorePlotConstructor/CorePlotConstructor-Prefix.pch";
+				INFOPLIST_FILE = "CorePlotConstructorTests/CorePlotConstructorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6C2FBCA17F805D9002BA46A /* Build configuration list for PBXProject "CorePlotConstructor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C2FBFE17F805DA002BA46A /* Debug */,
+				A6C2FBFF17F805DA002BA46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6C2FC0017F805DA002BA46A /* Build configuration list for PBXNativeTarget "CorePlotConstructor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C2FC0117F805DA002BA46A /* Debug */,
+				A6C2FC0217F805DA002BA46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6C2FC0317F805DA002BA46A /* Build configuration list for PBXNativeTarget "CorePlotConstructorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C2FC0417F805DA002BA46A /* Debug */,
+				A6C2FC0517F805DA002BA46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6C2FBC717F805D9002BA46A /* Project object */;
+}

@@ -16,3 +16,9 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+*.swp
+*~.nib
+*.lock
+.Trashes
+
