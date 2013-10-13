@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6B4E810180A48A000E8DA54 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B4E80F180A48A000E8DA54 /* CorePlot.framework */; };
+		A6B4E814180AA98600E8DA54 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6B4E80F180A48A000E8DA54 /* CorePlot.framework */; };
 		A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395818099E6A0092D6BC /* DMTabBar.m */; };
 		A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */; };
 		A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE717F805D9002BA46A /* MainMenu.xib */; };
@@ -45,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A6B4E814180AA98600E8DA54 /* CorePlot.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
