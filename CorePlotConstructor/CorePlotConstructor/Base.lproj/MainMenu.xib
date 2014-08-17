@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -696,7 +696,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <popUpButton verticalHuggingPriority="750" id="Clz-0b-TPI">
+                                        <popUpButton verticalHuggingPriority="750" id="Clz-0b-TPI" userLabel="Popup Button - theme">
                                             <rect key="frame" x="61" y="468" width="132" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Eee-W1-Z90" id="7Hs-fL-7GX">
@@ -757,17 +757,13 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="1yC-pD-0oX">
+                                        <textField verticalHuggingPriority="750" tag="2" id="1yC-pD-0oX">
                                             <rect key="frame" x="55" y="392" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dbs-ca-vGK">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="bBg-rP-aY1">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="bBg-rP-aY1">
                                                     <real key="minimum" value="7"/>
                                                     <real key="maximum" value="130"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -779,10 +775,11 @@
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <outlet property="delegate" destination="3U8-4g-8jP" id="dQB-Qm-EBX"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rZW-zE-Ygs">
-                                            <rect key="frame" x="125" y="394" width="37" height="14"/>
+                                            <rect key="frame" x="151" y="394" width="37" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="8MT-NH-VgO">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -800,7 +797,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6p8-Z3-urk">
-                                            <rect key="frame" x="20" y="374" width="93" height="14"/>
+                                            <rect key="frame" x="19" y="366" width="93" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Displacement x" id="NLk-u9-78c">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -808,48 +805,46 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="Am9-4X-1FS">
-                                            <rect key="frame" x="113" y="372" width="39" height="16"/>
+                                        <textField verticalHuggingPriority="750" tag="3" id="Am9-4X-1FS">
+                                            <rect key="frame" x="112" y="364" width="39" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="MGa-0d-Yf5">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="ApC-3d-P9I">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="ApC-3d-P9I">
                                                     <real key="minimum" value="-400"/>
                                                     <real key="maximum" value="400"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graphTitleDisplacementX" id="h7Y-7U-08E"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graphTitleDisplacementX" id="UTd-2b-yxU">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="3U8-4g-8jP" id="Jd6-7N-Tgt"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="qYG-ea-j0V">
-                                            <rect key="frame" x="184" y="372" width="39" height="16"/>
+                                        <textField verticalHuggingPriority="750" tag="1" id="qYG-ea-j0V">
+                                            <rect key="frame" x="85" y="272" width="39" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Wcs-US-Ybr">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="FMS-yB-rtA">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="FMS-yB-rtA">
                                                     <real key="minimum" value="-400"/>
                                                     <real key="maximum" value="400"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graphTitleDisplacementY" id="Mvf-D8-T9S"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="borderLineWidth" id="qBT-6v-mpQ"/>
+                                                <outlet property="delegate" destination="3U8-4g-8jP" id="jYc-kj-bf7"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="G0R-GW-0Mx">
-                                            <rect key="frame" x="169" y="374" width="19" height="14"/>
+                                            <rect key="frame" x="168" y="366" width="19" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="y" id="EHe-LY-UaA">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -858,7 +853,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3lJ-Zh-DX3" userLabel="Font - text label">
-                                            <rect key="frame" x="20" y="352" width="37" height="14"/>
+                                            <rect key="frame" x="19" y="344" width="37" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font" id="nnh-bi-b08">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -867,7 +862,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="LK6-TX-hh4" userLabel="Font popup button">
-                                            <rect key="frame" x="54" y="347" width="204" height="22"/>
+                                            <rect key="frame" x="97" y="339" width="187" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="5H6-v8-u4x" id="bMB-Ue-GlY">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -885,10 +880,118 @@
                                             </connections>
                                         </popUpButton>
                                         <colorWell id="1q7-PL-Z8u">
-                                            <rect key="frame" x="172" y="389" width="44" height="23"/>
+                                            <rect key="frame" x="189" y="388" width="44" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.titleColor" id="ahZ-k9-NDj"/>
+                                            </connections>
                                         </colorWell>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Sjk-bg-Hse">
+                                            <rect key="frame" x="18" y="322" width="76" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title Location" id="Ezu-8b-Hx6">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" id="3w1-Sr-Dvf" userLabel="Popup Button - title anchor pos">
+                                            <rect key="frame" x="97" y="317" width="187" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="jaW-xw-LF2">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="PDh-zn-aQR">
+                                                    <items>
+                                                        <menuItem title="Item 1" id="RGX-dk-cZF"/>
+                                                        <menuItem title="Item 2" id="7zb-bs-DT7"/>
+                                                        <menuItem title="Item 3" id="vZw-2g-Sk0"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="changeTitleAnchorStyle:" target="3U8-4g-8jP" id="Brd-bf-HRX"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="YZT-WY-tMt">
+                                            <rect key="frame" x="19" y="215" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data" id="rAo-OA-wJ3">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6dT-l7-ArM">
+                                            <rect key="frame" x="19" y="193" width="37" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="izV-qC-j8k">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <colorWell id="Z70-ia-LRz">
+                                            <rect key="frame" x="61" y="189" width="44" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.dataColor" id="hQc-8q-1cM"/>
+                                            </connections>
+                                        </colorWell>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3X4-Mc-YYj">
+                                            <rect key="frame" x="19" y="294" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Graph Border" id="cac-fb-5OE">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4y5-Eb-f1U">
+                                            <rect key="frame" x="150" y="272" width="37" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="bQu-CG-Y7f">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <colorWell id="zeK-Km-iKF">
+                                            <rect key="frame" x="188" y="268" width="44" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.borderLineColor" id="QBd-tR-z66"/>
+                                            </connections>
+                                        </colorWell>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5GM-s6-bNX">
+                                            <rect key="frame" x="19" y="273" width="60" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Width" id="O7I-U7-Bjt">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" tag="4" id="gRI-zj-J26">
+                                            <rect key="frame" x="188" y="364" width="39" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9gL-Uo-bRs">
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="s72-8Z-xqr">
+                                                    <real key="minimum" value="-400"/>
+                                                    <real key="maximum" value="400"/>
+                                                </numberFormatter>
+                                                <font key="font" metaFont="miniSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graphTitleDisplacementY" id="M4M-Jn-ugq"/>
+                                                <outlet property="delegate" destination="3U8-4g-8jP" id="Fbf-37-84t"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -906,16 +1009,14 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="Bn7-w7-QlN">
+                                        <textField verticalHuggingPriority="750" tag="4" id="Bn7-w7-QlN">
                                             <rect key="frame" x="56" y="418" width="43" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aHA-UQ-305">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="pGi-IH-o4T">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="pGi-IH-o4T">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -924,19 +1025,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingRight" id="9qg-yd-dVe"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingRight" id="pEj-0e-lVY">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="1Ap-GE-zmi"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="wBt-RD-9oN">
+                                        <textField verticalHuggingPriority="750" tag="3" id="wBt-RD-9oN">
                                             <rect key="frame" x="56" y="440" width="43" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="B1x-VN-Ecy">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="3eP-nF-LzD">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="3eP-nF-LzD">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -945,19 +1049,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingLeft" id="S9v-8M-DDU"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingLeft" id="G8p-PG-WDP">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="8EE-H2-ots"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="MvN-bo-tdy">
+                                        <textField verticalHuggingPriority="750" tag="1" id="MvN-bo-tdy">
                                             <rect key="frame" x="167" y="439" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="55y-IO-PnP">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="pEi-5o-ZM3">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="pEi-5o-ZM3">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -966,19 +1073,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingTop" id="6BK-HU-A9n"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingTop" id="Pe8-vb-Bsa">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="fNx-JB-FyH"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="FfP-Y2-Fwp">
+                                        <textField verticalHuggingPriority="750" tag="2" id="FfP-Y2-Fwp">
                                             <rect key="frame" x="167" y="418" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ctZ-cW-W4t">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="u9r-Wb-624">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="u9r-Wb-624">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -987,7 +1097,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingBottom" id="HuD-1I-d2q"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.paddingBottom" id="FvP-Hi-Way">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="N8H-8c-9Gg"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NgF-WL-g1r">
@@ -1035,16 +1150,14 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="Pv4-rB-9rA">
+                                        <textField verticalHuggingPriority="750" tag="8" id="Pv4-rB-9rA">
                                             <rect key="frame" x="56" y="344" width="43" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="J5t-z3-ddg">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="gna-7z-bEJ">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="gna-7z-bEJ">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -1053,19 +1166,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingRight" id="FEW-I1-nvk"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingRight" id="ldz-8M-hUV">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="PMh-oE-HR0"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="oqz-Li-Rhd">
+                                        <textField verticalHuggingPriority="750" tag="7" allowsExpansionToolTips="YES" id="oqz-Li-Rhd">
                                             <rect key="frame" x="56" y="366" width="43" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gvv-D1-2qk">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="wWp-oW-J50">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="wWp-oW-J50">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -1074,19 +1190,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingLeft" id="hR6-rY-VL3"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingLeft" id="FOB-iL-Ksz">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="phu-ze-icS"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="aEZ-hu-V03">
+                                        <textField verticalHuggingPriority="750" tag="5" id="aEZ-hu-V03">
                                             <rect key="frame" x="167" y="365" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aiX-te-2Xd">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="Van-ps-jjO">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="Van-ps-jjO">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -1095,19 +1214,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingTop" id="3mq-IS-Kvh"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingTop" id="ge9-yJ-9al">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="Esr-GT-Z7s"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="pew-RL-GAw">
+                                        <textField verticalHuggingPriority="750" tag="6" id="pew-RL-GAw">
                                             <rect key="frame" x="167" y="344" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Lnr-em-3Pt">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="sqO-Rg-rab">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="sqO-Rg-rab">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="500"/>
                                                     <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
                                                         <real key="inspectorSampleValue" value="1"/>
                                                     </metadata>
                                                 </numberFormatter>
@@ -1116,7 +1238,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingBottom" id="MKc-bi-dtr"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.plotAreaFrame.paddingBottom" id="ioR-Ek-7gj">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <outlet property="delegate" destination="v95-S2-Ts3" id="6UG-r9-MII"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uNr-wl-aoC">
@@ -1172,17 +1299,13 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="yfD-hu-ww2" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="1" id="yfD-hu-ww2" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="168" y="258" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aq8-L4-QZY">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="0NH-Ws-Ljf">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="0NH-Ws-Ljf">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1190,6 +1313,7 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.xAxis.majorGridLineStyle.lineWidth" id="h3t-se-sjB"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="N3f-2n-feY"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3Iz-1U-81p">
@@ -1228,7 +1352,7 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <popUpButton verticalHuggingPriority="750" id="4T1-cO-IwO">
+                                        <popUpButton verticalHuggingPriority="750" id="4T1-cO-IwO" userLabel="Popup Button - x labelling policy">
                                             <rect key="frame" x="126" y="379" width="141" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QN9-aB-EnI" id="Q9p-dB-0cX">
@@ -1246,7 +1370,7 @@
                                                 <action selector="axisPolicyChanged:" target="3U8-4g-8jP" id="K8m-7C-Mud"/>
                                             </connections>
                                         </popUpButton>
-                                        <popUpButton verticalHuggingPriority="750" id="0tR-ar-tDr">
+                                        <popUpButton verticalHuggingPriority="750" id="0tR-ar-tDr" userLabel="Popup Button - y labelling policy">
                                             <rect key="frame" x="126" y="357" width="141" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="jCc-vs-FJ6" id="jtT-uH-yLV">
@@ -1277,13 +1401,9 @@
                                             <rect key="frame" x="62" y="316" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="w1v-o6-RHl">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="309" minimumFractionDigits="0" maximumFractionDigits="3" id="fKP-1a-qbp">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#,##0.###" negativeFormat="#,##0.###" numberStyle="decimal" paddingCharacter="*" minimumIntegerDigits="1" maximumIntegerDigits="309" maximumFractionDigits="3" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="fKP-1a-qbp">
                                                     <real key="minimum" value="0.0"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1291,6 +1411,7 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3U8-4g-8jP" name="maxValue" keyPath="graph.plotAreaFrame.borderLineStyle.lineWidth" id="5hi-8T-RWs"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="sLQ-4K-BOq"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Zy0-Oj-oPN" userLabel="Text Field - Grid Lines label">
@@ -1325,17 +1446,13 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="Anl-Pw-ogN" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="2" id="Anl-Pw-ogN" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="226" y="257" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Hah-Pq-5wc">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="YoS-ae-87h">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="YoS-ae-87h">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1343,6 +1460,7 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.xAxis.majorGridLineStyle.lineWidth" id="ROZ-GJ-bCP"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="HIK-a9-sbA"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jFo-g1-vhg">
@@ -1354,17 +1472,13 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="ydj-35-NSl" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="3" id="ydj-35-NSl" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="168" y="236" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="kdj-xU-vke">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="fLa-p4-ulH">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="fLa-p4-ulH">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1372,6 +1486,7 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.xAxis.minorGridLineStyle.lineWidth" id="lPK-Dh-wcV"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="NgZ-Qu-2EJ"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iu0-l6-noQ">
@@ -1392,17 +1507,13 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="YcQ-RC-wha" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="4" id="YcQ-RC-wha" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="226" y="235" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dYe-kC-HVS">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="QGe-QL-mSo">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="QGe-QL-mSo">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1410,6 +1521,7 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.yAxis.minorGridLineStyle.lineWidth" id="gMO-FU-sdM"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="PY6-q3-t2C"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="KPc-y1-Wj7">
@@ -1451,7 +1563,11 @@
                                                 </connections>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.axisSet.xAxis.title" id="dWY-rT-cmq"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.title" id="rNe-2p-LCZ">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="i5a-w2-6tt">
@@ -1466,7 +1582,11 @@
                                                 </connections>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.axisSet.yAxis.title" id="izq-dq-Ihm"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.title" id="dvp-eu-fQV">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Ww-IM-yak">
@@ -1487,24 +1607,21 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="aB5-uh-Bs9" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="5" id="aB5-uh-Bs9" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="168" y="209" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2oa-TL-ALj">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="m93-Ew-okv">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="m93-Ew-okv">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.xAxis.minorTicksPerInterval" id="1Pg-f3-ho4"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.minorTicksPerInterval" id="iZO-Zp-a1U"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="yVL-N6-fEx"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="43P-J6-JbP">
@@ -1516,24 +1633,21 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="VSq-bY-cZI" userLabel="Text Field - major grid line width">
+                                        <textField verticalHuggingPriority="750" tag="6" id="VSq-bY-cZI" userLabel="Text Field - major grid line width">
                                             <rect key="frame" x="226" y="208" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="HP6-5p-F8U">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="QWr-Sd-nXa">
-                                                    <real key="roundingIncrement" value="0.0"/>
+                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="QWr-Sd-nXa">
                                                     <real key="minimum" value="0.01"/>
                                                     <real key="maximum" value="20"/>
-                                                    <metadata>
-                                                        <bool key="localizesFormat" value="YES"/>
-                                                    </metadata>
                                                 </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.axisSet.yAxis.minorTicksPerInterval" id="Dgm-L4-LZz"/>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.minorTicksPerInterval" id="68d-0N-7Mo"/>
+                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="Ryl-0h-tb7"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Q0J-u3-HPw">
@@ -1628,9 +1742,29 @@
         <viewController id="3U8-4g-8jP" userLabel="XYGraph View Controller" customClass="XYGraphViewController">
             <connections>
                 <outlet property="graphTitleFontPopup" destination="LK6-TX-hh4" id="uLE-OW-QZZ"/>
+                <outlet property="graphTitleFrameAnchorPopup" destination="3w1-Sr-Dvf" id="ztH-BU-hd3"/>
                 <outlet property="graphView" destination="Wuu-Dv-yKb" id="agK-er-yQj"/>
                 <outlet property="themePopup" destination="Clz-0b-TPI" id="Pmg-ES-wrl"/>
+                <outlet property="titleDisplacementFieldX" destination="Am9-4X-1FS" id="nYP-bd-bmd"/>
+                <outlet property="titleDisplacementFieldY" destination="qYG-ea-j0V" id="giH-4I-n3S"/>
+                <outlet property="titleFontSizeField" destination="1yC-pD-0oX" id="5bS-tO-P6X"/>
                 <outlet property="view" destination="Wuu-Dv-yKb" id="b7f-WX-oF8"/>
+                <outlet property="xAxisLabellingPolicyPopup" destination="4T1-cO-IwO" id="Lrc-NY-cUC"/>
+                <outlet property="yAxisLabellingPolicyPopup" destination="0tR-ar-tDr" id="Oze-bl-qR1"/>
+            </connections>
+        </viewController>
+        <viewController id="v95-S2-Ts3" userLabel="XYGraph Padding View Controller" customClass="XYGraphPaddingViewController">
+            <connections>
+                <outlet property="graphPaddingFieldBottom" destination="FfP-Y2-Fwp" id="iMT-3e-Aai"/>
+                <outlet property="graphPaddingFieldLeft" destination="wBt-RD-9oN" id="JrB-Bp-zic"/>
+                <outlet property="graphPaddingFieldRight" destination="Bn7-w7-QlN" id="BpK-2T-TfK"/>
+                <outlet property="graphPaddingFieldTop" destination="MvN-bo-tdy" id="3HX-Jf-sV5"/>
+                <outlet property="mc" destination="3U8-4g-8jP" id="N6Z-ZL-9UK"/>
+            </connections>
+        </viewController>
+        <viewController id="fiT-Fd-CRQ" userLabel="XYGraph Axes View Controller" customClass="XYGraphAxesViewController">
+            <connections>
+                <outlet property="mc" destination="3U8-4g-8jP" id="Bp7-b8-RqB"/>
             </connections>
         </viewController>
         <userDefaultsController representsSharedInstance="YES" id="yjJ-vs-oIn"/>

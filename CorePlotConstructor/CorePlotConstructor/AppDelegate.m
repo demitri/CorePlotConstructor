@@ -13,6 +13,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Insert code here to initialize your application
+	[NSNumberFormatter setDefaultFormatterBehavior:NSNumberFormatterBehavior10_4];
+	[[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
 }
 
 @end

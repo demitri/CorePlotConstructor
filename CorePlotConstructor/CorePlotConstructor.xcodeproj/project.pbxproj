@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6B4E810180A48A000E8DA54 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B4E80F180A48A000E8DA54 /* CorePlot.framework */; };
-		A6B4E814180AA98600E8DA54 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6B4E80F180A48A000E8DA54 /* CorePlot.framework */; };
 		A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395818099E6A0092D6BC /* DMTabBar.m */; };
 		A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */; };
 		A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE717F805D9002BA46A /* MainMenu.xib */; };
@@ -27,6 +25,13 @@
 		A6C2FBFD17F805DA002BA46A /* CorePlotConstructorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FBFC17F805DA002BA46A /* CorePlotConstructorTests.m */; };
 		A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FC0717F80739002BA46A /* ScatterPlotViewController.m */; };
 		A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C2FC0A17F80770002BA46A /* MainWindowController.m */; };
+		A6FEA753199AE8040007ED35 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FEA74C199AE6F10007ED35 /* CorePlot.framework */; };
+		A6FEA754199AE9000007ED35 /* Cocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6C2FBD217F805D9002BA46A /* Cocoa.framework */; };
+		A6FEA756199AE9C50007ED35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FEA755199AE9C50007ED35 /* QuartzCore.framework */; };
+		A6FEA77819A0726D0007ED35 /* XYGraphPaddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEA77719A0726D0007ED35 /* XYGraphPaddingViewController.m */; };
+		A6FEA77B19A088E20007ED35 /* XYGraphAxesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEA77A19A088E20007ED35 /* XYGraphAxesViewController.m */; };
+		A6FEA77F19A106060007ED35 /* CorePlotLineStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FEA77D19A106060007ED35 /* CorePlotLineStyleViewController.m */; };
+		A6FEA78019A106060007ED35 /* CorePlotLineStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6FEA77E19A106060007ED35 /* CorePlotLineStyleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,20 @@
 			remoteGlobalIDString = A6C2FBCE17F805D9002BA46A;
 			remoteInfo = CorePlotConstructor;
 		};
+		A6FEA74B199AE6F10007ED35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		A6FEA74D199AE6F10007ED35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,14 +65,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A6B4E814180AA98600E8DA54 /* CorePlot.framework in CopyFiles */,
+				A6FEA754199AE9000007ED35 /* Cocoa.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A6B4E80F180A48A000E8DA54 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = CorePlotConstructor/CorePlot.framework; sourceTree = "<group>"; };
 		A6BA395718099E6A0092D6BC /* DMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBar.h; sourceTree = "<group>"; };
 		A6BA395818099E6A0092D6BC /* DMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBar.m; sourceTree = "<group>"; };
 		A6BA395918099E6A0092D6BC /* DMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBarItem.h; sourceTree = "<group>"; };
@@ -85,6 +103,15 @@
 		A6C2FC0717F80739002BA46A /* ScatterPlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScatterPlotViewController.m; path = CorePlotConstructor/ScatterPlotViewController.m; sourceTree = "<group>"; };
 		A6C2FC0917F80770002BA46A /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		A6C2FC0A17F80770002BA46A /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "../../core-plot/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
+		A6FEA755199AE9C50007ED35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A6FEA77619A0726D0007ED35 /* XYGraphPaddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphPaddingViewController.h; sourceTree = "<group>"; };
+		A6FEA77719A0726D0007ED35 /* XYGraphPaddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphPaddingViewController.m; sourceTree = "<group>"; };
+		A6FEA77919A088E20007ED35 /* XYGraphAxesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphAxesViewController.h; sourceTree = "<group>"; };
+		A6FEA77A19A088E20007ED35 /* XYGraphAxesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphAxesViewController.m; sourceTree = "<group>"; };
+		A6FEA77C19A106060007ED35 /* CorePlotLineStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorePlotLineStyleViewController.h; sourceTree = "<group>"; };
+		A6FEA77D19A106060007ED35 /* CorePlotLineStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorePlotLineStyleViewController.m; sourceTree = "<group>"; };
+		A6FEA77E19A106060007ED35 /* CorePlotLineStyleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CorePlotLineStyleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B4E810180A48A000E8DA54 /* CorePlot.framework in Frameworks */,
+				A6FEA756199AE9C50007ED35 /* QuartzCore.framework in Frameworks */,
 				A6C2FBD317F805D9002BA46A /* Cocoa.framework in Frameworks */,
+				A6FEA753199AE8040007ED35 /* CorePlot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,9 +159,13 @@
 		A6BA39651809A25D0092D6BC /* XYGraph */ = {
 			isa = PBXGroup;
 			children = (
+				A6BA39611809A24A0092D6BC /* XYGraphViewController.xib */,
 				A6BA395F1809A24A0092D6BC /* XYGraphViewController.h */,
 				A6BA39601809A24A0092D6BC /* XYGraphViewController.m */,
-				A6BA39611809A24A0092D6BC /* XYGraphViewController.xib */,
+				A6FEA77619A0726D0007ED35 /* XYGraphPaddingViewController.h */,
+				A6FEA77719A0726D0007ED35 /* XYGraphPaddingViewController.m */,
+				A6FEA77919A088E20007ED35 /* XYGraphAxesViewController.h */,
+				A6FEA77A19A088E20007ED35 /* XYGraphAxesViewController.m */,
 			);
 			name = XYGraph;
 			sourceTree = "<group>";
@@ -149,6 +181,7 @@
 		A6C2FBC617F805D9002BA46A = {
 			isa = PBXGroup;
 			children = (
+				A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */,
 				A6C2FBD817F805D9002BA46A /* CorePlotConstructor */,
 				A6C2FBF617F805DA002BA46A /* CorePlotConstructorTests */,
 				A6C2FBD117F805D9002BA46A /* Frameworks */,
@@ -168,7 +201,7 @@
 		A6C2FBD117F805D9002BA46A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A6B4E80F180A48A000E8DA54 /* CorePlot.framework */,
+				A6FEA755199AE9C50007ED35 /* QuartzCore.framework */,
 				A6C2FBD217F805D9002BA46A /* Cocoa.framework */,
 				A6C2FBF117F805DA002BA46A /* XCTest.framework */,
 				A6C2FBD417F805D9002BA46A /* Other Frameworks */,
@@ -193,6 +226,7 @@
 				A6C2FBE517F805D9002BA46A /* AppDelegate.m */,
 				A6C2FC0917F80770002BA46A /* MainWindowController.h */,
 				A6C2FC0A17F80770002BA46A /* MainWindowController.m */,
+				A6FEA78119A1060B0007ED35 /* Line Style Inspector View */,
 				A6BA39641809A2540092D6BC /* Graph Types */,
 				A6C2FC0C17F8077B002BA46A /* Plot Types */,
 				A6C2FBE717F805D9002BA46A /* MainMenu.xib */,
@@ -242,6 +276,25 @@
 			);
 			name = "Plot Types";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		A6FEA746199AE6F10007ED35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEA74C199AE6F10007ED35 /* CorePlot.framework */,
+				A6FEA74E199AE6F10007ED35 /* UnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6FEA78119A1060B0007ED35 /* Line Style Inspector View */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEA77C19A106060007ED35 /* CorePlotLineStyleViewController.h */,
+				A6FEA77D19A106060007ED35 /* CorePlotLineStyleViewController.m */,
+				A6FEA77E19A106060007ED35 /* CorePlotLineStyleViewController.xib */,
+			);
+			name = "Line Style Inspector View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +361,12 @@
 			mainGroup = A6C2FBC617F805D9002BA46A;
 			productRefGroup = A6C2FBD017F805D9002BA46A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A6FEA746199AE6F10007ED35 /* Products */;
+					ProjectRef = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A6C2FBCE17F805D9002BA46A /* CorePlotConstructor */,
@@ -315,6 +374,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A6FEA74C199AE6F10007ED35 /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = A6FEA74B199AE6F10007ED35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6FEA74E199AE6F10007ED35 /* UnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.xctest;
+			remoteRef = A6FEA74D199AE6F10007ED35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A6C2FBCD17F805D9002BA46A /* Resources */ = {
@@ -327,6 +403,7 @@
 				A6C2FBE317F805D9002BA46A /* Credits.rtf in Resources */,
 				A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */,
 				A6BA39681809A4BE0092D6BC /* xy_data.plist in Resources */,
+				A6FEA78019A106060007ED35 /* CorePlotLineStyleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +422,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FEA77F19A106060007ED35 /* CorePlotLineStyleViewController.m in Sources */,
 				A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */,
 				A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */,
 				A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */,
 				A6C2FBE617F805D9002BA46A /* AppDelegate.m in Sources */,
 				A6C2FBDF17F805D9002BA46A /* main.m in Sources */,
 				A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */,
+				A6FEA77819A0726D0007ED35 /* XYGraphPaddingViewController.m in Sources */,
+				A6FEA77B19A088E20007ED35 /* XYGraphAxesViewController.m in Sources */,
 				A6BA39621809A24A0092D6BC /* XYGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +522,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DDLOG_DEBUG=1";
 				SDKROOT = macosx;
 			};
 			name = Debug;
