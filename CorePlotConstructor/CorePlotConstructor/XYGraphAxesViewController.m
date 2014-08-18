@@ -28,6 +28,11 @@
 	return mc.graph;
 }
 
+- (IBAction)editLineStyle:(id)sender
+{
+	
+}
+
 #pragma mark -
 #pragma mark NSTextViewDelegate methods
 

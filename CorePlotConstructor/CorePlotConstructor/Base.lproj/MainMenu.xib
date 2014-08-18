@@ -1300,7 +1300,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="1" id="yfD-hu-ww2" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="168" y="258" width="35" height="16"/>
+                                            <rect key="frame" x="170" y="215" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Aq8-L4-QZY">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="0NH-Ws-Ljf">
@@ -1317,7 +1317,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3Iz-1U-81p">
-                                            <rect key="frame" x="21" y="260" width="120" height="14"/>
+                                            <rect key="frame" x="23" y="217" width="120" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Major Grid Line Width" id="RK0-FA-93k">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1438,7 +1438,7 @@
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </colorWell>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OCf-dN-TtF">
-                                            <rect key="frame" x="151" y="260" width="11" height="14"/>
+                                            <rect key="frame" x="153" y="217" width="11" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="x" id="jj9-cx-1lg">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1447,7 +1447,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="2" id="Anl-Pw-ogN" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="226" y="257" width="35" height="16"/>
+                                            <rect key="frame" x="228" y="214" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Hah-Pq-5wc">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="YoS-ae-87h">
@@ -1464,7 +1464,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jFo-g1-vhg">
-                                            <rect key="frame" x="209" y="259" width="10" height="14"/>
+                                            <rect key="frame" x="211" y="216" width="10" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="y" id="aNz-Jw-6uw">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1473,7 +1473,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="3" id="ydj-35-NSl" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="168" y="236" width="35" height="16"/>
+                                            <rect key="frame" x="170" y="193" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="kdj-xU-vke">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="fLa-p4-ulH">
@@ -1490,7 +1490,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iu0-l6-noQ">
-                                            <rect key="frame" x="21" y="238" width="121" height="14"/>
+                                            <rect key="frame" x="23" y="195" width="121" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minor Grid Line Width" id="nP1-eB-Fa8">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1499,7 +1499,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="oyS-Ai-hVt">
-                                            <rect key="frame" x="151" y="238" width="11" height="14"/>
+                                            <rect key="frame" x="153" y="195" width="11" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="x" id="kFs-7G-rkX">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1508,7 +1508,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="4" id="YcQ-RC-wha" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="226" y="235" width="35" height="16"/>
+                                            <rect key="frame" x="228" y="192" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dYe-kC-HVS">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="QGe-QL-mSo">
@@ -1525,7 +1525,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="KPc-y1-Wj7">
-                                            <rect key="frame" x="209" y="237" width="10" height="14"/>
+                                            <rect key="frame" x="211" y="194" width="10" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="y" id="iBO-jF-i3C">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1590,7 +1590,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0Ww-IM-yak">
-                                            <rect key="frame" x="21" y="211" width="129" height="14"/>
+                                            <rect key="frame" x="23" y="168" width="129" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minor Ticks Per Interval" id="X4x-b9-6YR">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1599,7 +1599,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gT7-eM-4GD">
-                                            <rect key="frame" x="21" y="189" width="153" height="14"/>
+                                            <rect key="frame" x="23" y="146" width="153" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preferred No. of Major Ticks" id="k2I-N6-5aS">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1608,7 +1608,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="5" id="aB5-uh-Bs9" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="168" y="209" width="35" height="16"/>
+                                            <rect key="frame" x="170" y="166" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2oa-TL-ALj">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="m93-Ew-okv">
@@ -1625,7 +1625,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="43P-J6-JbP">
-                                            <rect key="frame" x="151" y="211" width="11" height="14"/>
+                                            <rect key="frame" x="153" y="168" width="11" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="x" id="XIG-gq-zGc">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1634,7 +1634,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="6" id="VSq-bY-cZI" userLabel="Text Field - major grid line width">
-                                            <rect key="frame" x="226" y="208" width="35" height="16"/>
+                                            <rect key="frame" x="228" y="165" width="35" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="HP6-5p-F8U">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" numberStyle="decimal" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="QWr-Sd-nXa">
@@ -1651,7 +1651,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Q0J-u3-HPw">
-                                            <rect key="frame" x="209" y="210" width="10" height="14"/>
+                                            <rect key="frame" x="211" y="167" width="10" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="y" id="dwy-aa-u3b">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1660,7 +1660,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0P0-IU-ptt">
-                                            <rect key="frame" x="21" y="167" width="114" height="14"/>
+                                            <rect key="frame" x="23" y="124" width="114" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="X Axis Tick Direction" id="M4k-rk-qgT">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1669,7 +1669,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cGs-86-r0u">
-                                            <rect key="frame" x="21" y="145" width="114" height="14"/>
+                                            <rect key="frame" x="23" y="102" width="114" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Y Axis Tick Direction" id="cNH-h9-uGp">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -1678,7 +1678,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="CHL-Q6-R4x">
-                                            <rect key="frame" x="138" y="162" width="141" height="22"/>
+                                            <rect key="frame" x="140" y="119" width="141" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="iI6-74-J2R" id="7mt-47-c6n">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1696,7 +1696,7 @@
                                             </connections>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" id="h2F-d4-fDO">
-                                            <rect key="frame" x="138" y="140" width="141" height="22"/>
+                                            <rect key="frame" x="140" y="97" width="141" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D62-Qq-FID" id="wW8-U6-PeY">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -1713,6 +1713,31 @@
                                                 <action selector="axisPolicyChanged:" target="3U8-4g-8jP" id="D8B-T1-Itv"/>
                                             </connections>
                                         </popUpButton>
+                                        <button verticalHuggingPriority="750" id="rSd-s2-dhu">
+                                            <rect key="frame" x="108" y="259" width="86" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaN-y0-Gdn">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="cellTitle"/>
+                                            </buttonCell>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hTN-bW-bVK">
+                                            <rect key="frame" x="19" y="261" width="81" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Grid Line Style" id="7Oy-lJ-DOP">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="1" id="KAO-j3-Igx">
+                                            <rect key="frame" x="202" y="260" width="86" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I4f-Vt-EOx">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="titleBar" size="12"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>

@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <CorePlot/CorePlot.h>
 
 @interface CorePlotLineStyleViewController : NSViewController
+
+@property (nonatomic, weak) CPTGraph *graph;
 
 @end

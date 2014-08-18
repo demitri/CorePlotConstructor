@@ -10,6 +10,7 @@
 #import <CorePlot/CorePlot.h>
 #import "XYGraphViewController.h"
 
+// Text fields
 enum {
 	MAJOR_GRID_LINE_WIDTH_X = 1,
 	MAJOR_GRID_LINE_WIDTH_Y,
@@ -19,11 +20,19 @@ enum {
 	MINOR_TICKS_PER_INTERVAL_Y
 };
 
+enum {
+	EDIT_LINE_STYLE_X_AXIS = 1,
+	EDIT_LINE_STYLE_Y_AXIS
+};
+
 @interface XYGraphAxesViewController : NSViewController <NSTextFieldDelegate>
 {
 	IBOutlet XYGraphViewController *mc; // main controller
 }
 
 @property (weak, nonatomic, readonly) CPTXYGraph *graph;
+@property (strong, nonatomic) NSPopover *lineStylePopover;
+
+- (IBAction)editLineStyle:(id)sender;
 
 @end
