@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
+		self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
     }
     return self;
 }
@@ -28,9 +29,55 @@
 	return mc.graph;
 }
 
+- (CPTXYAxis*)xAxis
+{
+	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
+	return axisSet.xAxis;
+}
+
+- (CPTXYAxis*)yAxis
+{
+	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
+	return axisSet.yAxis;
+}
+
 - (IBAction)editLineStyle:(id)sender
 {
+	self.axisBeingEdited = ([sender tag] == EDIT_LINE_STYLE_BUTTON_X_AXIS_MAJOR ||
+							[sender tag] == EDIT_LINE_STYLE_BUTTON_X_AXIS_MINOR) ? self.xAxis : self.yAxis;
+	self.lineStyleBeingEdited = [sender tag];
 	
+	// create the popover
+	self.lineStylePopover = [[NSPopover alloc] init];
+	
+	self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
+
+	switch (self.lineStyleBeingEdited) {
+		case EDIT_LINE_STYLE_BUTTON_X_AXIS_MAJOR:
+		case EDIT_LINE_STYLE_BUTTON_Y_AXIS_MAJOR:
+			self.lineStyleViewController.lineStyle = self.axisBeingEdited.majorGridLineStyle;
+			break;
+		default:
+			self.lineStyleViewController.lineStyle = self.axisBeingEdited.minorGridLineStyle;
+	}
+	self.lineStyleViewController.lineStyle =
+	
+	self.lineStylePopover.contentViewController = self.lineStyleViewController;
+	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
+	self.lineStylePopover.delegate = self;
+
+	NSButton *targetButton = (NSButton *)sender;
+	
+	[self.lineStylePopover showRelativeToRect:targetButton.bounds ofView:sender preferredEdge:NSMinYEdge]; // display on top of button
+}
+
+#pragma mark -
+#pragma mark NSPopover delegate methods
+
+- (void)popoverDidClose:(NSNotification *)notification
+{
+	self.lineStylePopover = nil;
+	self.axisBeingEdited = nil;
 }
 
 #pragma mark -

@@ -14,14 +14,46 @@
 
 @implementation CorePlotLineStyleViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+/* Designated initializer */
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	NSString *nibName = @"CorePlotLineStyleViewController";
+	NSBundle *bundle = nil;
+	self = [super initWithNibName:nibName bundle:bundle];
     if (self) {
-        // Initialization code here.
+        // init code
     }
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	// Disregard parameters - nib name is an implementation detail
+	return [self init];
+}
+
+- (void)awakeFromNib
+{
+	// set up line cap popup button
+	// ----------------------------
+	[lineCapPopupButton removeAllItems];
+	NSArray *lineCapOptions = @[@"Butt", @"Round", @"Square"];
+	[lineCapPopupButton addItemsWithTitles:lineCapOptions];
+	[lineCapPopupButton itemWithTitle:@"Butt"].tag = kCGLineCapButt;
+	[lineCapPopupButton itemWithTitle:@"Round"].tag = kCGLineCapRound;
+	[lineCapPopupButton itemWithTitle:@"Square"].tag = kCGLineCapSquare;
+	
+	// set up line join popup button
+	// -----------------------------
+	[lineJoinPopupButton removeAllItems];
+	NSArray *lineJoinOptions = @[@"Miter", @"Round", @"Bevel"];
+	[lineJoinPopupButton addItemsWithTitles:lineJoinOptions];
+	[lineJoinPopupButton itemWithTitle:@"Miter"].tag = kCGLineJoinMiter;
+	[lineJoinPopupButton itemWithTitle:@"Round"].tag = kCGLineJoinRound;
+	[lineJoinPopupButton itemWithTitle:@"Bevel"].tag = kCGLineJoinBevel;
+
+	
+	
+}
 
 @end
