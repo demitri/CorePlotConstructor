@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62855D519A64DBC00D8E70F /* IntegerSpaceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */; };
+		A65E159319A568F900FD4122 /* XYGraphAxisLabelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65E159219A568F900FD4122 /* XYGraphAxisLabelsViewController.m */; };
+		A65E159F19A6245C00FD4122 /* CPCDashPatternValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A65E159E19A6245C00FD4122 /* CPCDashPatternValueTransformer.m */; };
 		A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395818099E6A0092D6BC /* DMTabBar.m */; };
 		A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395A18099E6A0092D6BC /* DMTabBarItem.m */; };
 		A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE717F805D9002BA46A /* MainMenu.xib */; };
@@ -72,6 +75,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A62855D319A64DBC00D8E70F /* IntegerSpaceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerSpaceFormatter.h; sourceTree = "<group>"; };
+		A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerSpaceFormatter.m; sourceTree = "<group>"; };
+		A65E159119A568F900FD4122 /* XYGraphAxisLabelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphAxisLabelsViewController.h; sourceTree = "<group>"; };
+		A65E159219A568F900FD4122 /* XYGraphAxisLabelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphAxisLabelsViewController.m; sourceTree = "<group>"; };
+		A65E159D19A6245C00FD4122 /* CPCDashPatternValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCDashPatternValueTransformer.h; sourceTree = "<group>"; };
+		A65E159E19A6245C00FD4122 /* CPCDashPatternValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCDashPatternValueTransformer.m; sourceTree = "<group>"; };
 		A6BA395718099E6A0092D6BC /* DMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBar.h; sourceTree = "<group>"; };
 		A6BA395818099E6A0092D6BC /* DMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTabBar.m; sourceTree = "<group>"; };
 		A6BA395918099E6A0092D6BC /* DMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTabBarItem.h; sourceTree = "<group>"; };
@@ -166,6 +175,8 @@
 				A6FEA77719A0726D0007ED35 /* XYGraphPaddingViewController.m */,
 				A6FEA77919A088E20007ED35 /* XYGraphAxesViewController.h */,
 				A6FEA77A19A088E20007ED35 /* XYGraphAxesViewController.m */,
+				A65E159119A568F900FD4122 /* XYGraphAxisLabelsViewController.h */,
+				A65E159219A568F900FD4122 /* XYGraphAxisLabelsViewController.m */,
 			);
 			name = XYGraph;
 			sourceTree = "<group>";
@@ -226,6 +237,10 @@
 				A6C2FBE517F805D9002BA46A /* AppDelegate.m */,
 				A6C2FC0917F80770002BA46A /* MainWindowController.h */,
 				A6C2FC0A17F80770002BA46A /* MainWindowController.m */,
+				A65E159D19A6245C00FD4122 /* CPCDashPatternValueTransformer.h */,
+				A65E159E19A6245C00FD4122 /* CPCDashPatternValueTransformer.m */,
+				A62855D319A64DBC00D8E70F /* IntegerSpaceFormatter.h */,
+				A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */,
 				A6FEA78119A1060B0007ED35 /* Line Style Inspector View */,
 				A6BA39641809A2540092D6BC /* Graph Types */,
 				A6C2FC0C17F8077B002BA46A /* Plot Types */,
@@ -422,10 +437,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65E159319A568F900FD4122 /* XYGraphAxisLabelsViewController.m in Sources */,
 				A6FEA77F19A106060007ED35 /* CorePlotLineStyleViewController.m in Sources */,
+				A65E159F19A6245C00FD4122 /* CPCDashPatternValueTransformer.m in Sources */,
 				A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */,
 				A6BA395C18099E6A0092D6BC /* DMTabBarItem.m in Sources */,
 				A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */,
+				A62855D519A64DBC00D8E70F /* IntegerSpaceFormatter.m in Sources */,
 				A6C2FBE617F805D9002BA46A /* AppDelegate.m in Sources */,
 				A6C2FBDF17F805D9002BA46A /* main.m in Sources */,
 				A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */,

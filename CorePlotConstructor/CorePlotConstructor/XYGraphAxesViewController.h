@@ -13,21 +13,29 @@
 
 // Text fields
 enum {
-	LABEL_OFFSET_X,
-	LABEL_OFFSET_Y,
-	TITLE_OFFSET_X,
-	TITLE_OFFSET_Y,
+	MAJOR_TICK_LENGTH_X = 1,
+	MAJOR_TICK_LENGTH_Y,
+	MINOR_TICK_LENGTH_X,
+	MINOR_TICK_LENGTH_Y,
 	MINOR_TICKS_PER_INTERVAL_X,
 	MINOR_TICKS_PER_INTERVAL_Y,
-	TICK_LENGTH_X,
-	TICK_LENGTH_Y
+	MINOR_TICK_LABEL_OFFSET_X,
+	MINOR_TICK_LABEL_OFFSET_Y,
+	PREF_NO_MAJOR_TICKS_X,		// 0 = Core Plot decide
+	PREF_NO_MAJOR_TICKS_Y
 };
 
 enum {
-	EDIT_LINE_STYLE_BUTTON_X_AXIS_MAJOR = 1,
-	EDIT_LINE_STYLE_BUTTON_Y_AXIS_MAJOR,
-	EDIT_LINE_STYLE_BUTTON_X_AXIS_MINOR,
-	EDIT_LINE_STYLE_BUTTON_Y_AXIS_MINOR
+	EDIT_LINE_STYLE_X_AXIS = 1,
+	EDIT_LINE_STYLE_Y_AXIS,
+	EDIT_LINE_STYLE_MAJOR_GRID_X,
+	EDIT_LINE_STYLE_MAJOR_GRID_Y,
+	EDIT_LINE_STYLE_MINOR_GRID_X,
+	EDIT_LINE_STYLE_MINOR_GRID_Y,
+	EDIT_LINE_STYLE_MAJOR_TICK_X,
+	EDIT_LINE_STYLE_MAJOR_TICK_Y,
+	EDIT_LINE_STYLE_MINOR_TICK_X,
+	EDIT_LINE_STYLE_MINOR_TICK_Y
 };
 
 @interface XYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
@@ -40,8 +48,9 @@ enum {
 @property (strong, nonatomic) CorePlotLineStyleViewController *lineStyleViewController;
 @property (nonatomic, weak, readonly) CPTXYAxis *xAxis;
 @property (nonatomic, weak, readonly) CPTXYAxis *yAxis;
-@property (nonatomic, weak) CPTXYAxis* axisBeingEdited;
+//@property (nonatomic, weak) CPTXYAxis *axisBeingEdited;
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
+@property (nonatomic, strong, readonly) NSNumber *zeroValue;
 
 - (IBAction)editLineStyle:(id)sender;
 

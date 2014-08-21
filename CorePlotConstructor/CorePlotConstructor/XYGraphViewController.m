@@ -60,24 +60,6 @@
         [themePopup addItemWithTitle:[c name]];
 	[themePopup selectItemWithTitle:kCPTPlainWhiteTheme];
 	
-	[xAxisLabellingPolicyPopup removeAllItems];
-	[yAxisLabellingPolicyPopup removeAllItems];
-	NSArray *policyArray = @[@"None", @"LocationsProvided", @"FixedInterval",
-							 @"Automatic", @"EqualDivisions"];
-	[xAxisLabellingPolicyPopup addItemsWithTitles:policyArray];
-	[yAxisLabellingPolicyPopup addItemsWithTitles:policyArray];
-
-	// set the tag value to the policy (both integers)
-	for (NSPopUpButton *popup in @[xAxisLabellingPolicyPopup, yAxisLabellingPolicyPopup]) {
-		[popup itemWithTitle:@"None"].tag = CPTAxisLabelingPolicyNone;
-		[popup itemWithTitle:@"LocationsProvided"].tag = CPTAxisLabelingPolicyLocationsProvided;
-		[popup itemWithTitle:@"FixedInterval"].tag = CPTAxisLabelingPolicyFixedInterval;
-		[popup itemWithTitle:@"Automatic"].tag = CPTAxisLabelingPolicyAutomatic;
-		[popup itemWithTitle:@"EqualDivisions"].tag = CPTAxisLabelingPolicyEqualDivisions;
-		
-		[popup selectItemWithTitle:@"Automatic"];
-	}
-	
 	
 	// fonts
 #pragma mark setup fonts
@@ -332,7 +314,7 @@
 		if ([n floatValue] < [minValue floatValue])
 			minValue = n;
 	
-	NSLog(@"min: %@", minValue);
+	//NSLog(@"min: %@", minValue);
 	return minValue;
 	
 }
@@ -378,8 +360,8 @@
 	[self.graph applyTheme:[CPTTheme themeNamed:themeName]];
 	
 	// Most themes reset the axis labelling policy, so these need to be reset after changing themes.
-	((CPTXYAxisSet*)self.graph.axisSet).xAxis.labelingPolicy = xAxisLabellingPolicyPopup.selectedItem.tag;
-	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = yAxisLabellingPolicyPopup.selectedItem.tag;
+	((CPTXYAxisSet*)self.graph.axisSet).xAxis.labelingPolicy = axisLabelsController.xAxisLabellingPolicyPopup.selectedItem.tag;
+	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = axisLabelsController.yAxisLabellingPolicyPopup.selectedItem.tag;
 }
 
 - (IBAction)changeGraphTitleFont:(id)sender
@@ -389,15 +371,6 @@
 	self.graph.titleTextStyle = textStyle;
 }
 
-- (IBAction)axisPolicyChanged:(id)sender
-{
-	NSPopUpButton *popup = sender;
-	if (popup == xAxisLabellingPolicyPopup)
-		self.xAxis.labelingPolicy = popup.selectedItem.tag;
-	else
-		self.yAxis.labelingPolicy = popup.selectedItem.tag;
-	//[self.graph reloadData];
-}
 
 - (IBAction)changeTitleAnchorStyle:(id)sender
 {

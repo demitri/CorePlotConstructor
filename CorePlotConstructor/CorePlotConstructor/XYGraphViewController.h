@@ -9,6 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
 #import "XYGraphPaddingViewController.h"
+#import "XYGraphAxisLabelsViewController.h"
+
+@class XYGraphAxisLabelsViewController;
 
 enum {
 	GRAPH_BORDER_LINE_WIDTH = 1,
@@ -31,13 +34,12 @@ enum {
 	// ===
 	
 	IBOutlet NSPopUpButton *themePopup;
-	IBOutlet NSPopUpButton *xAxisLabellingPolicyPopup;
-	IBOutlet NSPopUpButton *yAxisLabellingPolicyPopup;
 	NSArray *axisPolicyNames;
 	NSArray *anchorStyleNames;
 	IBOutlet NSPopUpButton *graphTitleFontPopup;
 	IBOutlet NSPopUpButton *graphTitleFrameAnchorPopup;
 	
+	IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 }
 
 // Graph title properties
@@ -67,7 +69,6 @@ enum {
 - (NSNumber*)minYValue;
 - (IBAction)changeTheme:(id)sender;
 - (IBAction)changeGraphTitleFont:(id)sender;
-- (IBAction)axisPolicyChanged:(id)sender;
 - (IBAction)changeTitleAnchorStyle:(id)sender;
 
 

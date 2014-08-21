@@ -14,13 +14,47 @@
  This class is an editor for CPTLineStyle objects.
  */
 
+enum {
+	TEXT_FIELD_LINE_WIDTH = 1,
+	TEXT_FIELD_MITER_LIMIT,
+	TEXT_FIELD_PHASE
+};
+
+@interface CPCDashPattern : NSObject
+{
+}
+@property (nonatomic, strong) NSArray *numericArray;
+@property (nonatomic, readonly) NSString *stringValue;
+
+- (id)initWithNumericArray:(NSArray*)array;
++ (CPCDashPattern*)dashPatternfromString:(NSString*)string;
+
+@end
+
+#pragma mark -
+
 @interface CorePlotLineStyleViewController : NSViewController
 {
 	IBOutlet NSPopUpButton *lineCapPopupButton;
 	IBOutlet NSPopUpButton *lineJoinPopupButton;
+	IBOutlet NSTextField *dashPatternTextField;
+//	IBOutlet NSTextField *lineWidthTextField;
+//	IBOutlet NSTextField *patternPhaseTextField;
+//	IBOutlet NSTextField *miterLimitTextField;
 }
 
 @property (nonatomic, weak) CPTGraph *graph;
-@property (nonatomic, strong) CPTLineStyle *lineStyle;
+@property (nonatomic, assign) CGFloat lineWidth;
+@property (nonatomic, strong) NSColor *lineColor;
+@property (nonatomic, assign) CGFloat miterLimit;
+@property (nonatomic, strong) NSString *dashPatternString;
+@property (nonatomic, assign) CGFloat patternPhase;
+
+//@property (nonatomic, strong) CPTLineStyle *lineStyle;
+@property (nonatomic, strong, readonly) CPTLineStyle *currentLineStyle;
+
+- (IBAction)popupMenuChanged:(id)sender;
+
+- (void)updateWithLineStyle:(CPTLineStyle*)newLineStyle;
 
 @end

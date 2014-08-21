@@ -12,6 +12,8 @@
 
 @end
 
+#pragma mark -
+
 @implementation XYGraphAxesViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -22,6 +24,14 @@
 		self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+}
+
+- (void)dealloc
+{
 }
 
 - (CPTGraph*)graph
@@ -41,43 +51,170 @@
 	return axisSet.yAxis;
 }
 
+- (NSNumber*)zeroValue { return @0; }
+
 - (IBAction)editLineStyle:(id)sender
 {
-	self.axisBeingEdited = ([sender tag] == EDIT_LINE_STYLE_BUTTON_X_AXIS_MAJOR ||
-							[sender tag] == EDIT_LINE_STYLE_BUTTON_X_AXIS_MINOR) ? self.xAxis : self.yAxis;
+	if (self.lineStyleViewController != nil) {
+		// This will happen when trying to open a new popup before the old one is closed.
+		// Need to clean up the key/value observing before this happens.
+		[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
+	}
+	
 	self.lineStyleBeingEdited = [sender tag];
 	
+	CPTLineStyle *lineStyleToEdit = nil;
+	switch (self.lineStyleBeingEdited) {
+		case EDIT_LINE_STYLE_X_AXIS:
+			lineStyleToEdit = mc.xAxis.axisLineStyle;
+			break;
+		case EDIT_LINE_STYLE_Y_AXIS:
+			lineStyleToEdit = mc.yAxis.axisLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_GRID_X:
+			lineStyleToEdit = mc.xAxis.majorGridLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_GRID_Y:
+			lineStyleToEdit = mc.yAxis.majorGridLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_GRID_X:
+			lineStyleToEdit = mc.xAxis.minorGridLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_GRID_Y:
+			lineStyleToEdit = mc.yAxis.minorGridLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_TICK_X:
+			lineStyleToEdit = mc.xAxis.majorTickLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_TICK_Y:
+			lineStyleToEdit = mc.yAxis.majorTickLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_TICK_X:
+			lineStyleToEdit = mc.xAxis.minorTickLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_TICK_Y:
+			lineStyleToEdit = mc.yAxis.minorTickLineStyle;
+			break;
+	}
+	
+	 // Sometimes the line style value is nil. In this case, create a "default"
+	 // one that matches nothing being draw (i.e. line thickness = 0).
+	if (lineStyleToEdit == nil) {
+		CPTMutableLineStyle *defaultLineStyle = [CPTMutableLineStyle lineStyle];
+		defaultLineStyle.lineWidth = 0.0;
+		
+		lineStyleToEdit = defaultLineStyle;
+	}
+
 	// create the popover
 	self.lineStylePopover = [[NSPopover alloc] init];
 	
 	self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
-
-	switch (self.lineStyleBeingEdited) {
-		case EDIT_LINE_STYLE_BUTTON_X_AXIS_MAJOR:
-		case EDIT_LINE_STYLE_BUTTON_Y_AXIS_MAJOR:
-			self.lineStyleViewController.lineStyle = self.axisBeingEdited.majorGridLineStyle;
-			break;
-		default:
-			self.lineStyleViewController.lineStyle = self.axisBeingEdited.minorGridLineStyle;
-	}
-	self.lineStyleViewController.lineStyle =
+	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
 	
 	self.lineStylePopover.contentViewController = self.lineStyleViewController;
 	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
 	self.lineStylePopover.delegate = self;
+
+	[self.lineStyleViewController addObserver:self
+								   forKeyPath:@"currentLineStyle"
+									  options:NSKeyValueObservingOptionNew
+									  context:nil];
 
 	NSButton *targetButton = (NSButton *)sender;
 	
 	[self.lineStylePopover showRelativeToRect:targetButton.bounds ofView:sender preferredEdge:NSMinYEdge]; // display on top of button
 }
 
+
 #pragma mark -
 #pragma mark NSPopover delegate methods
 
 - (void)popoverDidClose:(NSNotification *)notification
 {
+	DLog(@"");
+	CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
+	
+	switch (self.lineStyleBeingEdited) {
+		case EDIT_LINE_STYLE_X_AXIS:
+			mc.xAxis.axisLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_Y_AXIS:
+			mc.yAxis.axisLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_GRID_X:
+			mc.xAxis.majorGridLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_GRID_Y:
+			mc.yAxis.majorGridLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_GRID_X:
+			mc.xAxis.minorGridLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_GRID_Y:
+			mc.xAxis.minorGridLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_TICK_X:
+			mc.xAxis.majorTickLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MAJOR_TICK_Y:
+			mc.yAxis.majorTickLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_TICK_X:
+			mc.xAxis.minorTickLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_MINOR_TICK_Y:
+			mc.yAxis.minorTickLineStyle = newLineStyle;
+			break;
+	}
+	
+	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
 	self.lineStylePopover = nil;
-	self.axisBeingEdited = nil;
+	self.lineStyleViewController = nil;
+	//self.axisBeingEdited = nil;
+}
+
+#pragma mark -
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if (object == self.lineStyleViewController) {
+		if ([keyPath isEqualToString:@"currentLineStyle"]) {
+			switch (self.lineStyleBeingEdited) {
+				case EDIT_LINE_STYLE_X_AXIS:
+					mc.xAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+				case EDIT_LINE_STYLE_Y_AXIS:
+					mc.yAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MAJOR_GRID_X:
+					mc.xAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MAJOR_GRID_Y:
+					mc.yAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MINOR_GRID_X:
+					mc.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MINOR_GRID_Y:
+					mc.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MAJOR_TICK_X:
+					mc.xAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MAJOR_TICK_Y:
+					mc.yAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MINOR_TICK_X:
+					mc.xAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+				case EDIT_LINE_STYLE_MINOR_TICK_Y:
+					mc.yAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					break;
+			}
+
+		}
+	}
 }
 
 #pragma mark -
@@ -98,39 +235,72 @@
 		
 		switch (control.tag) {
 				
-			case MAJOR_GRID_LINE_WIDTH_X:
-				self.graph.paddingTop += delta;
+			case MAJOR_TICK_LENGTH_X:
+				if (delta < 0 && self.xAxis.majorTickLength <= 1)
+					self.xAxis.majorTickLength = 0;
+				else
+					self.xAxis.majorTickLength += delta;
 				handled = YES;
 				break;
-			case GRAPH_PADDING_BOTTOM:
-				self.graph.paddingBottom += delta;
+			case MAJOR_TICK_LENGTH_Y:
+				if (delta < 0 && self.yAxis.majorTickLength <= 1)
+					self.yAxis.majorTickLength = 0;
+				else
+					self.yAxis.majorTickLength += delta;
 				handled = YES;
 				break;
-			case GRAPH_PADDING_LEFT:
-				self.graph.paddingLeft += delta;
+			case MINOR_TICK_LENGTH_X:
+				if (delta < 0 && self.xAxis.minorTickLength <= 1)
+					self.xAxis.minorTickLength = 0;
+				else
+					self.xAxis.minorTickLength += delta;
 				handled = YES;
 				break;
-			case GRAPH_PADDING_RIGHT:
-				self.graph.paddingRight += delta;
+			case MINOR_TICK_LENGTH_Y:
+				if (delta < 0 && self.yAxis.minorTickLength <= 1)
+					self.yAxis.minorTickLength = 0;
+				else
+					self.yAxis.minorTickLength += delta;
 				handled = YES;
 				break;
-			case PLOT_AREA_FRAME_TOP:
-				self.graph.plotAreaFrame.paddingTop += delta;
+			case MINOR_TICKS_PER_INTERVAL_X:
+				if (delta < 0 && self.xAxis.minorTicksPerInterval <= 1)
+					self.xAxis.minorTicksPerInterval = 0;
+				else
+					self.xAxis.minorTicksPerInterval += delta;
 				handled = YES;
 				break;
-			case PLOT_AREA_FRAME_BOTTOM:
-				self.graph.plotAreaFrame.paddingBottom += delta;
+			case MINOR_TICKS_PER_INTERVAL_Y:
+				if (delta < 0 && self.yAxis.minorTicksPerInterval <= 1)
+					self.yAxis.minorTicksPerInterval = 0;
+				else
+					self.yAxis.minorTicksPerInterval += delta;
 				handled = YES;
 				break;
-			case PLOT_AREA_FRAME_LEFT:
-				self.graph.plotAreaFrame.paddingLeft += delta;
+			case MINOR_TICK_LABEL_OFFSET_X:
+				if (delta < 0 && self.xAxis.minorTickLabelOffset <= 1)
+					self.xAxis.minorTickLabelOffset = 0;
+				else
+					self.xAxis.minorTickLabelOffset += delta;
+				break;
+			case MINOR_TICK_LABEL_OFFSET_Y:
+				if (delta < 0 && self.yAxis.minorTickLabelOffset <= 1)
+					self.yAxis.minorTickLabelOffset = 0;
+				else
+					self.yAxis.minorTickLabelOffset += delta;
+			case PREF_NO_MAJOR_TICKS_X:
+				if (delta < 0 && self.xAxis.preferredNumberOfMajorTicks <= 1)
+					self.xAxis.preferredNumberOfMajorTicks = 0;
+				else
+					self.xAxis.preferredNumberOfMajorTicks += delta;
 				handled = YES;
 				break;
-			case PLOT_AREA_FRAME_RIGHT:
-				self.graph.plotAreaFrame.paddingRight += delta;
+			case PREF_NO_MAJOR_TICKS_Y:
+				if (delta < 0 && self.yAxis.preferredNumberOfMajorTicks <= 1)
+					self.yAxis.preferredNumberOfMajorTicks = 0;
+				else
+					self.yAxis.preferredNumberOfMajorTicks += delta;
 				handled = YES;
-				break;
-			default:
 				break;
 		}
 		if (handled)
