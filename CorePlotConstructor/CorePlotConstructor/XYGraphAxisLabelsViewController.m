@@ -28,16 +28,23 @@
 	// ===============
 	// Setup inspector
 	// ===============
+	NSArray *cptSignLabels = @[@"No Offset", @"Positive Offset", @"Negative Offset"];
+	for (NSPopUpButton *popup in @[tickLabelDirXPopupButton, tickLabelDirYPopupButton, minorTickLabelDirXPopupButton, minorTickLabelDirYPopupButton]) {
+		[popup removeAllItems];
+		[popup addItemsWithTitles:cptSignLabels];
+		[popup itemWithTitle:@"No Offset"].tag = CPTSignNone;
+		[popup itemWithTitle:@"Positive Offset"].tag = CPTSignPositive;
+		[popup itemWithTitle:@"Negative Offset"].tag = CPTSignNegative;
+	}
 	
-	[self.xAxisLabellingPolicyPopup removeAllItems];
-	[self.yAxisLabellingPolicyPopup removeAllItems];
+	
 	NSArray *policyArray = @[@"None", @"LocationsProvided", @"FixedInterval",
 							 @"Automatic", @"EqualDivisions"];
-	[self.xAxisLabellingPolicyPopup addItemsWithTitles:policyArray];
-	[self.yAxisLabellingPolicyPopup addItemsWithTitles:policyArray];
-	
+
 	// set the tag value to the policy (both integers)
 	for (NSPopUpButton *popup in @[self.xAxisLabellingPolicyPopup, self.yAxisLabellingPolicyPopup]) {
+		[popup removeAllItems];
+		[popup addItemsWithTitles:policyArray];
 		[popup itemWithTitle:@"None"].tag = CPTAxisLabelingPolicyNone;
 		[popup itemWithTitle:@"LocationsProvided"].tag = CPTAxisLabelingPolicyLocationsProvided;
 		[popup itemWithTitle:@"FixedInterval"].tag = CPTAxisLabelingPolicyFixedInterval;
@@ -58,6 +65,48 @@
 	//[self.graph reloadData];
 }
 
+#pragma mark -
+#pragma mark NSTextViewDelegate methods
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
+{
+	if (command == @selector(moveUp:) || command == @selector(moveDown:)) {
+		
+		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+		NSNumber *number = [formatter numberFromString:textView.string];
+		if (number == nil)
+			return NO; // not a number
+		
+		float delta = command == @selector(moveUp:) ? +1 : -1;
+		
+		BOOL handled = NO;
+		
+		switch (control.tag) {
+			case LABEL_OFFSET_X:
+				mc.xAxis.labelOffset += delta;
+				handled = YES;
+				break;
+			case LABEL_OFFSET_Y:
+				mc.yAxis.labelOffset += delta;
+				handled = YES;
+				break;
+			case TITLE_OFFSET_X:
+				mc.xAxis.titleOffset += delta;
+				handled = YES;
+				break;
+			case TITLE_OFFSET_Y:
+				mc.yAxis.titleOffset += delta;
+				handled = YES;
+				break;
+		}
+		if (handled)
+			return YES;
+		
+		return NO;
+	}
+	
+	return NO;
+}
 
 
 
