@@ -10,9 +10,11 @@
 #import <CorePlot/CorePlot.h>
 #import "XYGraphPaddingViewController.h"
 #import "XYGraphAxisLabelsViewController.h"
+#import "CorePlotLineStyleViewController.h"
 
 @class XYGraphAxisLabelsViewController;
 
+// text fields in view
 enum {
 	GRAPH_BORDER_LINE_WIDTH = 1,
 	GRAPH_TITLE_SIZE,
@@ -20,7 +22,14 @@ enum {
 	GRAPH_TITLE_DISPLACEMENT_Y
 };
 
-@interface XYGraphViewController : NSViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, NSTextFieldDelegate>
+// line styles that could be edited
+enum {
+	EDIT_LINE_STYLE_GRAPH_BORDER = 1,
+	EDIT_LINE_STYLE_DATA
+	
+};
+
+@interface XYGraphViewController : NSViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, NSTextFieldDelegate, NSPopoverDelegate>
 {
 	// Plot Inspector
 	// --------------
@@ -42,23 +51,23 @@ enum {
 	IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 }
 
+@property (strong, nonatomic) CPTXYGraph *graph;
+@property (weak) IBOutlet CPTGraphHostingView *graphView;
+
+// properties for editing CPTLineStyle objects
+@property (strong, nonatomic) NSPopover *lineStylePopover;
+@property (strong, nonatomic) CorePlotLineStyleViewController *lineStyleViewController;
+@property (nonatomic, assign) NSInteger lineStyleBeingEdited;
+
 // Graph title properties
 @property (strong, nonatomic) IBOutlet NSColor *titleColor;
 @property (assign) CGFloat graphTitleDisplacementX;
 @property (assign) CGFloat graphTitleDisplacementY;
 
-// Graph border properties
-@property (assign, nonatomic) CGFloat borderLineWidth;
-@property (strong, nonatomic) IBOutlet NSColor *borderLineColor;
-
-@property (strong, nonatomic) IBOutlet NSColor *dataColor;
-
+// Data containers
 @property (strong, nonatomic) NSMutableArray *xData;
 @property (strong, nonatomic) NSMutableArray *yData;
 @property (strong, nonatomic) NSMutableArray *xyData;
-
-@property (weak) IBOutlet CPTGraphHostingView *graphView;
-@property (strong, nonatomic) CPTXYGraph *graph;
 
 @property (strong) CPTMutableLineStyle *majorGridLineStyle;
 @property (strong) CPTMutableLineStyle *minorGridLineStyle;
@@ -71,5 +80,6 @@ enum {
 - (IBAction)changeGraphTitleFont:(id)sender;
 - (IBAction)changeTitleAnchorStyle:(id)sender;
 
+- (IBAction)editLineStyle:(id)sender;
 
 @end

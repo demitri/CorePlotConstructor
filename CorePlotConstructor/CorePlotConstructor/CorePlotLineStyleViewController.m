@@ -128,11 +128,19 @@
 
 - (void)updateWithLineStyle:(CPTLineStyle*)newLineStyle
 {
+	if (newLineStyle == nil) {
+		// Sometimes the line style value is nil. In this case, create a "default"
+		// one that matches nothing being draw (i.e. line thickness = 0).
+		CPTMutableLineStyle *defaultLineStyle = [CPTMutableLineStyle lineStyle];
+		defaultLineStyle.lineWidth = 0.0;
+		
+		newLineStyle = defaultLineStyle;
+	}
+	
 	// update view with the properties of the newLineStyle
 	self.lineWidth = newLineStyle.lineWidth;
 	self.lineColor = newLineStyle.lineColor.nsColor;
 	self.miterLimit = newLineStyle.miterLimit;
-	self.dashPatternString = [newLineStyle.dashPattern copy];
 	self.patternPhase = newLineStyle.patternPhase;
 
 	if (newLineStyle.dashPattern == nil)
@@ -150,6 +158,7 @@
 	self.currentLineStyle = [self lineStyleFromCurrentView];
 }
 
+// getter
 - (CPTLineStyle*)currentLineStyle
 {
 	return [self lineStyleFromCurrentView];
@@ -201,8 +210,11 @@
 		switch (control.tag) {
 				
 			case TEXT_FIELD_LINE_WIDTH:
-				// min value = 1
-				if ((delta > 0 && self.lineWidth > 0) || (delta < 0 && self.lineWidth > 1))
+				// min value = 0
+				if (self.lineWidth += delta < 0)
+					self.lineWidth = 0;
+				else
+//				if ((delta > 0 && self.lineWidth > 0) || (delta < 0 && self.lineWidth > 1))
 					self.lineWidth += delta;
 				handled = YES;
 				break;

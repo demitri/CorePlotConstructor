@@ -30,7 +30,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        self.lineStyleViewController = nil;
     }
     return self;
 }
@@ -47,8 +47,7 @@
 	self.xyData = [NSMutableArray array];
 	
 	for (unsigned int i=0; i < [self.yData count]; i++) {
-		[self.xyData addObject:[NSDictionary dictionaryWithObjectsAndKeys:[self.yData objectAtIndex:i], @"y",
-									  [self.xData objectAtIndex:i], @"x", nil]];
+		[self.xyData addObject:@{[self.yData objectAtIndex:i]: @"y", [self.xData objectAtIndex:i] : @"x"}];
 	}
 	
 	// ===============
@@ -99,7 +98,7 @@
 	// -----------
 	// apply theme
 	// -----------
-	CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];//kCPTDarkGradientTheme];
+	CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
 	[self.graph applyTheme:theme];
 	self.graphView.hostedGraph = self.graph;
 	
@@ -131,9 +130,6 @@
 	borderLineStyle.lineColor = [CPTColor blackColor];
 	borderLineStyle.lineWidth = 1.0;
 	self.graph.plotAreaFrame.borderLineStyle = borderLineStyle;
-	
-	self.borderLineColor = borderLineStyle.lineColor.nsColor;
-	self.borderLineWidth = borderLineStyle.lineWidth;
 	
 	// -------------
 	// Graph padding
@@ -237,9 +233,7 @@
 	lineStyle.miterLimit = 1.0;
 	lineStyle.lineColor = [CPTColor greenColor];
 	dataSourceLinePlot.dataLineStyle = lineStyle;
-	
-	self.dataColor = lineStyle.lineColor.nsColor;
-	
+		
 	dataSourceLinePlot.dataSource = self;
 	[self.graph addPlot:dataSourceLinePlot];
 	
@@ -295,7 +289,7 @@
 
 - (NSArray*)propertiesToObserve
 {
-	return @[@"graphTitleDisplacementX", @"graphTitleDisplacementY", @"graph.titleDisplacement",
+	return @[@"graphTitleDisplacementX", @"graphTitleDisplacementY",
 			 @"titleColor", @"dataColor",
 			 @"borderLineWidth", @"borderLineColor"];
 }
@@ -304,6 +298,8 @@
 {
 	for (NSString *property in [self propertiesToObserve])
 		[self removeObserver:self forKeyPath:property];
+
+	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
 }
 
 - (NSNumber*)minYValue
@@ -354,6 +350,49 @@
 
 #pragma mark -
 
+- (IBAction)editLineStyle:(id)sender
+{
+	self.lineStyleBeingEdited = [sender tag];
+	
+	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
+
+	CPTLineStyle *lineStyleToEdit = nil;
+	switch (self.lineStyleBeingEdited) {
+		case EDIT_LINE_STYLE_GRAPH_BORDER:
+			lineStyleToEdit = self.graph.plotAreaFrame.borderLineStyle;
+			break;
+		case EDIT_LINE_STYLE_DATA:
+			lineStyleToEdit = plot.dataLineStyle;
+			break;
+	}
+
+	// create the popover
+	self.lineStylePopover = [[NSPopover alloc] init];
+	
+	if (self.lineStyleViewController == nil) {
+		self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
+	} else {
+		// don't want messages while it's being set up
+		[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
+	}
+	
+	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
+	
+	self.lineStylePopover.contentViewController = self.lineStyleViewController;
+	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
+	self.lineStylePopover.delegate = self;
+	
+	[self.lineStyleViewController addObserver:self
+								   forKeyPath:@"currentLineStyle"
+									  options:NSKeyValueObservingOptionNew
+									  context:nil];
+
+	NSButton *targetButton = (NSButton *)sender;
+	[self.lineStylePopover showRelativeToRect:targetButton.bounds
+									   ofView:sender
+								preferredEdge:NSMinYEdge]; // display on top of button
+}
+
 - (IBAction)changeTheme:(id)sender
 {
 	NSString *themeName = themePopup.titleOfSelectedItem;
@@ -381,42 +420,67 @@
 {
 	//DLog(@"%@", change);
 
-	if ([keyPath isEqualToString:@"graphTitleDisplacementX"]) {
-		CGFloat y = self.graph.titleDisplacement.y; // current value
-		self.graph.titleDisplacement = (CGPoint){ self.graphTitleDisplacementX, y };
-	
-	} else if ([keyPath isEqualToString:@"graphTitleDisplacementY"]) {
-		CGFloat x = self.graph.titleDisplacement.x; // current value
-		self.graph.titleDisplacement = (CGPoint){ x, self.graphTitleDisplacementY };
+	if (object == self.lineStyleViewController) {
+		if ([keyPath isEqualToString:@"currentLineStyle"]) {
 
-	} else if ([keyPath isEqualToString:@"graph.titleDisplacement"]) {
-		_graphTitleDisplacementX = self.graph.titleDisplacement.x;
-		_graphTitleDisplacementY = self.graph.titleDisplacement.y;
-	
-	} else if ([keyPath isEqualToString:@"titleColor"]) {
-		CPTMutableTextStyle *textStyle = [self.graph.titleTextStyle mutableCopy];
-		textStyle.color = [CPTColor colorWithCGColor:self.titleColor.CGColor];
-		self.graph.titleTextStyle = textStyle;
+			CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
 
-	} else if ([keyPath isEqualToString:@"dataColor"]) {
-		CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-		CPTMutableLineStyle *lineStyle = [plot.dataLineStyle mutableCopy];
-		lineStyle.lineColor = [CPTColor colorWithCGColor:self.dataColor.CGColor];
-		plot.dataLineStyle = lineStyle; // this sets needsDisplay to YES
+			switch (self.lineStyleBeingEdited) {
+				case EDIT_LINE_STYLE_GRAPH_BORDER:
+					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+				case EDIT_LINE_STYLE_DATA:
+					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+				default:
+					break;
+			}
+		} else {
+			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
+		}
+
+	} else if (object == self) {
 	
-	} else if ([keyPath isEqualToString:@"borderLineWidth"]) {
-		CPTMutableLineStyle *borderLineStyle = [self.graph.plotAreaFrame.borderLineStyle mutableCopy];
-		borderLineStyle.lineWidth = self.borderLineWidth;
-		self.graph.plotAreaFrame.borderLineStyle = borderLineStyle;
-	
-	} else if ([keyPath isEqualToString:@"borderLineColor"]) {
-		CPTMutableLineStyle *borderLineStyle = [self.graph.plotAreaFrame.borderLineStyle mutableCopy];
-		borderLineStyle.lineColor = [CPTColor colorWithCGColor:self.borderLineColor.CGColor];
-		self.graph.plotAreaFrame.borderLineStyle = borderLineStyle;
+		if ([keyPath isEqualToString:@"graphTitleDisplacementX"]) {
+			CGFloat y = self.graph.titleDisplacement.y; // current value
+			self.graph.titleDisplacement = (CGPoint){ self.graphTitleDisplacementX, y };
 		
-	} else {
-		NSLog(@"Uncaught keyPath observed: %@", keyPath);
+		} else if ([keyPath isEqualToString:@"graphTitleDisplacementY"]) {
+			CGFloat x = self.graph.titleDisplacement.x; // current value
+			self.graph.titleDisplacement = (CGPoint){ x, self.graphTitleDisplacementY };
+
+		} else if ([keyPath isEqualToString:@"titleColor"]) {
+			CPTMutableTextStyle *textStyle = [self.graph.titleTextStyle mutableCopy];
+			textStyle.color = [CPTColor colorWithCGColor:self.titleColor.CGColor];
+			self.graph.titleTextStyle = textStyle;
+					
+		} else {
+			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
+		}
+	} else
+		DLog(@"Uncaught object: %@", object);
+}
+
+#pragma mark -
+#pragma mark NSPopover delegate methods
+
+- (void)popoverDidClose:(NSNotification *)notification
+{
+	CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
+
+	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
+	
+	switch (self.lineStyleBeingEdited) {
+		case EDIT_LINE_STYLE_GRAPH_BORDER:
+			self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
+			break;
+		case EDIT_LINE_STYLE_DATA:
+			plot.dataLineStyle = newLineStyle;
+			break;
+		default:
+			break;
 	}
+	self.lineStylePopover = nil;
 }
 
 #pragma mark -
@@ -439,10 +503,6 @@
 		CPTMutableTextStyle *textStyle;
 		
 		switch (control.tag) {
-			case GRAPH_BORDER_LINE_WIDTH:
-				self.borderLineWidth += delta;
-				return YES;
-				break;
 			case GRAPH_TITLE_SIZE:
 				// this acts weird at the extremes
 				textStyle = [self.graph.titleTextStyle mutableCopy];

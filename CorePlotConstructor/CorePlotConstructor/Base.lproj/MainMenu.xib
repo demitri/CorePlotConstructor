@@ -697,11 +697,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <popUpButton verticalHuggingPriority="750" id="Clz-0b-TPI" userLabel="Popup Button - theme">
-                                            <rect key="frame" x="61" y="468" width="132" height="22"/>
+                                            <rect key="frame" x="61" y="334" width="129" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Eee-W1-Z90" id="7Hs-fL-7GX">
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Eee-W1-Z90" id="7Hs-fL-7GX">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="miniSystem"/>
                                                 <menu key="menu" title="OtherViews" id="zSB-oc-ioA">
                                                     <items>
                                                         <menuItem title="Item 1" state="on" id="Eee-W1-Z90"/>
@@ -715,7 +715,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OYS-aR-1W3">
-                                            <rect key="frame" x="18" y="473" width="47" height="14"/>
+                                            <rect key="frame" x="19" y="334" width="81" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Theme" id="AQn-L8-EKU">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -724,7 +724,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cHX-dk-lJL">
-                                            <rect key="frame" x="18" y="416" width="28" height="14"/>
+                                            <rect key="frame" x="18" y="460" width="28" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="kXK-4B-v9a">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -733,7 +733,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="clT-Ea-7HO">
-                                            <rect key="frame" x="55" y="415" width="162" height="16"/>
+                                            <rect key="frame" x="55" y="459" width="162" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="97v-oc-rne">
                                                 <font key="font" metaFont="miniSystem"/>
@@ -749,7 +749,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3RW-LX-4b1">
-                                            <rect key="frame" x="20" y="394" width="26" height="14"/>
+                                            <rect key="frame" x="18" y="436" width="26" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size" id="T8g-UQ-Ndu">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -758,7 +758,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="2" id="1yC-pD-0oX">
-                                            <rect key="frame" x="55" y="392" width="51" height="16"/>
+                                            <rect key="frame" x="55" y="435" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dbs-ca-vGK">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="bBg-rP-aY1">
@@ -778,17 +778,8 @@
                                                 <outlet property="delegate" destination="3U8-4g-8jP" id="dQB-Qm-EBX"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rZW-zE-Ygs">
-                                            <rect key="frame" x="151" y="394" width="37" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="8MT-NH-VgO">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uKK-NI-1pQ">
-                                            <rect key="frame" x="18" y="438" width="82" height="14"/>
+                                            <rect key="frame" x="18" y="482" width="82" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Graph Title" id="aNU-il-OZC">
                                                 <font key="font" metaFont="smallSystemBold"/>
@@ -797,16 +788,16 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6p8-Z3-urk">
-                                            <rect key="frame" x="19" y="366" width="93" height="14"/>
+                                            <rect key="frame" x="18" y="410" width="103" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Displacement x" id="NLk-u9-78c">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Title Displacement" id="NLk-u9-78c">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" tag="3" id="Am9-4X-1FS">
-                                            <rect key="frame" x="112" y="364" width="39" height="16"/>
+                                            <rect key="frame" x="178" y="409" width="39" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="MGa-0d-Yf5">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="ApC-3d-P9I">
@@ -826,34 +817,26 @@
                                                 <outlet property="delegate" destination="3U8-4g-8jP" id="Jd6-7N-Tgt"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" tag="1" id="qYG-ea-j0V">
-                                            <rect key="frame" x="85" y="272" width="39" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Wcs-US-Ybr">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="FMS-yB-rtA">
-                                                    <real key="minimum" value="-400"/>
-                                                    <real key="maximum" value="400"/>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="borderLineWidth" id="qBT-6v-mpQ"/>
-                                                <outlet property="delegate" destination="3U8-4g-8jP" id="jYc-kj-bf7"/>
-                                            </connections>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="G0R-GW-0Mx">
-                                            <rect key="frame" x="168" y="366" width="19" height="14"/>
+                                            <rect key="frame" x="218" y="410" width="19" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="y" id="EHe-LY-UaA">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="y" id="EHe-LY-UaA">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9L6-v4-AhC">
+                                            <rect key="frame" x="153" y="410" width="19" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="x" id="Ia6-Or-Bsl">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3lJ-Zh-DX3" userLabel="Font - text label">
-                                            <rect key="frame" x="19" y="344" width="37" height="14"/>
+                                            <rect key="frame" x="119" y="436" width="37" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font" id="nnh-bi-b08">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -862,11 +845,11 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="LK6-TX-hh4" userLabel="Font popup button">
-                                            <rect key="frame" x="97" y="339" width="187" height="22"/>
+                                            <rect key="frame" x="151" y="436" width="132" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="5H6-v8-u4x" id="bMB-Ue-GlY">
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="5H6-v8-u4x" id="bMB-Ue-GlY">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="miniSystem"/>
                                                 <menu key="menu" title="OtherViews" id="Wfp-j2-VaM">
                                                     <items>
                                                         <menuItem title="Item 1" state="on" id="5H6-v8-u4x"/>
@@ -880,7 +863,7 @@
                                             </connections>
                                         </popUpButton>
                                         <colorWell id="1q7-PL-Z8u">
-                                            <rect key="frame" x="189" y="388" width="44" height="23"/>
+                                            <rect key="frame" x="237" y="456" width="44" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -888,7 +871,7 @@
                                             </connections>
                                         </colorWell>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Sjk-bg-Hse">
-                                            <rect key="frame" x="18" y="322" width="76" height="14"/>
+                                            <rect key="frame" x="18" y="385" width="76" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title Location" id="Ezu-8b-Hx6">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -897,11 +880,11 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="3w1-Sr-Dvf" userLabel="Popup Button - title anchor pos">
-                                            <rect key="frame" x="97" y="317" width="187" height="22"/>
+                                            <rect key="frame" x="99" y="386" width="184" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="jaW-xw-LF2">
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="jaW-xw-LF2">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="miniSystem"/>
                                                 <menu key="menu" title="OtherViews" id="PDh-zn-aQR">
                                                     <items>
                                                         <menuItem title="Item 1" id="RGX-dk-cZF"/>
@@ -915,7 +898,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="YZT-WY-tMt">
-                                            <rect key="frame" x="19" y="215" width="82" height="14"/>
+                                            <rect key="frame" x="20" y="277" width="82" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data" id="rAo-OA-wJ3">
                                                 <font key="font" metaFont="smallSystemBold"/>
@@ -923,60 +906,17 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6dT-l7-ArM">
-                                            <rect key="frame" x="19" y="193" width="37" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="izV-qC-j8k">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <colorWell id="Z70-ia-LRz">
-                                            <rect key="frame" x="61" y="189" width="44" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.dataColor" id="hQc-8q-1cM"/>
-                                            </connections>
-                                        </colorWell>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3X4-Mc-YYj">
-                                            <rect key="frame" x="19" y="294" width="82" height="14"/>
+                                            <rect key="frame" x="18" y="356" width="101" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Graph Border" id="cac-fb-5OE">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Graph Properties" id="cac-fb-5OE">
                                                 <font key="font" metaFont="smallSystemBold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4y5-Eb-f1U">
-                                            <rect key="frame" x="150" y="272" width="37" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Color" id="bQu-CG-Y7f">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <colorWell id="zeK-Km-iKF">
-                                            <rect key="frame" x="188" y="268" width="44" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.borderLineColor" id="QBd-tR-z66"/>
-                                            </connections>
-                                        </colorWell>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5GM-s6-bNX">
-                                            <rect key="frame" x="19" y="273" width="60" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Width" id="O7I-U7-Bjt">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField verticalHuggingPriority="750" tag="4" id="gRI-zj-J26">
-                                            <rect key="frame" x="188" y="364" width="39" height="16"/>
+                                            <rect key="frame" x="243" y="409" width="39" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9gL-Uo-bRs">
                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="s72-8Z-xqr">
@@ -992,6 +932,37 @@
                                                 <outlet property="delegate" destination="3U8-4g-8jP" id="Fbf-37-84t"/>
                                             </connections>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9sA-fx-tKu">
+                                            <rect key="frame" x="20" y="254" width="55" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Style" id="BnO-X6-Edb">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="1" id="8su-5Z-RwF">
+                                            <rect key="frame" x="196" y="333" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit Line Style" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gt9-5P-ejo">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editLineStyle:" target="3U8-4g-8jP" id="41d-7f-ebL"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" tag="2" id="vbA-II-Klu">
+                                            <rect key="frame" x="81" y="252" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit Line Style" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cdd-QY-zIe">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editLineStyle:" target="3U8-4g-8jP" id="AlU-j4-s8Z"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -1370,12 +1341,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="dlH-jR-80q"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.minorTicksPerInterval" previousBinding="dlH-jR-80q" id="ha5-lF-4fA">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="dlH-jR-80q"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="Ryl-0h-tb7"/>
                                             </connections>
                                         </textField>
@@ -1401,12 +1372,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="uxy-nR-a9j"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.minorTickLabelOffset" previousBinding="uxy-nR-a9j" id="ZbT-LC-VuU">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="uxy-nR-a9j"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="Bmm-Rg-GCI"/>
                                             </connections>
                                         </textField>
@@ -1432,12 +1403,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="peu-Mo-wNc"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.minorTickLabelOffset" previousBinding="peu-Mo-wNc" id="NAw-As-z8l">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="peu-Mo-wNc"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="Xap-2G-tpI"/>
                                             </connections>
                                         </textField>
@@ -1463,12 +1434,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="ZNt-6s-Mv5"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.preferredNumberOfMajorTicks" previousBinding="ZNt-6s-Mv5" id="CfC-Wy-6P9">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="ZNt-6s-Mv5"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="kFj-EI-GQ4"/>
                                             </connections>
                                         </textField>
@@ -1494,12 +1465,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="wS5-Ka-ZOu"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.preferredNumberOfMajorTicks" previousBinding="wS5-Ka-ZOu" id="Zah-BY-puT">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="wS5-Ka-ZOu"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="6OA-HO-7df"/>
                                             </connections>
                                         </textField>
@@ -1525,12 +1496,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="VO9-lA-EwO"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.majorTickLength" previousBinding="VO9-lA-EwO" id="2sJ-eb-hKy">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="VO9-lA-EwO"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="9TC-hb-Ik9"/>
                                             </connections>
                                         </textField>
@@ -1556,12 +1527,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="rfB-b0-aM9"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.majorTickLength" previousBinding="rfB-b0-aM9" id="jzM-H2-WXh">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="rfB-b0-aM9"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="eY6-qa-s83"/>
                                             </connections>
                                         </textField>
@@ -1587,12 +1558,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="XpT-X3-gha"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="xAxis.minorTickLength" previousBinding="XpT-X3-gha" id="Y6M-it-aFh">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="XpT-X3-gha"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="7BV-Jx-qBf"/>
                                             </connections>
                                         </textField>
@@ -1618,12 +1589,12 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="EQH-tQ-lsk"/>
                                                 <binding destination="3U8-4g-8jP" name="value" keyPath="yAxis.minorTickLength" previousBinding="EQH-tQ-lsk" id="dH5-27-GPW">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="EQH-tQ-lsk"/>
                                                 <outlet property="delegate" destination="fiT-Fd-CRQ" id="lIu-Jf-i0S"/>
                                             </connections>
                                         </textField>
@@ -1637,29 +1608,29 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0P0-IU-ptt">
-                                            <rect key="frame" x="26" y="166" width="114" height="14"/>
+                                            <rect key="frame" x="25" y="177" width="15" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="X Axis Tick Direction" id="M4k-rk-qgT">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="x" id="M4k-rk-qgT">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cGs-86-r0u">
-                                            <rect key="frame" x="26" y="144" width="114" height="14"/>
+                                            <rect key="frame" x="167" y="177" width="15" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Y Axis Tick Direction" id="cNH-h9-uGp">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="y" id="cNH-h9-uGp">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="CHL-Q6-R4x">
-                                            <rect key="frame" x="143" y="161" width="141" height="22"/>
+                                            <rect key="frame" x="45" y="176" width="100" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="iI6-74-J2R" id="7mt-47-c6n">
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="iI6-74-J2R" id="7mt-47-c6n">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="miniSystem"/>
                                                 <menu key="menu" title="OtherViews" id="W7G-GE-hxq">
                                                     <items>
                                                         <menuItem title="Item 1" state="on" id="iI6-74-J2R"/>
@@ -1668,13 +1639,16 @@
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="selectedTag" keyPath="xAxis.tickDirection" id="b08-pa-fBp"/>
+                                            </connections>
                                         </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" id="h2F-d4-fDO">
-                                            <rect key="frame" x="143" y="139" width="141" height="22"/>
+                                            <rect key="frame" x="187" y="176" width="97" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D62-Qq-FID" id="wW8-U6-PeY">
+                                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D62-Qq-FID" id="wW8-U6-PeY">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="miniSystem"/>
                                                 <menu key="menu" title="OtherViews" id="nUA-ck-QOU">
                                                     <items>
                                                         <menuItem title="Item 1" state="on" id="D62-Qq-FID"/>
@@ -1683,6 +1657,9 @@
                                                     </items>
                                                 </menu>
                                             </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="selectedTag" keyPath="yAxis.tickDirection" id="ZkO-VL-vkf"/>
+                                            </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" tag="3" id="rSd-s2-dhu">
                                             <rect key="frame" x="136" y="434" width="70" height="17"/>
@@ -1861,6 +1838,15 @@
                                             <rect key="frame" x="15" y="296" width="100" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minor Tick Length" id="tuR-rn-3vp">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="v5Q-W3-wxF">
+                                            <rect key="frame" x="15" y="198" width="78" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tick Direction" id="70C-uA-3WL">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2280,6 +2266,8 @@
         <viewController id="fiT-Fd-CRQ" userLabel="XYGraph Axes View Controller" customClass="XYGraphAxesViewController">
             <connections>
                 <outlet property="mc" destination="3U8-4g-8jP" id="Bp7-b8-RqB"/>
+                <outlet property="tickDirectionXPopupButton" destination="CHL-Q6-R4x" id="Uya-bG-cbm"/>
+                <outlet property="tickDirectionYPopupButton" destination="h2F-d4-fDO" id="fmC-6N-i0y"/>
             </connections>
         </viewController>
         <viewController id="X1i-7c-Sdi" userLabel="XYGraph Axis Labels View Controller" customClass="XYGraphAxisLabelsViewController">

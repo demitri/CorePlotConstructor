@@ -21,13 +21,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
-		self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
+		self.lineStyleViewController = nil; //[[CorePlotLineStyleViewController alloc] init];
     }
     return self;
 }
 
 - (void)awakeFromNib
 {
+	NSArray *cptSignLabels = @[@"No Offset", @"Positive Offset", @"Negative Offset"];
+	for (NSPopUpButton *popup in @[tickDirectionXPopupButton, tickDirectionYPopupButton]) {
+		[popup removeAllItems];
+		[popup addItemsWithTitles:cptSignLabels];
+		[popup itemWithTitle:@"No Offset"].tag = CPTSignNone;
+		[popup itemWithTitle:@"Positive Offset"].tag = CPTSignPositive;
+		[popup itemWithTitle:@"Negative Offset"].tag = CPTSignNegative;
+	}
+
 }
 
 - (void)dealloc
@@ -97,15 +106,6 @@
 			break;
 	}
 	
-	 // Sometimes the line style value is nil. In this case, create a "default"
-	 // one that matches nothing being draw (i.e. line thickness = 0).
-	if (lineStyleToEdit == nil) {
-		CPTMutableLineStyle *defaultLineStyle = [CPTMutableLineStyle lineStyle];
-		defaultLineStyle.lineWidth = 0.0;
-		
-		lineStyleToEdit = defaultLineStyle;
-	}
-
 	// create the popover
 	self.lineStylePopover = [[NSPopover alloc] init];
 	
@@ -122,8 +122,9 @@
 									  context:nil];
 
 	NSButton *targetButton = (NSButton *)sender;
-	
-	[self.lineStylePopover showRelativeToRect:targetButton.bounds ofView:sender preferredEdge:NSMinYEdge]; // display on top of button
+	[self.lineStylePopover showRelativeToRect:targetButton.bounds
+									   ofView:sender
+								preferredEdge:NSMinYEdge]; // display on top of button
 }
 
 
@@ -132,7 +133,6 @@
 
 - (void)popoverDidClose:(NSNotification *)notification
 {
-	DLog(@"");
 	CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
 	
 	switch (self.lineStyleBeingEdited) {

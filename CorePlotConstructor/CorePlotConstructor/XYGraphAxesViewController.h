@@ -25,6 +25,7 @@ enum {
 	PREF_NO_MAJOR_TICKS_Y
 };
 
+// line styles that could be edited
 enum {
 	EDIT_LINE_STYLE_X_AXIS = 1,
 	EDIT_LINE_STYLE_Y_AXIS,
@@ -41,6 +42,8 @@ enum {
 @interface XYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
 	IBOutlet XYGraphViewController *mc; // main controller
+	IBOutlet NSPopUpButton *tickDirectionXPopupButton;
+	IBOutlet NSPopUpButton *tickDirectionYPopupButton;
 }
 
 @property (weak, nonatomic, readonly) CPTXYGraph *graph;
@@ -48,7 +51,6 @@ enum {
 @property (strong, nonatomic) CorePlotLineStyleViewController *lineStyleViewController;
 @property (nonatomic, weak, readonly) CPTXYAxis *xAxis;
 @property (nonatomic, weak, readonly) CPTXYAxis *yAxis;
-//@property (nonatomic, weak) CPTXYAxis *axisBeingEdited;
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
 @property (nonatomic, strong, readonly) NSNumber *zeroValue;
 
