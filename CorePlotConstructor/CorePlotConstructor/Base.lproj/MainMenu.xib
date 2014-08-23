@@ -678,16 +678,16 @@
             </connections>
         </customObject>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="81g-S4-b6l" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="272" y="172" width="302" height="531"/>
+            <rect key="contentRect" x="272" y="172" width="302" height="428"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" id="glX-xJ-JMw">
-                <rect key="frame" x="0.0" y="0.0" width="302" height="531"/>
+                <rect key="frame" x="0.0" y="0.0" width="302" height="428"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView drawsBackground="NO" type="noTabsNoBorder" initialItem="01W-3l-1JU" id="qqf-GD-QlO">
-                        <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
+                        <rect key="frame" x="0.0" y="-103" width="302" height="496"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
@@ -761,20 +761,11 @@
                                             <rect key="frame" x="55" y="435" width="51" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dbs-ca-vGK">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="bBg-rP-aY1">
-                                                    <real key="minimum" value="7"/>
-                                                    <real key="maximum" value="130"/>
-                                                </numberFormatter>
                                                 <font key="font" metaFont="miniSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="graph.titleTextStyle.fontSize" id="oiy-JM-ASE">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
                                                 <outlet property="delegate" destination="3U8-4g-8jP" id="dQB-Qm-EBX"/>
                                             </connections>
                                         </textField>
@@ -866,9 +857,6 @@
                                             <rect key="frame" x="237" y="456" width="44" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.titleColor" id="ahZ-k9-NDj"/>
-                                            </connections>
                                         </colorWell>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Sjk-bg-Hse">
                                             <rect key="frame" x="18" y="385" width="76" height="14"/>
@@ -961,6 +949,17 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="editLineStyle:" target="3U8-4g-8jP" id="AlU-j4-s8Z"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" tag="1" id="hO3-YM-FcH">
+                                            <rect key="frame" x="169" y="295" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit Text Style" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u0M-wP-y4E">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="3U8-4g-8jP" id="v0i-04-Map"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -2223,7 +2222,7 @@
                         </tabViewItems>
                     </tabView>
                     <popUpButton verticalHuggingPriority="750" id="bYF-tw-Kb1">
-                        <rect key="frame" x="83" y="501" width="136" height="22"/>
+                        <rect key="frame" x="83" y="398" width="136" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="xJS-93-Hhk">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2251,6 +2250,7 @@
                 <outlet property="graphTitleFrameAnchorPopup" destination="3w1-Sr-Dvf" id="ztH-BU-hd3"/>
                 <outlet property="graphView" destination="Wuu-Dv-yKb" id="agK-er-yQj"/>
                 <outlet property="themePopup" destination="Clz-0b-TPI" id="Pmg-ES-wrl"/>
+                <outlet property="titleSizeTextField" destination="1yC-pD-0oX" id="qJy-wQ-K7N"/>
                 <outlet property="view" destination="Wuu-Dv-yKb" id="b7f-WX-oF8"/>
             </connections>
         </viewController>

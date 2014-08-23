@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A62855D519A64DBC00D8E70F /* IntegerSpaceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */; };
+		A6406BBB19A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6406BBA19A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.m */; };
+		A64295DD19A9186A00E2AD38 /* CorePlotTextStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64295DB19A9186900E2AD38 /* CorePlotTextStyleViewController.m */; };
+		A64295DE19A9186A00E2AD38 /* CorePlotTextStyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A64295DC19A9186900E2AD38 /* CorePlotTextStyleView.xib */; };
 		A65E159319A568F900FD4122 /* XYGraphAxisLabelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65E159219A568F900FD4122 /* XYGraphAxisLabelsViewController.m */; };
 		A65E159F19A6245C00FD4122 /* CPCDashPatternValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A65E159E19A6245C00FD4122 /* CPCDashPatternValueTransformer.m */; };
 		A6BA395B18099E6A0092D6BC /* DMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BA395818099E6A0092D6BC /* DMTabBar.m */; };
@@ -77,6 +80,11 @@
 /* Begin PBXFileReference section */
 		A62855D319A64DBC00D8E70F /* IntegerSpaceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerSpaceFormatter.h; sourceTree = "<group>"; };
 		A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerSpaceFormatter.m; sourceTree = "<group>"; };
+		A6406BB919A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinuousBindingFixNumberFormatter.h; sourceTree = "<group>"; };
+		A6406BBA19A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinuousBindingFixNumberFormatter.m; sourceTree = "<group>"; };
+		A64295DA19A9186900E2AD38 /* CorePlotTextStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorePlotTextStyleViewController.h; sourceTree = "<group>"; };
+		A64295DB19A9186900E2AD38 /* CorePlotTextStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorePlotTextStyleViewController.m; sourceTree = "<group>"; };
+		A64295DC19A9186900E2AD38 /* CorePlotTextStyleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CorePlotTextStyleView.xib; sourceTree = "<group>"; };
 		A65E159119A568F900FD4122 /* XYGraphAxisLabelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphAxisLabelsViewController.h; sourceTree = "<group>"; };
 		A65E159219A568F900FD4122 /* XYGraphAxisLabelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphAxisLabelsViewController.m; sourceTree = "<group>"; };
 		A65E159D19A6245C00FD4122 /* CPCDashPatternValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCDashPatternValueTransformer.h; sourceTree = "<group>"; };
@@ -146,6 +154,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A64295E219A9187400E2AD38 /* CPTTextStyle Editor */ = {
+			isa = PBXGroup;
+			children = (
+				A64295DA19A9186900E2AD38 /* CorePlotTextStyleViewController.h */,
+				A64295DB19A9186900E2AD38 /* CorePlotTextStyleViewController.m */,
+				A64295DC19A9186900E2AD38 /* CorePlotTextStyleView.xib */,
+			);
+			name = "CPTTextStyle Editor";
+			sourceTree = "<group>";
+		};
 		A6BA395D18099E6F0092D6BC /* DMTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +259,10 @@
 				A65E159E19A6245C00FD4122 /* CPCDashPatternValueTransformer.m */,
 				A62855D319A64DBC00D8E70F /* IntegerSpaceFormatter.h */,
 				A62855D419A64DBC00D8E70F /* IntegerSpaceFormatter.m */,
-				A6FEA78119A1060B0007ED35 /* Line Style Inspector View */,
+				A6406BB919A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.h */,
+				A6406BBA19A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.m */,
+				A6FEA78119A1060B0007ED35 /* CPTLineStyleEditor */,
+				A64295E219A9187400E2AD38 /* CPTTextStyle Editor */,
 				A6BA39641809A2540092D6BC /* Graph Types */,
 				A6C2FC0C17F8077B002BA46A /* Plot Types */,
 				A6C2FBE717F805D9002BA46A /* MainMenu.xib */,
@@ -302,14 +323,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6FEA78119A1060B0007ED35 /* Line Style Inspector View */ = {
+		A6FEA78119A1060B0007ED35 /* CPTLineStyleEditor */ = {
 			isa = PBXGroup;
 			children = (
 				A6FEA77C19A106060007ED35 /* CorePlotLineStyleViewController.h */,
 				A6FEA77D19A106060007ED35 /* CorePlotLineStyleViewController.m */,
 				A6FEA77E19A106060007ED35 /* CorePlotLineStyleViewController.xib */,
 			);
-			name = "Line Style Inspector View";
+			name = CPTLineStyleEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6C2FBDD17F805D9002BA46A /* InfoPlist.strings in Resources */,
+				A64295DE19A9186A00E2AD38 /* CorePlotTextStyleView.xib in Resources */,
 				A6BA39631809A24A0092D6BC /* XYGraphViewController.xib in Resources */,
 				A6C2FBEB17F805D9002BA46A /* Images.xcassets in Resources */,
 				A6C2FBE317F805D9002BA46A /* Credits.rtf in Resources */,
@@ -448,7 +470,9 @@
 				A6C2FBDF17F805D9002BA46A /* main.m in Sources */,
 				A6C2FC0817F80739002BA46A /* ScatterPlotViewController.m in Sources */,
 				A6FEA77819A0726D0007ED35 /* XYGraphPaddingViewController.m in Sources */,
+				A64295DD19A9186A00E2AD38 /* CorePlotTextStyleViewController.m in Sources */,
 				A6FEA77B19A088E20007ED35 /* XYGraphAxesViewController.m in Sources */,
+				A6406BBB19A8F7F0003ADF1D /* ContinuousBindingFixNumberFormatter.m in Sources */,
 				A6BA39621809A24A0092D6BC /* XYGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

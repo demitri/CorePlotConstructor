@@ -11,6 +11,7 @@
 #import "XYGraphPaddingViewController.h"
 #import "XYGraphAxisLabelsViewController.h"
 #import "CorePlotLineStyleViewController.h"
+#import "CorePlotTextStyleViewController.h"
 
 @class XYGraphAxisLabelsViewController;
 
@@ -25,15 +26,16 @@ enum {
 // line styles that could be edited
 enum {
 	EDIT_LINE_STYLE_GRAPH_BORDER = 1,
-	EDIT_LINE_STYLE_DATA
-	
+	EDIT_LINE_STYLE_DATA,
+	EDIT_TEXT_STYLE_TITLE
 };
 
 @interface XYGraphViewController : NSViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, NSTextFieldDelegate, NSPopoverDelegate>
 {
 	// Plot Inspector
 	// --------------
-
+	IBOutlet NSTextField *titleSizeTextField;
+	
 	// Padding Inspector
 	// -----------------
 	
@@ -59,8 +61,12 @@ enum {
 @property (strong, nonatomic) CorePlotLineStyleViewController *lineStyleViewController;
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
 
+// properties for editing CPTTextStyle objects
+@property (strong, nonatomic) NSPopover *textStylePopover;
+@property (strong, nonatomic) CorePlotTextStyleViewController *textStyleViewController;
+
 // Graph title properties
-@property (strong, nonatomic) IBOutlet NSColor *titleColor;
+@property (strong, nonatomic) NSColor *titleColor;
 @property (assign) CGFloat graphTitleDisplacementX;
 @property (assign) CGFloat graphTitleDisplacementY;
 
@@ -81,5 +87,6 @@ enum {
 - (IBAction)changeTitleAnchorStyle:(id)sender;
 
 - (IBAction)editLineStyle:(id)sender;
+- (IBAction)editTextStyle:(id)sender;
 
 @end

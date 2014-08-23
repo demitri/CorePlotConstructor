@@ -20,6 +20,13 @@
 	CPCDashPatternValueTransformer *dashPatternValueTransformer = [[CPCDashPatternValueTransformer alloc] init];
 	[CPCDashPatternValueTransformer setValueTransformer:dashPatternValueTransformer
 												forName:@"CPCDashPatternValueTransformer"];
+	
+	// set up number formatters
+	NSNumberFormatter *decimalNF = [[NSNumberFormatter alloc] init];
+	decimalNF.numberStyle = NSNumberFormatterDecimalStyle;
+	decimalNF.usesSignificantDigits = YES;
+	decimalNF.maximumSignificantDigits = 1;
+	_decimalNumberFormatter = decimalNF;
 }
 
 @end

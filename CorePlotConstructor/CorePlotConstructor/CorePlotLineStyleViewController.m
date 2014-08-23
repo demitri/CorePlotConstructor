@@ -54,6 +54,7 @@
 @property (nonatomic, strong, readwrite) CPTLineStyle *currentLineStyle;
 
 - (NSArray*)propertiesToObserve;
+- (CPTLineStyle*)lineStyleFromCurrentView;
 
 @end
 
@@ -211,10 +212,9 @@
 				
 			case TEXT_FIELD_LINE_WIDTH:
 				// min value = 0
-				if (self.lineWidth += delta < 0)
+				if ((self.lineWidth += delta) < 0)
 					self.lineWidth = 0;
 				else
-//				if ((delta > 0 && self.lineWidth > 0) || (delta < 0 && self.lineWidth > 1))
 					self.lineWidth += delta;
 				handled = YES;
 				break;

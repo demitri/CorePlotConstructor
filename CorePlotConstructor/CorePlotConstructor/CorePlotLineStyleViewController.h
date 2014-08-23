@@ -38,9 +38,6 @@ enum {
 	IBOutlet NSPopUpButton *lineCapPopupButton;
 	IBOutlet NSPopUpButton *lineJoinPopupButton;
 	IBOutlet NSTextField *dashPatternTextField;
-//	IBOutlet NSTextField *lineWidthTextField;
-//	IBOutlet NSTextField *patternPhaseTextField;
-//	IBOutlet NSTextField *miterLimitTextField;
 }
 
 @property (nonatomic, weak) CPTGraph *graph;
@@ -50,11 +47,9 @@ enum {
 @property (nonatomic, strong) NSString *dashPatternString;
 @property (nonatomic, assign) CGFloat patternPhase;
 
-//@property (nonatomic, strong) CPTLineStyle *lineStyle;
 @property (nonatomic, strong, readonly) CPTLineStyle *currentLineStyle;
 
 - (IBAction)popupMenuChanged:(id)sender;
-
 - (void)updateWithLineStyle:(CPTLineStyle*)newLineStyle;
 
 @end

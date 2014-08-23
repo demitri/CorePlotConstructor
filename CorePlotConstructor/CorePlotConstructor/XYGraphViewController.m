@@ -7,6 +7,7 @@
 //
 
 #import "XYGraphViewController.h"
+#import "ContinuousBindingFixNumberFormatter.h"
 
 #define kScatterPlot @"scatter plot"
 #define kInitialFont @"Helvetica"
@@ -15,6 +16,7 @@
 
 @interface XYGraphViewController ()
 
+- (void)initialize;
 - (NSArray*)propertiesToObserve;
 
 @end
@@ -30,13 +32,45 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.lineStyleViewController = nil;
-    }
+		[self initialize];
+	}
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+	self = [super initWithCoder:decoder];
+	[self initialize];
+	return self;
+}
+
+- (void)initialize
+{
+	self.lineStyleViewController = nil;
+	
+	// create the text style popover
+	self.textStylePopover = [[NSPopover alloc] init];
+	self.textStylePopover.behavior = NSPopoverBehaviorTransient;
+	self.textStylePopover.delegate = self;
+	
+	self.textStyleViewController = [[CorePlotTextStyleViewController alloc] init];
+	self.textStylePopover.contentViewController = self.textStyleViewController;
+		
+	[self.textStyleViewController addObserver:self
+								   forKeyPath:@"currentTextStyle"
+									  options:NSKeyValueObservingOptionNew
+									  context:nil];
+	
 }
 
 - (void)awakeFromNib
 {
+	ContinuousBindingFixNumberFormatter *f = [[ContinuousBindingFixNumberFormatter alloc] init];
+	f.usesSignificantDigits = NO;
+	f.maximumFractionDigits = 1;
+	f.minimumFractionDigits = 0;
+	titleSizeTextField.formatter = f;
+	
 	NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"xy_data" ofType:@"plist"];
 	NSAssert(plistPath != nil, @"The data file was not found!");
 	NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:plistPath];
@@ -63,8 +97,9 @@
 	// fonts
 #pragma mark setup fonts
 	[graphTitleFontPopup removeAllItems];
-	for (NSString *fontName in [[NSFontManager sharedFontManager] availableFontFamilies])
-		[graphTitleFontPopup addItemWithTitle:fontName];
+	[graphTitleFontPopup addItemsWithTitles:[[NSFontManager sharedFontManager] availableFontFamilies]];
+	//for (NSString *fontName in [[NSFontManager sharedFontManager] availableFontFamilies])
+	//	[graphTitleFontPopup addItemWithTitle:fontName];
 	[graphTitleFontPopup selectItemWithTitle:kInitialFont];
 	
 	[graphTitleFrameAnchorPopup removeAllItems];
@@ -95,6 +130,13 @@
 	CGRect bounds = NSRectToCGRect(self.graphView.bounds);
 	self.graph = [[CPTXYGraph alloc] initWithFrame:bounds];
 	
+	// TODO: when graph is separated out, move this to the appropriate place.
+/*	[self.graph addObserver:self
+				 forKeyPath:@"titleDisplacement"
+					options:NSKeyValueObservingOptionNew
+					context:nil];
+*/
+	
 	// -----------
 	// apply theme
 	// -----------
@@ -111,15 +153,13 @@
 	textStyle.color = [CPTColor grayColor];
 	textStyle.fontName = kInitialFont; // @"Helvetica-Bold";
 	textStyle.fontSize = 18.0;
-	//	textStyle.fontSize = round(bounds.size.height / (CGFloat)20.0);
 	self.graph.titleTextStyle = textStyle;
 	//	graph.titleDisplacement = CGPoint{0.0, 10.0};
 	self.graph.titleDisplacement = (CGPoint){ 0.0f, round(bounds.size.height / (CGFloat)18.0) }; // Ensure that title displacement falls on an integral pixel
 	self.graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
 	[graphTitleFrameAnchorPopup selectItemWithTag:CPTRectAnchorTop];
-	
-	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
-	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
+
+	// TODO fix
 	self.titleColor = textStyle.color.nsColor;
 	
 	// ------------
@@ -284,7 +324,7 @@
 				  options:NSKeyValueObservingOptionNew
 				  context:nil];
 	}
-
+	
 }
 
 - (NSArray*)propertiesToObserve
@@ -300,6 +340,7 @@
 		[self removeObserver:self forKeyPath:property];
 
 	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
+	[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
 }
 
 - (NSNumber*)minYValue
@@ -393,6 +434,18 @@
 								preferredEdge:NSMinYEdge]; // display on top of button
 }
 
+- (IBAction)editTextStyle:(id)sender
+{
+	CPTTextStyle *textStyleToEdit = self.graph.titleTextStyle;
+	NSAssert(textStyleToEdit != nil, @"need to create a default text style");
+	
+	[self.textStyleViewController updateWithTextStyle:textStyleToEdit];
+	
+	[self.textStylePopover showRelativeToRect:((NSButton*)sender).bounds
+									   ofView:sender
+								preferredEdge:NSMinYEdge];
+}
+
 - (IBAction)changeTheme:(id)sender
 {
 	NSString *themeName = themePopup.titleOfSelectedItem;
@@ -420,26 +473,7 @@
 {
 	//DLog(@"%@", change);
 
-	if (object == self.lineStyleViewController) {
-		if ([keyPath isEqualToString:@"currentLineStyle"]) {
-
-			CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-
-			switch (self.lineStyleBeingEdited) {
-				case EDIT_LINE_STYLE_GRAPH_BORDER:
-					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
-					break;
-				case EDIT_LINE_STYLE_DATA:
-					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
-					break;
-				default:
-					break;
-			}
-		} else {
-			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
-		}
-
-	} else if (object == self) {
+	if (object == self) {
 	
 		if ([keyPath isEqualToString:@"graphTitleDisplacementX"]) {
 			CGFloat y = self.graph.titleDisplacement.y; // current value
@@ -453,10 +487,43 @@
 			CPTMutableTextStyle *textStyle = [self.graph.titleTextStyle mutableCopy];
 			textStyle.color = [CPTColor colorWithCGColor:self.titleColor.CGColor];
 			self.graph.titleTextStyle = textStyle;
-					
+
 		} else {
 			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
 		}
+		
+	/*} else if (object == self.graph) {
+		
+		if ([keyPath isEqualToString:@"titleDisplacement"]) {
+			self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
+			self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
+		}
+*/
+	} else if (object == self.lineStyleViewController) {
+		if ([keyPath isEqualToString:@"currentLineStyle"]) {
+			
+			CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
+			
+			switch (self.lineStyleBeingEdited) {
+				case EDIT_LINE_STYLE_GRAPH_BORDER:
+					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+				case EDIT_LINE_STYLE_DATA:
+					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+				default:
+					break;
+			}
+		} else {
+			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
+		}
+		
+	} else if (object == self.textStyleViewController) {
+
+		DLog(@"");
+		if ([keyPath isEqualToString:@"currentTextStyle"])
+			self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
+		
 	} else
 		DLog(@"Uncaught object: %@", object);
 }
@@ -466,27 +533,40 @@
 
 - (void)popoverDidClose:(NSNotification *)notification
 {
-	CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
-
+	NSPopover *popover = notification.object;
 	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
 	
-	switch (self.lineStyleBeingEdited) {
-		case EDIT_LINE_STYLE_GRAPH_BORDER:
-			self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
-			break;
-		case EDIT_LINE_STYLE_DATA:
-			plot.dataLineStyle = newLineStyle;
-			break;
-		default:
-			break;
+	if (popover == self.lineStylePopover) {
+		
+		CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
+		
+		switch (self.lineStyleBeingEdited) {
+			case EDIT_LINE_STYLE_GRAPH_BORDER:
+				self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
+				break;
+			case EDIT_LINE_STYLE_DATA:
+				plot.dataLineStyle = newLineStyle;
+				break;
+			default:
+				break;
+		}
+		self.lineStylePopover = nil;
+	
+	} else if (popover == self.textStylePopover) {
+		
+		self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
 	}
-	self.lineStylePopover = nil;
 }
 
 #pragma mark -
 #pragma mark NSTextViewDelegate methods
 
-//- (BOOL)textView:(NSTextView *)aTextView doCommandBySelector:(SEL)aSelector
+- (void)controlTextDidEndEditing:(NSNotification *)notification
+{
+	//DLog(@"%@", notification);
+	[self.graph.titleTextStyle willChangeValueForKey:@"fontSize"];
+	[self.graph.titleTextStyle didChangeValueForKey:@"fontSize"];
+}
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
 {

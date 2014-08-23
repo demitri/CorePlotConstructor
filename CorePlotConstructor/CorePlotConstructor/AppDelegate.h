@@ -12,4 +12,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+@property (nonatomic, strong, readonly) NSNumberFormatter *decimalNumberFormatter;
+
 @end
