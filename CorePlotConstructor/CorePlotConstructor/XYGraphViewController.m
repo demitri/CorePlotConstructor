@@ -520,7 +520,6 @@
 		
 	} else if (object == self.textStyleViewController) {
 
-		DLog(@"");
 		if ([keyPath isEqualToString:@"currentTextStyle"])
 			self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
 		
