@@ -63,6 +63,8 @@
 		
 		BOOL handled = NO;
 		
+		// TODO: redraw graph at each change - the graph updates when then window is resized.
+		
 		switch (control.tag) {
 				
 			case GRAPH_PADDING_TOP:

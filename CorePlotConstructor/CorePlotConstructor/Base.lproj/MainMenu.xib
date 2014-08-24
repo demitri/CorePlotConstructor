@@ -715,7 +715,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OYS-aR-1W3">
-                                            <rect key="frame" x="19" y="334" width="81" height="14"/>
+                                            <rect key="frame" x="18" y="334" width="81" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Theme" id="AQn-L8-EKU">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -832,15 +832,6 @@
                                                 <action selector="changeTitleAnchorStyle:" target="3U8-4g-8jP" id="Brd-bf-HRX"/>
                                             </connections>
                                         </popUpButton>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="YZT-WY-tMt">
-                                            <rect key="frame" x="20" y="277" width="82" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data" id="rAo-OA-wJ3">
-                                                <font key="font" metaFont="smallSystemBold"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3X4-Mc-YYj">
                                             <rect key="frame" x="18" y="356" width="101" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -867,15 +858,6 @@
                                                 <outlet property="delegate" destination="3U8-4g-8jP" id="Fbf-37-84t"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9sA-fx-tKu">
-                                            <rect key="frame" x="20" y="254" width="55" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Style" id="BnO-X6-Edb">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <button verticalHuggingPriority="750" tag="1" id="8su-5Z-RwF">
                                             <rect key="frame" x="62" y="310" width="94" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -885,17 +867,6 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="editLineStyle:" target="3U8-4g-8jP" id="41d-7f-ebL"/>
-                                            </connections>
-                                        </button>
-                                        <button verticalHuggingPriority="750" tag="2" id="vbA-II-Klu">
-                                            <rect key="frame" x="81" y="252" width="94" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="roundRect" title="Edit Line Style" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cdd-QY-zIe">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="3U8-4g-8jP" id="AlU-j4-s8Z"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" tag="1" id="hO3-YM-FcH">
@@ -910,7 +881,7 @@
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="TVh-GS-3sH">
-                                            <rect key="frame" x="19" y="435" width="82" height="14"/>
+                                            <rect key="frame" x="18" y="435" width="82" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title Text Style" id="Zef-Nc-ezH">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -919,7 +890,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xD0-jP-YYF">
-                                            <rect key="frame" x="19" y="312" width="81" height="14"/>
+                                            <rect key="frame" x="18" y="312" width="81" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Border" id="HqQ-BM-1wR">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -927,6 +898,72 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <button id="7Yr-wb-LZF">
+                                            <rect key="frame" x="17" y="286" width="197" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Plot Area Frame Masks To Border" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="DXm-7w-b2F">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.plotAreaFrame.masksToBorder" id="mOM-9F-Rhd"/>
+                                            </connections>
+                                        </button>
+                                        <button id="xVJ-AG-wJc">
+                                            <rect key="frame" x="17" y="266" width="201" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Plot Area Frame Masks To Bounds" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="V91-0S-bxc">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.plotAreaFrame.masksToBounds" id="eCC-bK-J83"/>
+                                            </connections>
+                                        </button>
+                                        <button id="F2t-ux-xIm">
+                                            <rect key="frame" x="17" y="246" width="201" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use Fast Rendering" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="g88-U7-OEn">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.useFastRendering" id="cB8-9Z-ljf"/>
+                                            </connections>
+                                        </button>
+                                        <button id="DFp-Ol-KqA">
+                                            <rect key="frame" x="17" y="226" width="201" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Aligns Points To Pixels" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="zyp-zD-Tpr">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.plot.alignsPointsToPixels" id="Yhk-5b-uDo"/>
+                                            </connections>
+                                        </button>
+                                        <button id="PXv-ul-mgH">
+                                            <rect key="frame" x="17" y="206" width="201" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Show Labels" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="Ulg-oV-7zA">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.plot.showLabels" id="ymh-oe-1ca"/>
+                                            </connections>
+                                        </button>
+                                        <button id="4l8-0M-K9x">
+                                            <rect key="frame" x="18" y="186" width="201" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Allow User Interaction" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="Uub-Fi-ns5">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="3U8-4g-8jP" name="value" keyPath="self.graph.defaultPlotSpace.allowsUserInteraction" id="iV6-nU-7fV"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -2286,6 +2323,49 @@
                                     </subviews>
                                 </view>
                             </tabViewItem>
+                            <tabViewItem label="Data" identifier="4" id="Ytz-jN-hKR" userLabel="Tab View Item - Data">
+                                <view key="view" id="QOd-lq-Pv7">
+                                    <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="TD6-Nq-Cc2">
+                                            <rect key="frame" x="18" y="462" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Data" id="Mt6-qB-KSn">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="i7k-MC-MsA">
+                                            <rect key="frame" x="18" y="439" width="55" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Style" id="vdO-GF-YyQ">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="2" id="6xS-Z5-irF">
+                                            <rect key="frame" x="79" y="437" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Edit Line Style" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PWV-lQ-zpl">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editLineStyle:" target="3U8-4g-8jP" id="tai-Cz-qDD"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Legend" identifier="5" id="tq4-2Q-Mqh" userLabel="Tab View Item - Legend">
+                                <view key="view" id="IVP-CH-qJv">
+                                    <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
                         </tabViewItems>
                     </tabView>
                     <popUpButton verticalHuggingPriority="750" id="bYF-tw-Kb1">
@@ -2300,6 +2380,8 @@
                                     <menuItem title="Padding" tag="1" keyEquivalent="2" id="w57-bR-2hv"/>
                                     <menuItem title="Axes" tag="2" keyEquivalent="3" id="T9T-P8-i5V"/>
                                     <menuItem title="Axis Labels" tag="3" keyEquivalent="4" id="eXW-xR-aOw"/>
+                                    <menuItem title="Data" tag="4" keyEquivalent="5" id="MX3-Q1-uP0"/>
+                                    <menuItem title="Legend" tag="5" keyEquivalent="6" id="DgU-qi-5Qo"/>
                                 </items>
                             </menu>
                         </popUpButtonCell>

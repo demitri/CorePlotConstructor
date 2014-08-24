@@ -112,6 +112,8 @@
 
 	[self createGraph];
 	
+	self.plot = [[self.graph allPlots] objectAtIndex:0];
+	
 	// update UI items from graph
 	self.titleColor =  self.graph.titleTextStyle.color.nsColor;
 
@@ -183,6 +185,7 @@
 	//	  * default value in each direction: 20 pixels
 	//	  * plot axis labels will not be drawn in this area
 	//
+	/*
 	CGFloat boundsPadding = round(bounds.size.width / (CGFloat)20.0); // Ensure that padding falls on an integral pixel
 	
 	self.graph.paddingLeft = boundsPadding;
@@ -195,11 +198,13 @@
 	
 	self.graph.paddingRight	= boundsPadding;
 	self.graph.paddingBottom = boundsPadding;
+	*/
+	self.graph.paddingTop = 40;
 	
 	self.graph.plotAreaFrame.paddingTop	   = 15.0;
-	self.graph.plotAreaFrame.paddingRight  = 15.0;
+	self.graph.plotAreaFrame.paddingRight  = 10.0;
 	self.graph.plotAreaFrame.paddingBottom = 55.0;
-	self.graph.plotAreaFrame.paddingLeft   = 55.0;
+	self.graph.plotAreaFrame.paddingLeft   = 70.0;
 	
 	/*	graph.paddingLeft	= 20.0;
 	 graph.paddingTop	= 20.0;
@@ -249,6 +254,7 @@
 	NSNumberFormatter *labelFormatter = [[NSNumberFormatter alloc] init];
 	labelFormatter.numberStyle = NSNumberFormatterNoStyle; // NSNumberFormatterScientificStyle
 	self.xAxis.labelFormatter		   = labelFormatter;
+	self.xAxis.axisConstraints					= [CPTConstraints constraintWithLowerOffset:0.0];
 	
 	// Label y with an automatic label policy.
 	self.yAxis = axisSet.yAxis;
@@ -260,8 +266,8 @@
 	self.yAxis.minorGridLineStyle              = minorGridLineStyle;
 	self.yAxis.labelOffset                     = 10.0;
 	self.yAxis.title                           = @"flux";
-	self.yAxis.titleOffset                     = 20.0;
-	//self.yAxis.constraints					  = [CPTConstraints constraintWithLowerOffset:0.0];
+	self.yAxis.titleOffset                     = 50.0;
+	self.yAxis.axisConstraints				   = [CPTConstraints constraintWithLowerOffset:0.0];
 	
 	// set up plot
 	// -----------

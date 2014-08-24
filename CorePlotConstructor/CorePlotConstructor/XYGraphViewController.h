@@ -54,6 +54,7 @@ enum {
 }
 
 @property (strong, nonatomic) CPTXYGraph *graph;
+@property (weak, nonatomic) CPTPlot *plot;
 @property (weak) IBOutlet CPTGraphHostingView *graphView;
 
 // properties for editing CPTLineStyle objects
