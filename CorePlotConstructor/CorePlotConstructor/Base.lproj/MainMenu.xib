@@ -2056,7 +2056,7 @@
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="75y-TJ-Mg2">
-                                            <rect key="frame" x="19" y="339" width="110" height="14"/>
+                                            <rect key="frame" x="19" y="364" width="110" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tick Label Direction" id="s6k-XI-tjJ">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2065,7 +2065,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="ck3-K2-fgq">
-                                            <rect key="frame" x="53" y="316" width="100" height="15"/>
+                                            <rect key="frame" x="53" y="341" width="100" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qLX-gW-5HU" id="U9b-dV-Yfa">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2083,7 +2083,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jjD-Vz-UQC">
-                                            <rect key="frame" x="26" y="317" width="22" height="14"/>
+                                            <rect key="frame" x="26" y="342" width="22" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="x" id="4zq-hq-poV">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2092,7 +2092,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="27c-vR-MnN">
-                                            <rect key="frame" x="184" y="316" width="100" height="15"/>
+                                            <rect key="frame" x="184" y="341" width="100" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Yuh-Rw-hLo" id="0N2-vY-jKQ">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2110,7 +2110,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="bFe-rN-EtX">
-                                            <rect key="frame" x="157" y="317" width="22" height="14"/>
+                                            <rect key="frame" x="157" y="342" width="22" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="y" id="SE4-ek-SVB">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2119,7 +2119,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="A3z-xQ-6zb">
-                                            <rect key="frame" x="53" y="271" width="100" height="15"/>
+                                            <rect key="frame" x="53" y="296" width="100" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3WJ-Es-9vr" id="6da-BY-r7d">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2137,7 +2137,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DUq-FB-dBp">
-                                            <rect key="frame" x="26" y="272" width="22" height="14"/>
+                                            <rect key="frame" x="26" y="297" width="22" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="x" id="WXN-OJ-v6x">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2146,7 +2146,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" id="3Wz-Xe-EWJ">
-                                            <rect key="frame" x="184" y="271" width="100" height="15"/>
+                                            <rect key="frame" x="184" y="296" width="100" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DxW-gT-DtQ" id="SNz-zo-myF">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -2164,7 +2164,7 @@
                                             </connections>
                                         </popUpButton>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="PV8-rA-Cye">
-                                            <rect key="frame" x="157" y="272" width="22" height="14"/>
+                                            <rect key="frame" x="157" y="297" width="22" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="y" id="ZsB-Ed-tEK">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2173,7 +2173,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FFq-ir-qpb">
-                                            <rect key="frame" x="18" y="294" width="144" height="14"/>
+                                            <rect key="frame" x="18" y="319" width="144" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minor Tick Label Direction" id="IBL-5B-ycJ">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -2181,6 +2181,108 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CCn-hL-cgo">
+                                            <rect key="frame" x="19" y="274" width="73" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Styles" id="yjo-Gf-Udc">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="1" id="qsg-Wg-Uv5">
+                                            <rect key="frame" x="144" y="250" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rwM-HF-Tjk">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="EVr-r8-Yfu"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zFx-Y0-nkI">
+                                            <rect key="frame" x="19" y="252" width="87" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label Text Style" id="9O3-Sb-wc6">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="2" id="wkP-mH-3oL">
+                                            <rect key="frame" x="217" y="250" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d7P-4Z-b3f">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="zok-07-OtP"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" tag="3" id="s6J-c7-csd">
+                                            <rect key="frame" x="144" y="227" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zPR-oE-LLh">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="ofo-ci-iyH"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qfB-zc-RVS">
+                                            <rect key="frame" x="19" y="229" width="108" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Axis Title Text Style" id="OGv-rR-rsV">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="4" id="tDu-9B-zfI">
+                                            <rect key="frame" x="217" y="227" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cfh-qD-khO">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="phd-My-mRc"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" tag="5" id="nFH-t3-kdT">
+                                            <rect key="frame" x="144" y="204" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vqk-lT-R8P">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="xBu-i3-5Ds"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Tpw-aG-0GU">
+                                            <rect key="frame" x="19" y="206" width="120" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Minor Ticks Text Style" id="kuP-rf-e9m">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" tag="6" id="jig-Dt-pCH">
+                                            <rect key="frame" x="217" y="204" width="65" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kaw-Zd-DH1">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editTextStyle:" target="X1i-7c-Sdi" id="vrd-lO-nI5"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>

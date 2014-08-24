@@ -25,9 +25,6 @@
 
 @implementation XYGraphViewController
 
-//@synthesize graph, graphView;
-//@synthesize xData, yData, xyData;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,11 +62,11 @@
 
 - (void)awakeFromNib
 {
-	ContinuousBindingFixNumberFormatter *f = [[ContinuousBindingFixNumberFormatter alloc] init];
-	f.usesSignificantDigits = NO;
-	f.maximumFractionDigits = 1;
-	f.minimumFractionDigits = 0;
-	titleSizeTextField.formatter = f;
+//	ContinuousBindingFixNumberFormatter *f = [[ContinuousBindingFixNumberFormatter alloc] init];
+//	f.usesSignificantDigits = NO;
+//	f.maximumFractionDigits = 1;
+//	f.minimumFractionDigits = 0;
+//	titleSizeTextField.formatter = f;
 	
 	NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"xy_data" ofType:@"plist"];
 	NSAssert(plistPath != nil, @"The data file was not found!");
@@ -96,11 +93,9 @@
 	
 	// fonts
 #pragma mark setup fonts
-	[graphTitleFontPopup removeAllItems];
-	[graphTitleFontPopup addItemsWithTitles:[[NSFontManager sharedFontManager] availableFontFamilies]];
-	//for (NSString *fontName in [[NSFontManager sharedFontManager] availableFontFamilies])
-	//	[graphTitleFontPopup addItemWithTitle:fontName];
-	[graphTitleFontPopup selectItemWithTitle:kInitialFont];
+//	[graphTitleFontPopup removeAllItems];
+//	[graphTitleFontPopup addItemsWithTitles:[[NSFontManager sharedFontManager] availableFontFamilies]];
+//	[graphTitleFontPopup selectItemWithTitle:kInitialFont];
 	
 	[graphTitleFrameAnchorPopup removeAllItems];
 	NSArray *anchorArray = @[@"CPTRectAnchorTop", @"CPTRectAnchorTopLeft", @"CPTRectAnchorTopRight",
@@ -385,8 +380,6 @@
 		NSLog(@"[%@].%s: Identifier not found!!", self, __PRETTY_FUNCTION__);
 		return [NSNumber numberWithInt:0];
 	}
-	
-	
 }
 
 #pragma mark -
@@ -456,14 +449,6 @@
 	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = axisLabelsController.yAxisLabellingPolicyPopup.selectedItem.tag;
 }
 
-- (IBAction)changeGraphTitleFont:(id)sender
-{
-	CPTMutableTextStyle *textStyle = [self.graph.titleTextStyle mutableCopy];
-	textStyle.fontName = ((NSPopUpButton*)sender).titleOfSelectedItem;
-	self.graph.titleTextStyle = textStyle;
-}
-
-
 - (IBAction)changeTitleAnchorStyle:(id)sender
 {
 	self.graph.titlePlotAreaFrameAnchor = [(NSPopUpButton*)sender selectedItem].tag;
@@ -483,22 +468,17 @@
 			CGFloat x = self.graph.titleDisplacement.x; // current value
 			self.graph.titleDisplacement = (CGPoint){ x, self.graphTitleDisplacementY };
 
-		} else if ([keyPath isEqualToString:@"titleColor"]) {
-			CPTMutableTextStyle *textStyle = [self.graph.titleTextStyle mutableCopy];
-			textStyle.color = [CPTColor colorWithCGColor:self.titleColor.CGColor];
-			self.graph.titleTextStyle = textStyle;
-
 		} else {
 			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
 		}
 		
-	/*} else if (object == self.graph) {
+	} else if (object == self.graph) {
 		
 		if ([keyPath isEqualToString:@"titleDisplacement"]) {
 			self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
 			self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
 		}
-*/
+
 	} else if (object == self.lineStyleViewController) {
 		if ([keyPath isEqualToString:@"currentLineStyle"]) {
 			
@@ -563,8 +543,6 @@
 - (void)controlTextDidEndEditing:(NSNotification *)notification
 {
 	//DLog(@"%@", notification);
-	[self.graph.titleTextStyle willChangeValueForKey:@"fontSize"];
-	[self.graph.titleTextStyle didChangeValueForKey:@"fontSize"];
 }
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
@@ -578,24 +556,8 @@
 		
 		CGFloat delta = command == @selector(moveUp:) ? +1. : -1.;
 		
-		
-		CPTMutableTextStyle *textStyle;
-		
 		switch (control.tag) {
-			case GRAPH_TITLE_SIZE:
-				// this acts weird at the extremes
-				textStyle = [self.graph.titleTextStyle mutableCopy];
-				if (self.graph.titleTextStyle.fontSize >= 7.0 || delta == +1.0)  { // min size: 6pt
-					//self.graph.titleTextStyle = [CPTMutableTextStyle textStyleWithFontDelta:delta fromTextStyle:self.graph.titleTextStyle];
-					textStyle.fontSize += delta;
-				} else {
-					//self.graph.titleTextStyle = [CPTMutableTextStyle textStyleWithFontSize:6 fromTextStyle:self.graph.titleTextStyle];
-					textStyle.fontSize = 6.0;
-				}
-				self.graph.titleTextStyle = textStyle; // triggers draw
-				return YES;
-				break;
-				
+
 			case GRAPH_TITLE_DISPLACEMENT_X:
 				self.graphTitleDisplacementX = [[NSNumber numberWithFloat:[number floatValue] + delta] floatValue];
 				return YES;

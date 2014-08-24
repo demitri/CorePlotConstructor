@@ -34,7 +34,7 @@ enum {
 {
 	// Plot Inspector
 	// --------------
-	IBOutlet NSTextField *titleSizeTextField;
+	//IBOutlet NSTextField *titleSizeTextField;
 	
 	// Padding Inspector
 	// -----------------
@@ -47,7 +47,7 @@ enum {
 	IBOutlet NSPopUpButton *themePopup;
 	NSArray *axisPolicyNames;
 	NSArray *anchorStyleNames;
-	IBOutlet NSPopUpButton *graphTitleFontPopup;
+	//IBOutlet NSPopUpButton *graphTitleFontPopup;
 	IBOutlet NSPopUpButton *graphTitleFrameAnchorPopup;
 	
 	IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
@@ -83,7 +83,7 @@ enum {
 
 - (NSNumber*)minYValue;
 - (IBAction)changeTheme:(id)sender;
-- (IBAction)changeGraphTitleFont:(id)sender;
+//- (IBAction)changeGraphTitleFont:(id)sender;
 - (IBAction)changeTitleAnchorStyle:(id)sender;
 
 - (IBAction)editLineStyle:(id)sender;
