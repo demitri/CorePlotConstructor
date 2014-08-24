@@ -42,8 +42,8 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 @property (nonatomic, strong) NSPopover *textStylePopover;
 @property (nonatomic, strong) CorePlotTextStyleViewController *textStyleViewController;
 @property (nonatomic, assign) NSInteger textStyleBeingEdited;
-@property (weak) IBOutlet NSPopUpButton *xAxisLabellingPolicyPopup;
-@property (weak) IBOutlet NSPopUpButton *yAxisLabellingPolicyPopup;
+@property (weak) IBOutlet NSPopUpButton *xAxisLabelingPolicyPopup;
+@property (weak) IBOutlet NSPopUpButton *yAxisLabelingPolicyPopup;
 
 - (IBAction)axisPolicyChanged:(id)sender;
 - (IBAction)editTextStyle:(id)sender;

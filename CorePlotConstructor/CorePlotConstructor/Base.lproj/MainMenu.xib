@@ -2343,8 +2343,8 @@
                 <outlet property="tickLabelDirXPopupButton" destination="ck3-K2-fgq" id="5cX-Wr-QxZ"/>
                 <outlet property="tickLabelDirYPopupButton" destination="27c-vR-MnN" id="ZHC-3u-S9y"/>
                 <outlet property="view" destination="so6-vx-Cyp" id="5tL-u7-rSQ"/>
-                <outlet property="xAxisLabellingPolicyPopup" destination="O5v-co-Eg8" id="D0o-LS-gJ9"/>
-                <outlet property="yAxisLabellingPolicyPopup" destination="AIn-oF-HzS" id="BhO-5H-1ug"/>
+                <outlet property="xAxisLabelingPolicyPopup" destination="O5v-co-Eg8" id="MD1-ge-fjD"/>
+                <outlet property="yAxisLabelingPolicyPopup" destination="AIn-oF-HzS" id="HiF-Z0-dKx"/>
             </connections>
         </viewController>
         <userDefaultsController representsSharedInstance="YES" id="yjJ-vs-oIn"/>

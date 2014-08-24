@@ -72,7 +72,7 @@
 							 @"Automatic", @"EqualDivisions"];
 
 	// set the tag value to the policy (both integers)
-	for (NSPopUpButton *popup in @[self.xAxisLabellingPolicyPopup, self.yAxisLabellingPolicyPopup]) {
+	for (NSPopUpButton *popup in @[self.xAxisLabelingPolicyPopup, self.yAxisLabelingPolicyPopup]) {
 		[popup removeAllItems];
 		[popup addItemsWithTitles:policyArray];
 		[popup itemWithTitle:@"None"].tag = CPTAxisLabelingPolicyNone;
@@ -88,7 +88,7 @@
 - (IBAction)axisPolicyChanged:(id)sender
 {
 	NSPopUpButton *popup = sender;
-	if (popup == self.xAxisLabellingPolicyPopup)
+	if (popup == self.xAxisLabelingPolicyPopup)
 		mc.xAxis.labelingPolicy = popup.selectedItem.tag;
 	else
 		mc.yAxis.labelingPolicy = popup.selectedItem.tag;

@@ -81,6 +81,7 @@ enum {
 @property (weak) CPTXYAxis *xAxis;
 @property (weak) CPTXYAxis *yAxis;
 
+- (void)createGraph;
 - (NSNumber*)minYValue;
 - (IBAction)changeTheme:(id)sender;
 //- (IBAction)changeGraphTitleFont:(id)sender;

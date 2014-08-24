@@ -91,12 +91,7 @@
 	[themePopup selectItemWithTitle:kCPTPlainWhiteTheme];
 	
 	
-	// fonts
-#pragma mark setup fonts
-//	[graphTitleFontPopup removeAllItems];
-//	[graphTitleFontPopup addItemsWithTitles:[[NSFontManager sharedFontManager] availableFontFamilies]];
-//	[graphTitleFontPopup selectItemWithTitle:kInitialFont];
-	
+	// set up frame anchor popup
 	[graphTitleFrameAnchorPopup removeAllItems];
 	NSArray *anchorArray = @[@"CPTRectAnchorTop", @"CPTRectAnchorTopLeft", @"CPTRectAnchorTopRight",
 							 @"CPTRectAnchorBottom", @"CPTRectAnchorBottomLeft", @"CPTRectAnchorBottomRight",
@@ -114,7 +109,24 @@
 	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorLeft"].tag = CPTRectAnchorLeft;
 	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorRight"].tag = CPTRectAnchorRight;
 	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorCenter"].tag = CPTRectAnchorCenter;
+
+	[self createGraph];
 	
+	// update UI items from graph
+	self.titleColor =  self.graph.titleTextStyle.color.nsColor;
+
+	// set up observing
+	for (NSString *property in [self propertiesToObserve]) {
+		[self addObserver:self
+			   forKeyPath:property
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+	}
+
+}
+
+- (void)createGraph
+{
 	// ===========
 	// Setup graph
 	// ===========
@@ -154,9 +166,6 @@
 	self.graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
 	[graphTitleFrameAnchorPopup selectItemWithTag:CPTRectAnchorTop];
 
-	// TODO fix
-	self.titleColor = textStyle.color.nsColor;
-	
 	// ------------
 	// graph border
 	// ------------
@@ -310,16 +319,6 @@
 	plotSpace.delegate = self;
 	plotSpace.allowsUserInteraction = YES;
 	[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSourceLinePlot]];
-
-#pragma mark set up observers
-	
-	for (NSString *property in [self propertiesToObserve]) {
-		[self addObserver:self
-			   forKeyPath:property
-				  options:NSKeyValueObservingOptionNew
-				  context:nil];
-	}
-	
 }
 
 - (NSArray*)propertiesToObserve
@@ -444,9 +443,9 @@
 	NSString *themeName = themePopup.titleOfSelectedItem;
 	[self.graph applyTheme:[CPTTheme themeNamed:themeName]];
 	
-	// Most themes reset the axis labelling policy, so these need to be reset after changing themes.
-	((CPTXYAxisSet*)self.graph.axisSet).xAxis.labelingPolicy = axisLabelsController.xAxisLabellingPolicyPopup.selectedItem.tag;
-	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = axisLabelsController.yAxisLabellingPolicyPopup.selectedItem.tag;
+	// Most themes reset the axis labeling policy, so these need to be reset after changing themes.
+	((CPTXYAxisSet*)self.graph.axisSet).xAxis.labelingPolicy = axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag;
+	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = axisLabelsController.yAxisLabelingPolicyPopup.selectedItem.tag;
 }
 
 - (IBAction)changeTitleAnchorStyle:(id)sender
