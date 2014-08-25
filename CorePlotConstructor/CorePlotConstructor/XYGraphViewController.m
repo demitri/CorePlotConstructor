@@ -116,6 +116,8 @@
 	
 	// update UI items from graph
 	self.titleColor =  self.graph.titleTextStyle.color.nsColor;
+	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
+	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
 
 	// set up observing
 	for (NSString *property in [self propertiesToObserve]) {
@@ -267,7 +269,7 @@
 	self.yAxis.labelOffset                     = 10.0;
 	self.yAxis.title                           = @"flux";
 	self.yAxis.titleOffset                     = 50.0;
-	self.yAxis.axisConstraints				   = [CPTConstraints constraintWithLowerOffset:0.0];
+	self.yAxis.axisConstraints				   = [CPTConstraints constraintWithLowerOffset:20.0];
 	
 	// set up plot
 	// -----------
