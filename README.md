@@ -1,5 +1,4 @@
 #CorePlotConstructor
----
 
 [Core Plot](https://github.com/core-plot/core-plot) is an open source framework for creating various types of graphs on the Mac and iOS platforms. CorePlotConstructor is a developer tool supporting Core Plot.
 
