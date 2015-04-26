@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CPIInspectorWindowController">
             <connections>
+                <outlet property="graphPaddingController" destination="v95-S2-Ts3" id="Cn2-yl-O2T"/>
                 <outlet property="inspectorTabView" destination="qqf-GD-QlO" id="L6R-FG-g3k"/>
                 <outlet property="plotInspectorController" destination="hW4-ZV-OWe" id="vZx-ju-pyX"/>
             </connections>
@@ -1739,7 +1740,6 @@
         <objectController id="9rg-QF-WsF" userLabel="XYGraph Controller" customClass="CPIXYGraphController">
             <connections>
                 <outlet property="axisLabelsController" destination="X1i-7c-Sdi" id="fom-h0-1bt"/>
-                <outlet property="graphPaddingController" destination="v95-S2-Ts3" id="xcq-au-0es"/>
             </connections>
         </objectController>
         <viewController id="v95-S2-Ts3" customClass="CPIGraphPaddingViewController"/>

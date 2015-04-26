@@ -11,19 +11,13 @@
 #import <Foundation/Foundation.h>
 #import <CorePlot/CorePlot.h>
 #import "CPIGraphController.h"
-#import "XYGraphAxisLabelsViewController.h"
-
-@class XYGraphAxisLabelsViewController;
 
 @interface CPIXYGraphController : CPIGraphController
 
 // self.graph is expected to be of type CPTXYGraph
 
-//@property (nonatomic, weak) CPTXYGraph *graph;
 @property (nonatomic, weak) CPTXYAxis *xAxis;
 @property (nonatomic, weak) CPTXYAxis *yAxis;
-
-@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 
 - (instancetype)initWithGraph:(CPTXYGraph*)graph;
 

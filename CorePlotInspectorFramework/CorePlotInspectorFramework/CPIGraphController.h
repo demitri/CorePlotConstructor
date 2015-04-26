@@ -11,12 +11,13 @@
 #import <Cocoa/Cocoa.h>
 #import "CPIGraphPaddingViewController.h"
 
+@class CPIGraphPaddingViewController;
+
 @interface CPIGraphController : NSObjectController
 
 @property (nonatomic, weak) CPTXYGraph *graph;
-
 @property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
 
-- (void)resetLabelingPolicy;
+- (void)resetLabelingPolicy:(NSArray*)axesPolices;
 
 @end

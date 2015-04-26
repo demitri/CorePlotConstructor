@@ -11,7 +11,7 @@
 
 @implementation CPIGraphController
 
-- (void)resetLabelingPolicy
+- (void)resetLabelingPolicy:(NSArray*)axesPolices
 {
 	DLog(@"NOTE: This is the superclass implementation of 'resetLabelingPolicy' - nothing has been done.");
 }

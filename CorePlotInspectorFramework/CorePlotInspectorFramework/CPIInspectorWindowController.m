@@ -108,6 +108,7 @@
 		return;
 	
 	self.plotInspectorController.graph = self.currentGraphController.graph;
+	self.graphPaddingController.graph = self.currentGraphController.graph;
 }
 
 #pragma mark -
@@ -127,9 +128,16 @@
 	if ([graph isKindOfClass:CPTXYGraph.class]) {
 		
 		CPTXYGraph *xyGraph = (CPTXYGraph*)graph;
+		
 		if (self.xyGraphController == nil)
 			self.xyGraphController = [[CPIXYGraphController alloc] initWithGraph:xyGraph];
 		self.xyGraphController.graph = xyGraph;
+
+		if (self.axisLabelsController == nil)
+			self.axisLabelsController = [[XYGraphAxisLabelsViewController alloc] init];
+		self.axisLabelsController.graph = xyGraph;
+		//self.axisLabelsController.inspector = self;
+		
 		self.currentGraphController = self.xyGraphController;
 		
 	} else {

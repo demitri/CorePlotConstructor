@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
 
-@class CPIGraphViewController;
+@class CPIGraphViewController, CPIInspectorWindowController;
 
 enum {
 	GRAPH_PADDING_TOP = 1,
@@ -24,9 +24,9 @@ enum {
 
 @interface CPIGraphPaddingViewController : NSViewController <NSTextFieldDelegate>
 {
-	
+	BOOL xibInitialized;
 }
 
-@property (weak, nonatomic) IBOutlet CPTGraph *graph;
+@property (nonatomic, weak) IBOutlet CPTGraph *graph;
 
 @end

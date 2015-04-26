@@ -7,31 +7,46 @@
 //
 
 #import "CPIGraphPaddingViewController.h"
+#import "CPIPrivateHeader.h"
 
 @interface CPIGraphPaddingViewController ()
-
+- (void)commonInit;
 @end
 
 @implementation CPIGraphPaddingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
+	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
+	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+
+	self = [super initWithNibName:nibNameOrNil bundle:frameworkBundle];
     if (self) {
         // Initialization code here.
     }
     return self;
 }
 
-/*
-- (CPTGraph*)graph
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-	return mc.graph;
+	self = [super initWithCoder:coder];
+	if (self) {
+		[self commonInit];
+	}
+	return self;
 }
-*/
+
+- (void)commonInit
+{
+	xibInitialized = NO;
+}
 
 - (void)awakeFromNib
 {
+	if (xibInitialized)
+		return;
+	
 #pragma mark set up observers
 
 	for (NSString *property in @[@"graphPaddingTop", @"graphPaddingLeft", @"graphPaddingRight", @"graphPaddingBottom"]) {

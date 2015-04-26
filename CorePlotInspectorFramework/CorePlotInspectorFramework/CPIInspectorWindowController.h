@@ -14,11 +14,14 @@
 #import "CPIGraphController.h"
 #import "CPIXYGraphController.h"
 #import "CPIPlotInspectorViewController.h"
+#import "CPIGraphPaddingViewController.h"
+#import "XYGraphAxisLabelsViewController.h"
 
 #define kScatterPlot @"scatter plot"
 #define kInitialFont @"Helvetica"
 
-@class CPIPlotInspectorViewController;
+@class CPIPlotInspectorViewController, CPIGraphPaddingViewController;
+@class CPIGraphController, XYGraphAxisLabelsViewController;
 
 // access the CPTGraph being inspected via self.currentGraphController.graph
 
@@ -46,10 +49,12 @@ enum {
 
 // Controllers applicable to all graphs
 @property (nonatomic, strong) IBOutlet CPIPlotInspectorViewController *plotInspectorController;
+@property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
 
 // Graph-specific controllers
 @property (nonatomic, weak) CPIGraphController *currentGraphController;
 @property (nonatomic, strong) CPIXYGraphController *xyGraphController;
+@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 
 //@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 //@property (nonatomic, strong) IBOutlet XYGraphPaddingViewController *graphPaddingController;

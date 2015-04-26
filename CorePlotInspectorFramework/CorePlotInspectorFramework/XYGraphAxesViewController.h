@@ -49,6 +49,7 @@ enum {
 @property (nonatomic, weak) CPIXYGraphController *graphController;
 
 //@property (weak, nonatomic, readonly) CPTXYGraph *graph;
+@property (nonatomic, weak) IBOutlet CPIInspectorWindowController *inspector;
 @property (strong, nonatomic) NSPopover *lineStylePopover;
 @property (strong, nonatomic) CPILineStyleViewController *lineStyleViewController;
 @property (nonatomic, weak, readonly) CPTXYAxis *xAxis;

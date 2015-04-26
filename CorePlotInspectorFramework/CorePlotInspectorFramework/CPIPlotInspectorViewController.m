@@ -20,6 +20,7 @@
 	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
 	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
 	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+	
 	self = [super initWithNibName:nibNameOrNil bundle:frameworkBundle];
 	if (self) {
 		[self commonInit];
@@ -92,7 +93,10 @@
 	[self.graph applyTheme:[CPTTheme themeNamed:themeName]];
 	
 	// Most themes reset the axis labeling policy, so these need to be reset after changing themes.
-	[self.inspector.currentGraphController resetLabelingPolicy];
+	// Send an array of tag values, one for each index. This isn't the cleanest method,
+	// but am striving for encapsulation.
+	[self.inspector.currentGraphController resetLabelingPolicy:@[[NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag],
+																 [NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag]]];
 }
 
 - (IBAction)changeTitleAnchorStyle:(id)sender

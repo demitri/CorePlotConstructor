@@ -9,7 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
 #import "CPITextStyleViewController.h"
-#import "CPIXYGraphController.h"
+//#import "CPIXYGraphController.h"
+//#import "CPIInspectorWindowController.h"
+
+//@class CPIInspectorWindowController;
 
 // text fields
 enum AXIS_LABELS_VIEW_TEXT_FIELDS {
@@ -28,7 +31,7 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 	EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y
 };
 
-@class XYGraphViewController, CPIXYGraphController;
+@class /*XYGraphViewController,*/ CPIXYGraphController;
 
 @interface XYGraphAxisLabelsViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
@@ -38,6 +41,13 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 	IBOutlet NSPopUpButton *minorTickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirYPopupButton;
 }
+
+@property (nonatomic, weak) CPTXYGraph *graph;
+//@property (nonatomic, weak) IBOutlet CPIInspectorWindowController *inspector;
+
+// convenience properties
+@property (nonatomic, readonly) CPTXYAxis *xAxis;
+@property (nonatomic, readonly) CPTXYAxis *yAxis;
 
 @property (nonatomic, weak) CPIXYGraphController *xyGraphController;
 @property (nonatomic, strong) NSPopover *textStylePopover;

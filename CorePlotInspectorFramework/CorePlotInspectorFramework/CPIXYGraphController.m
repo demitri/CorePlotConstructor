@@ -7,6 +7,7 @@
 //
 
 #import "CPIXYGraphController.h"
+#import "XYGraphAxisLabelsViewController.h"
 
 @implementation CPIXYGraphController
 
@@ -64,10 +65,17 @@
 	}
 }
 
-- (void)resetLabelingPolicy
+- (void)resetLabelingPolicy:(NSArray*)axesPolices
 {
-	self.xAxis.labelingPolicy = self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag;
-	self.yAxis.labelingPolicy = self.axisLabelsController.yAxisLabelingPolicyPopup.selectedItem.tag;
+
+	self.xAxis.labelingPolicy = [axesPolices[0] intValue];
+	self.yAxis.labelingPolicy = [axesPolices[1] intValue];
+
+//	self.xAxis.labelingPolicy = self.inspector.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag;
+//	self.yAxis.labelingPolicy = self.inspector.axisLabelsController.yAxisLabelingPolicyPopup.selectedItem.tag;
+	
+//	self.xAxis.labelingPolicy = self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag;
+//	self.yAxis.labelingPolicy = self.axisLabelsController.yAxisLabelingPolicyPopup.selectedItem.tag;
 
 }
 

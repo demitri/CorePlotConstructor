@@ -39,10 +39,6 @@
 
 }
 
-- (void)dealloc
-{
-}
-
 - (CPTGraph*)graph
 {
 	return self.graphController.graph;

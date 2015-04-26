@@ -11,7 +11,7 @@
 #import "XYGraphAxisLabelsViewController.h"
 #import "CPIInspectorWindowController.h"
 
-@class CPIInspectorWindowController;
+@class CPIInspectorWindowController, XYGraphAxisLabelsViewController;
 
 @interface CPIPlotInspectorViewController : NSViewController
 {
