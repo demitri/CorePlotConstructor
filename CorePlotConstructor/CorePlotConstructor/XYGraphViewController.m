@@ -7,17 +7,14 @@
 //
 
 #import "XYGraphViewController.h"
-#import "ContinuousBindingFixNumberFormatter.h"
-
-#define kScatterPlot @"scatter plot"
-#define kInitialFont @"Helvetica"
+//#import "ContinuousBindingFixNumberFormatter.h"
+#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
 
 #pragma mark -
 
 @interface XYGraphViewController ()
 
 - (void)initialize;
-- (NSArray*)propertiesToObserve;
 
 @end
 
@@ -43,20 +40,6 @@
 
 - (void)initialize
 {
-	self.lineStyleViewController = nil;
-	
-	// create the text style popover
-	self.textStylePopover = [[NSPopover alloc] init];
-	self.textStylePopover.behavior = NSPopoverBehaviorTransient;
-	self.textStylePopover.delegate = self;
-	
-	self.textStyleViewController = [[CorePlotTextStyleViewController alloc] init];
-	self.textStylePopover.contentViewController = self.textStyleViewController;
-		
-	[self.textStyleViewController addObserver:self
-								   forKeyPath:@"currentTextStyle"
-									  options:NSKeyValueObservingOptionNew
-									  context:nil];
 	
 }
 
@@ -80,52 +63,21 @@
 	for (unsigned int i=0; i < [self.yData count]; i++) {
 		[self.xyData addObject:@{[self.yData objectAtIndex:i]: @"y", [self.xData objectAtIndex:i] : @"x"}];
 	}
-	
-	// ===============
-	// Setup inspector
-	// ===============
-#pragma mark setup inspector
-	[themePopup removeAllItems];
-    for ( Class c in [CPTTheme themeClasses] )
-        [themePopup addItemWithTitle:[c name]];
-	[themePopup selectItemWithTitle:kCPTPlainWhiteTheme];
-	
-	
-	// set up frame anchor popup
-	[graphTitleFrameAnchorPopup removeAllItems];
-	NSArray *anchorArray = @[@"CPTRectAnchorTop", @"CPTRectAnchorTopLeft", @"CPTRectAnchorTopRight",
-							 @"CPTRectAnchorBottom", @"CPTRectAnchorBottomLeft", @"CPTRectAnchorBottomRight",
-							 @"CPTRectAnchorLeft", @"CPTRectAnchorRight", @"CPTRectAnchorCenter"];
-	[graphTitleFrameAnchorPopup addItemsWithTitles:anchorArray];
-	
-#pragma mark setup title anchor policy
-	// set the tag value to the policy (both integers)
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTop"].tag = CPTRectAnchorTop;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTopLeft"].tag = CPTRectAnchorTopLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTopRight"].tag = CPTRectAnchorTopRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottom"].tag = CPTRectAnchorBottom;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottomLeft"].tag = CPTRectAnchorBottomLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottomRight"].tag = CPTRectAnchorBottomRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorLeft"].tag = CPTRectAnchorLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorRight"].tag = CPTRectAnchorRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorCenter"].tag = CPTRectAnchorCenter;
 
 	[self createGraph];
 	
 	self.plot = [[self.graph allPlots] objectAtIndex:0];
 	
-	// update UI items from graph
-	self.titleColor =  self.graph.titleTextStyle.color.nsColor;
-	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
-	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
+	// load and initialize inspector
+	self.inspectorWindowController = [[CPIInspectorWindowController alloc] initWithGraph:self.graph];
+	[self.inspectorWindowController.window makeKeyAndOrderFront:nil];
 
-	// set up observing
-	for (NSString *property in [self propertiesToObserve]) {
-		[self addObserver:self
-			   forKeyPath:property
-				  options:NSKeyValueObservingOptionNew
-				  context:nil];
-	}
+	// update UI items from graph
+	// TODO
+//	self.titleColor =  self.graph.titleTextStyle.color.nsColor;
+//	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
+//	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
+
 
 }
 
@@ -162,13 +114,13 @@
 	self.graph.title = @"CPTXYGraph Plot Title";
 	CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
 	textStyle.color = [CPTColor grayColor];
-	textStyle.fontName = kInitialFont; // @"Helvetica-Bold";
+	textStyle.fontName = @"Helvetica-Bold"; //kInitialFont; // @"Helvetica-Bold";
 	textStyle.fontSize = 18.0;
 	self.graph.titleTextStyle = textStyle;
 	//	graph.titleDisplacement = CGPoint{0.0, 10.0};
 	self.graph.titleDisplacement = (CGPoint){ 0.0f, round(bounds.size.height / (CGFloat)18.0) }; // Ensure that title displacement falls on an integral pixel
 	self.graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
-	[graphTitleFrameAnchorPopup selectItemWithTag:CPTRectAnchorTop];
+	// TODO: check this works : [graphTitleFrameAnchorPopup selectItemWithTag:CPTRectAnchorTop];
 
 	// ------------
 	// graph border
@@ -329,22 +281,6 @@
 	[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSourceLinePlot]];
 }
 
-- (NSArray*)propertiesToObserve
-{
-	return @[@"graphTitleDisplacementX", @"graphTitleDisplacementY",
-			 @"titleColor", @"dataColor",
-			 @"borderLineWidth", @"borderLineColor"];
-}
-
-- (void)dealloc
-{
-	for (NSString *property in [self propertiesToObserve])
-		[self removeObserver:self forKeyPath:property];
-
-	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
-	[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
-}
-
 - (NSNumber*)minYValue
 {
 	//	return [self.wavelengths valueForKeyPath:@"@min.x"];
@@ -391,197 +327,6 @@
 
 #pragma mark -
 
-- (IBAction)editLineStyle:(id)sender
-{
-	self.lineStyleBeingEdited = [sender tag];
-	
-	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-
-	CPTLineStyle *lineStyleToEdit = nil;
-	switch (self.lineStyleBeingEdited) {
-		case EDIT_LINE_STYLE_GRAPH_BORDER:
-			lineStyleToEdit = self.graph.plotAreaFrame.borderLineStyle;
-			break;
-		case EDIT_LINE_STYLE_DATA:
-			lineStyleToEdit = plot.dataLineStyle;
-			break;
-	}
-
-	// create the popover
-	self.lineStylePopover = [[NSPopover alloc] init];
-	
-	if (self.lineStyleViewController == nil) {
-		self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
-	} else {
-		// don't want messages while it's being set up
-		[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
-	}
-	
-	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
-	
-	self.lineStylePopover.contentViewController = self.lineStyleViewController;
-	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
-	self.lineStylePopover.delegate = self;
-	
-	[self.lineStyleViewController addObserver:self
-								   forKeyPath:@"currentLineStyle"
-									  options:NSKeyValueObservingOptionNew
-									  context:nil];
-
-	NSButton *targetButton = (NSButton *)sender;
-	[self.lineStylePopover showRelativeToRect:targetButton.bounds
-									   ofView:sender
-								preferredEdge:NSMinYEdge]; // display on top of button
-}
-
-- (IBAction)editTextStyle:(id)sender
-{
-	CPTTextStyle *textStyleToEdit = self.graph.titleTextStyle;
-	NSAssert(textStyleToEdit != nil, @"need to create a default text style");
-	
-	[self.textStyleViewController updateWithTextStyle:textStyleToEdit];
-	
-	[self.textStylePopover showRelativeToRect:((NSButton*)sender).bounds
-									   ofView:sender
-								preferredEdge:NSMinYEdge];
-}
-
-- (IBAction)changeTheme:(id)sender
-{
-	NSString *themeName = themePopup.titleOfSelectedItem;
-	[self.graph applyTheme:[CPTTheme themeNamed:themeName]];
-	
-	// Most themes reset the axis labeling policy, so these need to be reset after changing themes.
-	((CPTXYAxisSet*)self.graph.axisSet).xAxis.labelingPolicy = axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag;
-	((CPTXYAxisSet*)self.graph.axisSet).yAxis.labelingPolicy = axisLabelsController.yAxisLabelingPolicyPopup.selectedItem.tag;
-}
-
-- (IBAction)changeTitleAnchorStyle:(id)sender
-{
-	self.graph.titlePlotAreaFrameAnchor = [(NSPopUpButton*)sender selectedItem].tag;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	//DLog(@"%@", change);
-
-	if (object == self) {
-	
-		if ([keyPath isEqualToString:@"graphTitleDisplacementX"]) {
-			CGFloat y = self.graph.titleDisplacement.y; // current value
-			self.graph.titleDisplacement = (CGPoint){ self.graphTitleDisplacementX, y };
-		
-		} else if ([keyPath isEqualToString:@"graphTitleDisplacementY"]) {
-			CGFloat x = self.graph.titleDisplacement.x; // current value
-			self.graph.titleDisplacement = (CGPoint){ x, self.graphTitleDisplacementY };
-
-		} else {
-			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
-		}
-		
-	} else if (object == self.graph) {
-		
-		if ([keyPath isEqualToString:@"titleDisplacement"]) {
-			self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
-			self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
-		}
-
-	} else if (object == self.lineStyleViewController) {
-		if ([keyPath isEqualToString:@"currentLineStyle"]) {
-			
-			CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-			
-			switch (self.lineStyleBeingEdited) {
-				case EDIT_LINE_STYLE_GRAPH_BORDER:
-					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
-					break;
-				case EDIT_LINE_STYLE_DATA:
-					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
-					break;
-				default:
-					break;
-			}
-		} else {
-			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
-		}
-		
-	} else if (object == self.textStyleViewController) {
-
-		if ([keyPath isEqualToString:@"currentTextStyle"])
-			self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
-		
-	} else
-		DLog(@"Uncaught object: %@", object);
-}
-
-#pragma mark -
-#pragma mark NSPopover delegate methods
-
-- (void)popoverDidClose:(NSNotification *)notification
-{
-	NSPopover *popover = notification.object;
-	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-	
-	if (popover == self.lineStylePopover) {
-		
-		CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
-		
-		switch (self.lineStyleBeingEdited) {
-			case EDIT_LINE_STYLE_GRAPH_BORDER:
-				self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
-				break;
-			case EDIT_LINE_STYLE_DATA:
-				plot.dataLineStyle = newLineStyle;
-				break;
-			default:
-				break;
-		}
-		self.lineStylePopover = nil;
-	
-	} else if (popover == self.textStylePopover) {
-		
-		self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
-	}
-}
-
-#pragma mark -
-#pragma mark NSTextViewDelegate methods
-
-- (void)controlTextDidEndEditing:(NSNotification *)notification
-{
-	//DLog(@"%@", notification);
-}
-
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
-{
-	if (command == @selector(moveUp:) || command == @selector(moveDown:)) {
-		
-		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-		NSNumber *number = [formatter numberFromString:textView.string];
-		if (number == nil)
-			return NO; // not a number
-		
-		CGFloat delta = command == @selector(moveUp:) ? +1. : -1.;
-		
-		switch (control.tag) {
-
-			case GRAPH_TITLE_DISPLACEMENT_X:
-				self.graphTitleDisplacementX = [[NSNumber numberWithFloat:[number floatValue] + delta] floatValue];
-				return YES;
-				break;
-				
-			case GRAPH_TITLE_DISPLACEMENT_Y:
-				self.graphTitleDisplacementY = [[NSNumber numberWithFloat:[number floatValue] + delta] floatValue];
-				return YES;
-				break;
-
-		}
-		
-		return NO;
-	}
-	
-	return NO;
-}
 
 
 @end

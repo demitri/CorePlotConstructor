@@ -7,6 +7,7 @@
 //
 
 #import "CPCDashPatternValueTransformer.h"
+#import "CPIPrivateHeader.h"
 
 @implementation CPCDashPatternValueTransformer
 

@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
 #import <Quartz/Quartz.h>
+#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+#import "XYGraphViewController.h"
 
 enum {
 	PLOT_INSPECTOR_PANEL = 1,
@@ -17,11 +19,16 @@ enum {
 };
 
 @interface MainWindowController : NSWindowController
-{
-	IBOutlet NSSplitView *splitView;
-	IBOutlet NSTabView *inspectorTabView;
-}
 
-- (IBAction)inspectorPopupAction:(id)sender;
+@property (nonatomic, strong) IBOutlet XYGraphViewController *xyGraphViewController;
+
+// Data containers
+@property (strong, nonatomic) NSMutableArray *xData;
+@property (strong, nonatomic) NSMutableArray *yData;
+@property (strong, nonatomic) NSMutableArray *xyData;
+
+//- (IBAction)inspectorPopupAction:(id)sender;
+- (IBAction)exportPlotDescription:(id)sender;
+- (IBAction)openPlotDescription:(id)sender;
 
 @end

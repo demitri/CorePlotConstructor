@@ -1,18 +1,18 @@
 //
-//  XYGraphPaddingViewController.m
+//  CPIGraphPaddingViewController.m
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/17/14.
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
-#import "XYGraphPaddingViewController.h"
+#import "CPIGraphPaddingViewController.h"
 
-@interface XYGraphPaddingViewController ()
+@interface CPIGraphPaddingViewController ()
 
 @end
 
-@implementation XYGraphPaddingViewController
+@implementation CPIGraphPaddingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +23,12 @@
     return self;
 }
 
+/*
 - (CPTGraph*)graph
 {
 	return mc.graph;
 }
+*/
 
 - (void)awakeFromNib
 {

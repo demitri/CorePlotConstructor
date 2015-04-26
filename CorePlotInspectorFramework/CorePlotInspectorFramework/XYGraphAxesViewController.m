@@ -45,9 +45,9 @@
 
 - (CPTGraph*)graph
 {
-	return mc.graph;
+	return self.graphController.graph;
 }
-
+/*
 - (CPTXYAxis*)xAxis
 {
 	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
@@ -59,7 +59,7 @@
 	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
 	return axisSet.yAxis;
 }
-
+*/
 - (NSNumber*)zeroValue { return @0; }
 
 - (IBAction)editLineStyle:(id)sender
@@ -75,41 +75,41 @@
 	CPTLineStyle *lineStyleToEdit = nil;
 	switch (self.lineStyleBeingEdited) {
 		case EDIT_LINE_STYLE_X_AXIS:
-			lineStyleToEdit = mc.xAxis.axisLineStyle;
+			lineStyleToEdit = self.graphController.xAxis.axisLineStyle;
 			break;
 		case EDIT_LINE_STYLE_Y_AXIS:
-			lineStyleToEdit = mc.yAxis.axisLineStyle;
+			lineStyleToEdit = self.graphController.yAxis.axisLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_GRID_X:
-			lineStyleToEdit = mc.xAxis.majorGridLineStyle;
+			lineStyleToEdit = self.graphController.xAxis.majorGridLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_GRID_Y:
-			lineStyleToEdit = mc.yAxis.majorGridLineStyle;
+			lineStyleToEdit = self.graphController.yAxis.majorGridLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_GRID_X:
-			lineStyleToEdit = mc.xAxis.minorGridLineStyle;
+			lineStyleToEdit = self.graphController.xAxis.minorGridLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_GRID_Y:
-			lineStyleToEdit = mc.yAxis.minorGridLineStyle;
+			lineStyleToEdit = self.graphController.yAxis.minorGridLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_TICK_X:
-			lineStyleToEdit = mc.xAxis.majorTickLineStyle;
+			lineStyleToEdit = self.graphController.xAxis.majorTickLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_TICK_Y:
-			lineStyleToEdit = mc.yAxis.majorTickLineStyle;
+			lineStyleToEdit = self.graphController.yAxis.majorTickLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_TICK_X:
-			lineStyleToEdit = mc.xAxis.minorTickLineStyle;
+			lineStyleToEdit = self.graphController.xAxis.minorTickLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_TICK_Y:
-			lineStyleToEdit = mc.yAxis.minorTickLineStyle;
+			lineStyleToEdit = self.graphController.yAxis.minorTickLineStyle;
 			break;
 	}
 	
 	// create the popover
 	self.lineStylePopover = [[NSPopover alloc] init];
 	
-	self.lineStyleViewController = [[CorePlotLineStyleViewController alloc] init];
+	self.lineStyleViewController = [[CPILineStyleViewController alloc] init];
 	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
 	
 	self.lineStylePopover.contentViewController = self.lineStyleViewController;
@@ -137,34 +137,34 @@
 	
 	switch (self.lineStyleBeingEdited) {
 		case EDIT_LINE_STYLE_X_AXIS:
-			mc.xAxis.axisLineStyle = newLineStyle;
+			self.graphController.xAxis.axisLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_Y_AXIS:
-			mc.yAxis.axisLineStyle = newLineStyle;
+			self.graphController.yAxis.axisLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_GRID_X:
-			mc.xAxis.majorGridLineStyle = newLineStyle;
+			self.graphController.xAxis.majorGridLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_GRID_Y:
-			mc.yAxis.majorGridLineStyle = newLineStyle;
+			self.graphController.yAxis.majorGridLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_GRID_X:
-			mc.xAxis.minorGridLineStyle = newLineStyle;
+			self.graphController.xAxis.minorGridLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_GRID_Y:
-			mc.xAxis.minorGridLineStyle = newLineStyle;
+			self.graphController.xAxis.minorGridLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_TICK_X:
-			mc.xAxis.majorTickLineStyle = newLineStyle;
+			self.graphController.xAxis.majorTickLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MAJOR_TICK_Y:
-			mc.yAxis.majorTickLineStyle = newLineStyle;
+			self.graphController.yAxis.majorTickLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_TICK_X:
-			mc.xAxis.minorTickLineStyle = newLineStyle;
+			self.graphController.xAxis.minorTickLineStyle = newLineStyle;
 			break;
 		case EDIT_LINE_STYLE_MINOR_TICK_Y:
-			mc.yAxis.minorTickLineStyle = newLineStyle;
+			self.graphController.yAxis.minorTickLineStyle = newLineStyle;
 			break;
 	}
 	
@@ -182,34 +182,34 @@
 		if ([keyPath isEqualToString:@"currentLineStyle"]) {
 			switch (self.lineStyleBeingEdited) {
 				case EDIT_LINE_STYLE_X_AXIS:
-					mc.xAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;
+					self.graphController.xAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;
 					break;
 				case EDIT_LINE_STYLE_Y_AXIS:
-					mc.yAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.yAxis.axisLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MAJOR_GRID_X:
-					mc.xAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.xAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MAJOR_GRID_Y:
-					mc.yAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.yAxis.majorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MINOR_GRID_X:
-					mc.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MINOR_GRID_Y:
-					mc.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MAJOR_TICK_X:
-					mc.xAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.xAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MAJOR_TICK_Y:
-					mc.yAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.yAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MINOR_TICK_X:
-					mc.xAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.xAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MINOR_TICK_Y:
-					mc.yAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.graphController.yAxis.minorTickLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 			}
 

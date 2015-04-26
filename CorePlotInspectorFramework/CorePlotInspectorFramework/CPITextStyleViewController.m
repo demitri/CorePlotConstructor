@@ -1,37 +1,40 @@
 //
-//  CorePlotTextStyleViewController.m
+//  CPITextStyleViewController.m
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/23/14.
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
-#import "CorePlotTextStyleViewController.h"
+#import "CPITextStyleViewController.h"
+#import "CPIPrivateHeader.h"
 
 #define kInitialFont @"Helvetica"
 
-@interface CorePlotTextStyleViewController ()
+@interface CPITextStyleViewController ()
 @property (nonatomic, strong, readwrite) CPTTextStyle *currentTextStyle;
 - (NSArray*)propertiesToObserve;
 - (CPTTextStyle*)textStyleFromCurrentView;
 @end
 
-@implementation CorePlotTextStyleViewController
+@implementation CPITextStyleViewController
 
-/* Designated initializer */
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-	NSString *nibName = @"CorePlotTextStyleView";
-	self = [super initWithNibName:nibName bundle:nil];
+//	NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"" withExtension:@"bundle"]];
+	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
+	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
+	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+	self = [super initWithNibName:@"CPITextStyleView" bundle:frameworkBundle];
 	if (self) {
 		self.textColor = [NSColor blackColor]; // can't be nil when nib loads
 	}
 	return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    return [self init];
+    return [self initWithNibName:nil bundle:nil];
 }
 
 - (void)awakeFromNib
@@ -45,10 +48,10 @@
 	[textAlignmentPopupButton removeAllItems];
 	[textAlignmentPopupButton addItemsWithTitles:@[@"Left", @"Center", @"Right", @"Justified", @"Natural"]];
 	[textAlignmentPopupButton itemWithTitle:@"Left"].tag = CPTTextAlignmentLeft;
-	[textAlignmentPopupButton itemWithTitle:@"Center"].tag = CPTTextAlignmentLeft;
-	[textAlignmentPopupButton itemWithTitle:@"Right"].tag = CPTTextAlignmentLeft;
-	[textAlignmentPopupButton itemWithTitle:@"Justified"].tag = CPTTextAlignmentLeft;
-	[textAlignmentPopupButton itemWithTitle:@"Natural"].tag = CPTTextAlignmentLeft;
+	[textAlignmentPopupButton itemWithTitle:@"Center"].tag = CPTTextAlignmentCenter;
+	[textAlignmentPopupButton itemWithTitle:@"Right"].tag = CPTTextAlignmentRight;
+	[textAlignmentPopupButton itemWithTitle:@"Justified"].tag = CPTTextAlignmentJustified;
+	[textAlignmentPopupButton itemWithTitle:@"Natural"].tag = CPTTextAlignmentNatural;
 	
 	// set up line break mode popup
 	[lineBreakModePopupButton removeAllItems];

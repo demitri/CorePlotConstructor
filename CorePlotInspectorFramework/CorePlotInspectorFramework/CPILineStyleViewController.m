@@ -1,13 +1,15 @@
 //
-//  CorePlotLineStyleViewController.m
+//  CPILineStyleViewController.m
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/17/14.
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
-#import "CorePlotLineStyleViewController.h"
-#import "IntegerSpaceFormatter.h"
+#import "CPILineStyleViewController.h"
+//#import "IntegerSpaceFormatter.h"
+#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+#import "CPIPrivateHeader.h"
 
 @interface CPCDashPattern ()
 @end
@@ -49,7 +51,7 @@
 
 #pragma mark -
 
-@interface CorePlotLineStyleViewController ()
+@interface CPILineStyleViewController ()
 
 @property (nonatomic, strong, readwrite) CPTLineStyle *currentLineStyle;
 
@@ -58,25 +60,29 @@
 
 @end
 
-@implementation CorePlotLineStyleViewController
+#pragma mark -
+
+@implementation CPILineStyleViewController
 
 /* Designated initializer */
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-	NSString *nibName = @"CorePlotLineStyleViewController";
-	NSBundle *bundle = nil;
-	self = [super initWithNibName:nibName bundle:bundle];
-    if (self) {
-        self.lineColor = [NSColor blackColor]; // can't be nil when nib loads
-    }
-    return self;
+	//	NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"" withExtension:@"bundle"]];
+	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
+	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
+	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+	
+	self = [super initWithNibName:@"CPILineStyleView" bundle:frameworkBundle];
+	if (self) {
+		self.lineColor = [NSColor blackColor]; // can't be nil when nib loads
+	}
+	return self;
 }
 
 // -------------------------------------------------------------------
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-	// Disregard parameters - nib name is an implementation detail
-	return [self init];
+	return [self initWithNibName:nil bundle:nil];
 }
 
 // -------------------------------------------------------------------
@@ -190,6 +196,47 @@
 		self.currentLineStyle = [self lineStyleFromCurrentView];
 }
 
+#pragma mark -
+#pragma mark Property validation methods
+
+- (BOOL)validateLineWidth:(id *)ioValue error:(NSError * __autoreleasing *)returnedError
+{
+	// if the field becomes nil (value deleted), program will immediately crash
+
+	if (*ioValue == nil || ![*ioValue isKindOfClass:NSNumber.class])
+		*ioValue = [NSNumber numberWithFloat:0.0f];
+	else if ([*ioValue isKindOfClass:NSNumber.class]) {
+		if ([*ioValue floatValue] < 0)
+			*ioValue = [NSNumber numberWithFloat:0.0f];
+	}
+	return YES;
+}
+
+- (BOOL)validatePatternPhase:(id *)ioValue error:(NSError * __autoreleasing *)returnedError
+{
+	// if the field becomes nil (value deleted), program will immediately crash
+	
+	if (*ioValue == nil || ![*ioValue isKindOfClass:NSNumber.class])
+		*ioValue = [NSNumber numberWithFloat:0.0f];
+	else if ([*ioValue isKindOfClass:NSNumber.class]) {
+		if ([*ioValue floatValue] < 0)
+			*ioValue = [NSNumber numberWithFloat:0.0f];
+	}
+	return YES;
+}
+
+- (BOOL)validateMiterLimit:(id *)ioValue error:(NSError * __autoreleasing *)returnedError
+{
+	// if the field becomes nil (value deleted), program will immediately crash
+	
+	if (*ioValue == nil || ![*ioValue isKindOfClass:NSNumber.class])
+		*ioValue = [NSNumber numberWithFloat:0.0f];
+	else if ([*ioValue isKindOfClass:NSNumber.class]) {
+		if ([*ioValue floatValue] < 0)
+			*ioValue = [NSNumber numberWithFloat:0.0f];
+	}
+	return YES;
+}
 
 #pragma mark -
 #pragma mark NSTextViewDelegate methods
@@ -212,7 +259,7 @@
 				
 			case TEXT_FIELD_LINE_WIDTH:
 				// min value = 0
-				if ((self.lineWidth += delta) < 0)
+				if ((self.lineWidth + delta) < 0)
 					self.lineWidth = 0;
 				else
 					self.lineWidth += delta;

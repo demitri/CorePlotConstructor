@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CPCDashPatternValueTransformer.h"
+//#import "CPCDashPatternValueTransformer.h"
 
 @implementation AppDelegate
 
@@ -15,7 +15,7 @@
 {
 	[NSNumberFormatter setDefaultFormatterBehavior:NSNumberFormatterBehavior10_4];
 	[[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
-
+/*
 	// register value transformers
 	CPCDashPatternValueTransformer *dashPatternValueTransformer = [[CPCDashPatternValueTransformer alloc] init];
 	[CPCDashPatternValueTransformer setValueTransformer:dashPatternValueTransformer
@@ -27,6 +27,7 @@
 	decimalNF.usesSignificantDigits = YES;
 	decimalNF.maximumSignificantDigits = 1;
 	_decimalNumberFormatter = decimalNF;
-}
+*/
+ }
 
 @end

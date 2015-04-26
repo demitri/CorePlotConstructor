@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CorePlotLineStyleViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="CPILineStyleViewController">
             <connections>
                 <outlet property="dashPatternTextField" destination="U3B-E5-gX0" id="Bbj-Za-wRN"/>
                 <outlet property="lineCapPopupButton" destination="t6t-Hc-wLf" id="zBU-lh-oPN"/>
@@ -13,7 +13,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Q47-fc-ZzH">
             <rect key="frame" x="0.0" y="0.0" width="302" height="165"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -31,9 +31,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="lineWidth" id="4VR-q2-qpd">
+                        <binding destination="-2" name="value" keyPath="lineWidth" id="nNp-1Y-Qof">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                         <outlet property="delegate" destination="-2" id="ab6-hj-GSe"/>
@@ -105,9 +106,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="miterLimit" id="7Ol-Sy-APO">
+                        <binding destination="-2" name="value" keyPath="miterLimit" id="mtP-Yg-uPJ">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                         <outlet property="delegate" destination="-2" id="uRd-nl-zIN"/>
@@ -144,9 +146,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="patternPhase" id="Bbv-rY-DVV">
+                        <binding destination="-2" name="value" keyPath="patternPhase" id="FpK-Rr-QCa">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                         <outlet property="delegate" destination="-2" id="hVK-5k-Lep"/>

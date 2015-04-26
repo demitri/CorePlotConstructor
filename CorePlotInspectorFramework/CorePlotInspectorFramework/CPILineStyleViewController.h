@@ -1,5 +1,5 @@
 //
-//  CorePlotLineStyleViewController.h
+//  CPILineStyleViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/17/14.
@@ -33,7 +33,7 @@ enum {
 
 #pragma mark -
 
-@interface CorePlotLineStyleViewController : NSViewController
+@interface CPILineStyleViewController : NSViewController
 {
 	IBOutlet NSPopUpButton *lineCapPopupButton;
 	IBOutlet NSPopUpButton *lineJoinPopupButton;

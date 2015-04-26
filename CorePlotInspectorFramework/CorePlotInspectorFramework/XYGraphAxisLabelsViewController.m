@@ -7,6 +7,7 @@
 //
 
 #import "XYGraphAxisLabelsViewController.h"
+#import "CPIPrivateHeader.h"
 
 @interface XYGraphAxisLabelsViewController ()
 - (void)initialize;
@@ -32,7 +33,7 @@
 
 - (void)initialize
 {
-	self.textStyleViewController = [[CorePlotTextStyleViewController alloc] init];
+	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
 
 	// set up text style popover inspector
 	self.textStylePopover = [[NSPopover alloc] init];
@@ -89,9 +90,9 @@
 {
 	NSPopUpButton *popup = sender;
 	if (popup == self.xAxisLabelingPolicyPopup)
-		mc.xAxis.labelingPolicy = popup.selectedItem.tag;
+		self.xyGraphController.xAxis.labelingPolicy = popup.selectedItem.tag;
 	else
-		mc.yAxis.labelingPolicy = popup.selectedItem.tag;
+		self.xyGraphController.yAxis.labelingPolicy = popup.selectedItem.tag;
 	//[self.graph reloadData];
 }
 
@@ -102,22 +103,22 @@
 	CPTTextStyle *textStyleToEdit = nil;
 	switch (self.textStyleBeingEdited) {
 		case EDIT_TEXT_STYLE_LABEL_X:
-			textStyleToEdit = mc.xAxis.labelTextStyle;
+			textStyleToEdit = self.xyGraphController.xAxis.labelTextStyle;
 			break;
 		case EDIT_TEXT_STYLE_LABEL_Y:
-			textStyleToEdit = mc.yAxis.labelTextStyle;
+			textStyleToEdit = self.xyGraphController.yAxis.labelTextStyle;
 			break;
 		case EDIT_TEXT_STYLE_AXIS_TITLE_X:
-			textStyleToEdit = mc.xAxis.titleTextStyle;
+			textStyleToEdit = self.xyGraphController.xAxis.titleTextStyle;
 			break;
 		case EDIT_TEXT_STYLE_AXIS_TITLE_Y:
-			textStyleToEdit = mc.yAxis.titleTextStyle;
+			textStyleToEdit = self.xyGraphController.yAxis.titleTextStyle;
 			break;
 		case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_X:
-			textStyleToEdit = mc.xAxis.minorTickLabelTextStyle;
+			textStyleToEdit = self.xyGraphController.xAxis.minorTickLabelTextStyle;
 			break;
 		case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y:
-			textStyleToEdit = mc.yAxis.minorTickLabelTextStyle;
+			textStyleToEdit = self.xyGraphController.yAxis.minorTickLabelTextStyle;
 			break;
 	}
 	NSAssert(textStyleToEdit != nil, @"need to create a default text style?");
@@ -138,22 +139,22 @@
 						
 			switch (self.textStyleBeingEdited) {
 				case EDIT_TEXT_STYLE_LABEL_X:
-					mc.xAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.xAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 				case EDIT_TEXT_STYLE_LABEL_Y:
-					mc.yAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.yAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 				case EDIT_TEXT_STYLE_AXIS_TITLE_X:
-					mc.xAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.xAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 				case EDIT_TEXT_STYLE_AXIS_TITLE_Y:
-					mc.yAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.yAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 				case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_X:
-					mc.xAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.xAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 				case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y:
-					mc.yAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
+					self.xyGraphController.yAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
 					break;
 			}
 		} else {
@@ -175,22 +176,22 @@
 		
 		switch (self.textStyleBeingEdited) {
 			case EDIT_TEXT_STYLE_LABEL_X:
-				mc.xAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.xAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 			case EDIT_TEXT_STYLE_LABEL_Y:
-				mc.yAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.yAxis.labelTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 			case EDIT_TEXT_STYLE_AXIS_TITLE_X:
-				mc.xAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.xAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 			case EDIT_TEXT_STYLE_AXIS_TITLE_Y:
-				mc.yAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.yAxis.titleTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 			case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_X:
-				mc.xAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.xAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 			case EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y:
-				mc.yAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
+				self.xyGraphController.yAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 		}
 	}
@@ -214,19 +215,19 @@
 		
 		switch (control.tag) {
 			case LABEL_OFFSET_X:
-				mc.xAxis.labelOffset += delta;
+				self.xyGraphController.xAxis.labelOffset += delta;
 				handled = YES;
 				break;
 			case LABEL_OFFSET_Y:
-				mc.yAxis.labelOffset += delta;
+				self.xyGraphController.yAxis.labelOffset += delta;
 				handled = YES;
 				break;
 			case TITLE_OFFSET_X:
-				mc.xAxis.titleOffset += delta;
+				self.xyGraphController.xAxis.titleOffset += delta;
 				handled = YES;
 				break;
 			case TITLE_OFFSET_Y:
-				mc.yAxis.titleOffset += delta;
+				self.xyGraphController.yAxis.titleOffset += delta;
 				handled = YES;
 				break;
 		}

@@ -1,5 +1,5 @@
 //
-//  CorePlotConstraintViewController.h
+//  CPIConstraintViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/24/14.
@@ -10,7 +10,7 @@
 #import <CorePlot/CorePlot.h>
 
 /* This is a controller for an NSPopupView.
- This class is an editor for CPTConstrint objects. */
+ This class is an editor for CPTConstraint objects. */
 
 enum CONTRAINT_VALUES {
 	LOWER_OFFSET = 1,
@@ -18,7 +18,7 @@ enum CONTRAINT_VALUES {
 	RELATIVE_OFFSET
 };
 
-@interface CorePlotConstraintViewController : NSViewController
+@interface CPIConstraintViewController : NSViewController
 {
 	IBOutlet NSPopUpButton *constraintPopupButton;
 }

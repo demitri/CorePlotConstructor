@@ -1,5 +1,5 @@
 //
-//  XYGraphPaddingViewController.h
+//  CPIGraphPaddingViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/17/14.
@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
-#import "XYGraphViewController.h"
 
-@class XYGraphViewController;
+@class CPIGraphViewController;
 
 enum {
 	GRAPH_PADDING_TOP = 1,
@@ -23,12 +22,11 @@ enum {
 	PLOT_AREA_FRAME_RIGHT
 };
 
-@interface XYGraphPaddingViewController : NSViewController <NSTextFieldDelegate>
+@interface CPIGraphPaddingViewController : NSViewController <NSTextFieldDelegate>
 {
-	IBOutlet XYGraphViewController *mc; // main controller
 	
 }
 
-@property (weak, nonatomic, readonly) CPTXYGraph *graph;
+@property (weak, nonatomic) IBOutlet CPTGraph *graph;
 
 @end

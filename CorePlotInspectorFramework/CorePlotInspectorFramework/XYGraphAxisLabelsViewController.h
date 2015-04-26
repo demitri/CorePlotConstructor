@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
-#import "XYGraphViewController.h"
-#import "CorePlotTextStyleViewController.h"
+#import "CPITextStyleViewController.h"
+#import "CPIXYGraphController.h"
 
 // text fields
 enum AXIS_LABELS_VIEW_TEXT_FIELDS {
@@ -28,19 +28,20 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 	EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y
 };
 
-@class XYGraphViewController;
+@class XYGraphViewController, CPIXYGraphController;
 
 @interface XYGraphAxisLabelsViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-	IBOutlet XYGraphViewController *mc; // main controller
+//	IBOutlet XYGraphViewController *mc; // main controller
 	IBOutlet NSPopUpButton *tickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *tickLabelDirYPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirYPopupButton;
 }
 
+@property (nonatomic, weak) CPIXYGraphController *xyGraphController;
 @property (nonatomic, strong) NSPopover *textStylePopover;
-@property (nonatomic, strong) CorePlotTextStyleViewController *textStyleViewController;
+@property (nonatomic, strong) CPITextStyleViewController *textStyleViewController;
 @property (nonatomic, assign) NSInteger textStyleBeingEdited;
 @property (weak) IBOutlet NSPopUpButton *xAxisLabelingPolicyPopup;
 @property (weak) IBOutlet NSPopUpButton *yAxisLabelingPolicyPopup;

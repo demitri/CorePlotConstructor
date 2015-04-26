@@ -1,34 +1,38 @@
 //
-//  CorePlotConstraintViewController.m
+//  CPIConstraintViewController.m
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/24/14.
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
-#import "CorePlotConstraintViewController.h"
+#import "CPIConstraintViewController.h"
+#import "CPIPrivateHeader.h"
 
-@interface CorePlotConstraintViewController ()
+@interface CPIConstraintViewController ()
 @property (nonatomic, strong, readwrite) CPTConstraints* currentConstraints;
 - (CPTConstraints*)constraintsFromCurrentView;
 @end
 
-@implementation CorePlotConstraintViewController
+@implementation CPIConstraintViewController
 
-/* Designated initializer */
-- (instancetype)init
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-	NSString *nibName = @"CorePlotConstraintViewController";
-    self = [super initWithNibName:nibName bundle:nil];
+	//	NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"" withExtension:@"bundle"]];
+	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
+	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
+	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+
+	self = [super initWithNibName:@"CPIConstraintView" bundle:frameworkBundle];
     if (self) {
         // Initialization code here.
     }
     return self;
 }
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)init
 {
-	return [self init];
+	return [self initWithNibName:nil bundle:nil];
 }
 
 - (void)awakeFromNib

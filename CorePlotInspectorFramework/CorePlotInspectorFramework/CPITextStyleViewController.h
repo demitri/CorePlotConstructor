@@ -1,5 +1,5 @@
 //
-//  CorePlotTextStyleViewController.h
+//  CPITextStyleViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/23/14.
@@ -14,7 +14,7 @@
  This class is an editor for CPTTextStyle objects.
  */
 
-@interface CorePlotTextStyleViewController : NSViewController
+@interface CPITextStyleViewController : NSViewController
 {
 	IBOutlet NSPopUpButton *fontsPopupButton;
 	IBOutlet NSPopUpButton *textAlignmentPopupButton;

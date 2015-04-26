@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
-#import "XYGraphViewController.h"
-#import "CorePlotLineStyleViewController.h"
+#import "CPIXYGraphController.h"
+#import "CPILineStyleViewController.h"
 
 // Text fields
 enum {
@@ -41,14 +41,16 @@ enum {
 
 @interface XYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-	IBOutlet XYGraphViewController *mc; // main controller
+	//IBOutlet XYGraphViewController *mc; // main controller
 	IBOutlet NSPopUpButton *tickDirectionXPopupButton;
 	IBOutlet NSPopUpButton *tickDirectionYPopupButton;
 }
 
-@property (weak, nonatomic, readonly) CPTXYGraph *graph;
+@property (nonatomic, weak) CPIXYGraphController *graphController;
+
+//@property (weak, nonatomic, readonly) CPTXYGraph *graph;
 @property (strong, nonatomic) NSPopover *lineStylePopover;
-@property (strong, nonatomic) CorePlotLineStyleViewController *lineStyleViewController;
+@property (strong, nonatomic) CPILineStyleViewController *lineStyleViewController;
 @property (nonatomic, weak, readonly) CPTXYAxis *xAxis;
 @property (nonatomic, weak, readonly) CPTXYAxis *yAxis;
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
