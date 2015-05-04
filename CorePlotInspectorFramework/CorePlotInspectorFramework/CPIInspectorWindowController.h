@@ -15,13 +15,14 @@
 #import "CPIXYGraphController.h"
 #import "CPIPlotInspectorViewController.h"
 #import "CPIGraphPaddingViewController.h"
-#import "XYGraphAxisLabelsViewController.h"
+#import "CPIXYGraphAxisLabelsViewController.h"
+#import "CPIXYGraphAxesViewController.h"
 
 #define kScatterPlot @"scatter plot"
 #define kInitialFont @"Helvetica"
 
 @class CPIPlotInspectorViewController, CPIGraphPaddingViewController;
-@class CPIGraphController, XYGraphAxisLabelsViewController;
+@class CPIGraphController; //, XYGraphAxisLabelsViewController; //, CPIXYGraphAxesViewController;
 
 // access the CPTGraph being inspected via self.currentGraphController.graph
 
@@ -52,9 +53,12 @@ enum {
 @property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
 
 // Graph-specific controllers
+// --------------------------
+// CPTXYGraph
 @property (nonatomic, weak) CPIGraphController *currentGraphController;
 @property (nonatomic, strong) CPIXYGraphController *xyGraphController;
-@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
+@property (nonatomic, strong) IBOutlet CPIXYGraphAxisLabelsViewController *xyGraphAxisLabelsController;
+@property (nonatomic, strong) IBOutlet CPIXYGraphAxesViewController *xyGraphAxesController;
 
 //@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 //@property (nonatomic, strong) IBOutlet XYGraphPaddingViewController *graphPaddingController;
@@ -75,6 +79,8 @@ enum {
 @property (strong, nonatomic) NSColor *titleColor;
 @property (assign) CGFloat graphTitleDisplacementX;
 @property (assign) CGFloat graphTitleDisplacementY;
+
+@property (nonatomic, strong, readonly) NSNumber *zeroValue;
 
 - (instancetype)initWithGraph:(CPTGraph*)graph;
 - (void)updateForNewGraph:(CPTGraph*)graph;

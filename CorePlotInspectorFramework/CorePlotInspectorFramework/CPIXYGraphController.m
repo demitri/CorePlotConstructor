@@ -7,7 +7,7 @@
 //
 
 #import "CPIXYGraphController.h"
-#import "XYGraphAxisLabelsViewController.h"
+#import "CPIXYGraphAxisLabelsViewController.h"
 
 @implementation CPIXYGraphController
 

@@ -1,5 +1,5 @@
 //
-//  XYGraphAxisLabelsViewController.h
+//  CPIXYGraphAxisLabelsViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/20/14.
@@ -31,11 +31,11 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 	EDIT_TEXT_STYLE_MINOR_TICK_LABEL_STYLE_Y
 };
 
-@class /*XYGraphViewController,*/ CPIXYGraphController;
+@class CPIXYGraphController;
 
-@interface XYGraphAxisLabelsViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
+@interface CPIXYGraphAxisLabelsViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-//	IBOutlet XYGraphViewController *mc; // main controller
+	BOOL xibInitialized;
 	IBOutlet NSPopUpButton *tickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *tickLabelDirYPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirXPopupButton;
@@ -43,7 +43,6 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 }
 
 @property (nonatomic, weak) CPTXYGraph *graph;
-//@property (nonatomic, weak) IBOutlet CPIInspectorWindowController *inspector;
 
 // convenience properties
 @property (nonatomic, readonly) CPTXYAxis *xAxis;

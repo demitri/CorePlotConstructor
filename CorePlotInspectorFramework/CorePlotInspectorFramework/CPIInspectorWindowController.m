@@ -40,6 +40,7 @@
 - (instancetype)initWithGraph:(CPTGraph*)graph
 {
 	self = [self initWithWindowNibName:@"CPIInspectorWindow"];
+	[self loadWindow]; // need all bindings before graph can be wired up
 	[self updateForNewGraph:graph];
 	return self;
 }
@@ -129,16 +130,35 @@
 		
 		CPTXYGraph *xyGraph = (CPTXYGraph*)graph;
 		
+		NSTabViewItem *tabViewItem;
+
+		// select appropriate inspectors
+		// -----------------------------
+		
+		self.xyGraphAxesController = [[CPIXYGraphAxesViewController alloc] init];
+		self.xyGraphAxesController.graph = xyGraph;
+		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxes"];
+		[tabViewItem setView:self.xyGraphAxesController.view];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:2];
+		
+		self.xyGraphAxisLabelsController = [[CPIXYGraphAxisLabelsViewController alloc] init];
+		self.xyGraphAxisLabelsController.graph = xyGraph;
+		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxesLabels"];
+		[tabViewItem setView:self.xyGraphAxisLabelsController.view];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:3];
+		
 		if (self.xyGraphController == nil)
 			self.xyGraphController = [[CPIXYGraphController alloc] initWithGraph:xyGraph];
 		self.xyGraphController.graph = xyGraph;
 
-		if (self.axisLabelsController == nil)
-			self.axisLabelsController = [[XYGraphAxisLabelsViewController alloc] init];
-		self.axisLabelsController.graph = xyGraph;
-		//self.axisLabelsController.inspector = self;
+		if (self.xyGraphAxisLabelsController == nil)
+			self.xyGraphAxisLabelsController = [[CPIXYGraphAxisLabelsViewController alloc] init];
+		self.xyGraphAxisLabelsController.graph = xyGraph;
+	
+		self.xyGraphAxesController.graph = xyGraph;
 		
 		self.currentGraphController = self.xyGraphController;
+		self.plotInspectorController.graphController = self.xyGraphController;
 		
 	} else {
 		NSAssert(FALSE, @"This type of graph ('%@') not yet supported.", self.graph);
@@ -332,6 +352,8 @@
 
 #pragma mark -
 
+// Used as a value for binding.
+- (NSNumber*)zeroValue { return @0; }
 
 
 @end

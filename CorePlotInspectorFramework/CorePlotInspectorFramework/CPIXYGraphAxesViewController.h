@@ -1,5 +1,5 @@
 //
-//  XYGraphAxesViewController.h
+//  CPIXYGraphAxesViewController.h
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/17/14.
@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
-#import "CPIXYGraphController.h"
 #import "CPILineStyleViewController.h"
 
 // Text fields
@@ -39,21 +38,21 @@ enum {
 	EDIT_LINE_STYLE_MINOR_TICK_Y
 };
 
-@interface XYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
+@interface CPIXYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-	//IBOutlet XYGraphViewController *mc; // main controller
+	BOOL zibInitialized;
 	IBOutlet NSPopUpButton *tickDirectionXPopupButton;
 	IBOutlet NSPopUpButton *tickDirectionYPopupButton;
 }
 
-@property (nonatomic, weak) CPIXYGraphController *graphController;
+@property (nonatomic, weak) CPTXYGraph *graph;
 
-//@property (weak, nonatomic, readonly) CPTXYGraph *graph;
-@property (nonatomic, weak) IBOutlet CPIInspectorWindowController *inspector;
+// convenience properties
+@property (nonatomic, readonly) CPTXYAxis *xAxis;
+@property (nonatomic, readonly) CPTXYAxis *yAxis;
+
 @property (strong, nonatomic) NSPopover *lineStylePopover;
 @property (strong, nonatomic) CPILineStyleViewController *lineStyleViewController;
-@property (nonatomic, weak, readonly) CPTXYAxis *xAxis;
-@property (nonatomic, weak, readonly) CPTXYAxis *yAxis;
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
 @property (nonatomic, strong, readonly) NSNumber *zeroValue;
 

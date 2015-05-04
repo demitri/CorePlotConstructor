@@ -1,38 +1,50 @@
 //
-//  XYGraphAxisLabelsViewController.m
+//  CPIXYGraphAxisLabelsViewController.m
 //  CorePlotConstructor
 //
 //  Created by Demitri Muna on 8/20/14.
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
-#import "XYGraphAxisLabelsViewController.h"
+#import "CPIXYGraphAxisLabelsViewController.h"
 #import "CPIPrivateHeader.h"
 
-@interface XYGraphAxisLabelsViewController ()
-- (void)initialize;
+@interface CPIXYGraphAxisLabelsViewController ()
+- (void)commonInit;
 @end
 
-@implementation XYGraphAxisLabelsViewController
+@implementation CPIXYGraphAxisLabelsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	// Ref: http://stackoverflow.com/questions/12557936/loading-a-nib-thats-included-in-a-framework
+	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
+	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
+
+	self = [super initWithNibName:@"CPIXYGraphAxisLabelsView" bundle:frameworkBundle];
     if (self) {
-        [self initialize];
+        [self commonInit];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (instancetype)initWithCoder:(NSCoder *)decoder
 {
 	self = [super initWithCoder:decoder];
-	[self initialize];
+	[self commonInit];
 	return self;
 }
 
-- (void)initialize
+- (instancetype)init
 {
+	self = [self initWithNibName:nil bundle:nil];
+	return self;
+}
+
+
+- (void)commonInit
+{
+	xibInitialized = YES;
 	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
 
 	// set up text style popover inspector
@@ -56,6 +68,9 @@
 
 - (void)awakeFromNib
 {
+	if (xibInitialized)
+		return;
+	
 	// ===============
 	// Setup inspector
 	// ===============

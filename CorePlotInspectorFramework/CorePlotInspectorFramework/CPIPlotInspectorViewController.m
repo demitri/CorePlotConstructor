@@ -95,7 +95,7 @@
 	// Most themes reset the axis labeling policy, so these need to be reset after changing themes.
 	// Send an array of tag values, one for each index. This isn't the cleanest method,
 	// but am striving for encapsulation.
-	[self.inspector.currentGraphController resetLabelingPolicy:@[[NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag],
+	[self.graphController resetLabelingPolicy:@[[NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag],
 																 [NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag]]];
 }
 

@@ -597,7 +597,7 @@
                                     </subviews>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Axes" identifier="2" id="Vp3-Qd-74M">
+                            <tabViewItem label="Axes" identifier="7" id="Vp3-Qd-74M">
                                 <view key="view" id="YOS-By-0vP">
                                     <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1193,6 +1193,15 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Gns-rO-NDm">
+                                            <rect key="frame" x="135" y="151" width="32" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OLD" id="S3k-r7-V0G">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -1712,14 +1721,14 @@
                     <popUpButton verticalHuggingPriority="750" id="bYF-tw-Kb1">
                         <rect key="frame" x="83" y="398" width="136" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" title="Plot" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="T6e-sA-EWq" id="xJS-93-Hhk">
+                        <popUpButtonCell key="cell" type="push" title="Axes" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="T9T-P8-i5V" id="xJS-93-Hhk">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                             <menu key="menu" title="OtherViews" id="4gg-U0-G3a">
                                 <items>
-                                    <menuItem title="Plot" state="on" keyEquivalent="1" id="T6e-sA-EWq"/>
+                                    <menuItem title="Plot" keyEquivalent="1" id="T6e-sA-EWq"/>
                                     <menuItem title="Padding" tag="1" keyEquivalent="2" id="w57-bR-2hv"/>
-                                    <menuItem title="Axes" tag="2" keyEquivalent="3" id="T9T-P8-i5V"/>
+                                    <menuItem title="Axes" state="on" tag="2" keyEquivalent="3" id="T9T-P8-i5V"/>
                                     <menuItem title="Axis Labels" tag="3" keyEquivalent="4" id="eXW-xR-aOw"/>
                                     <menuItem title="Data" tag="4" keyEquivalent="5" id="MX3-Q1-uP0"/>
                                     <menuItem title="Legend" tag="5" keyEquivalent="6" id="DgU-qi-5Qo"/>
@@ -1735,7 +1744,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="Eno-vF-fdv"/>
             </connections>
-            <point key="canvasLocation" x="151" y="313"/>
+            <point key="canvasLocation" x="77" y="285"/>
         </window>
         <objectController id="9rg-QF-WsF" userLabel="XYGraph Controller" customClass="CPIXYGraphController">
             <connections>
@@ -1743,7 +1752,7 @@
             </connections>
         </objectController>
         <viewController id="v95-S2-Ts3" customClass="CPIGraphPaddingViewController"/>
-        <viewController id="fiT-Fd-CRQ" userLabel="XYGraph Axes View Controller" customClass="XYGraphAxesViewController">
+        <viewController id="fiT-Fd-CRQ" userLabel="XYGraph Axes View Controller" customClass="CPIXYGraphAxesViewController">
             <connections>
                 <outlet property="tickDirectionXPopupButton" destination="CHL-Q6-R4x" id="Uya-bG-cbm"/>
                 <outlet property="tickDirectionYPopupButton" destination="h2F-d4-fDO" id="fmC-6N-i0y"/>
