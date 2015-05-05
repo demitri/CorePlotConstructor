@@ -147,6 +147,12 @@
 		[tabViewItem setView:self.xyGraphAxisLabelsController.view];
 		[inspectorTabView insertTabViewItem:tabViewItem atIndex:3];
 		
+		self.graphPaddingController = [[CPIGraphPaddingViewController alloc] init];
+		self.graphPaddingController.graph = xyGraph;
+		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"GraphPadding"];
+		tabViewItem.view = self.graphPaddingController.view;
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:4];
+		
 		if (self.xyGraphController == nil)
 			self.xyGraphController = [[CPIXYGraphController alloc] initWithGraph:xyGraph];
 		self.xyGraphController.graph = xyGraph;
@@ -155,7 +161,6 @@
 			self.xyGraphAxisLabelsController = [[CPIXYGraphAxisLabelsViewController alloc] init];
 		self.xyGraphAxisLabelsController.graph = xyGraph;
 	
-		self.xyGraphAxesController.graph = xyGraph;
 		
 		self.currentGraphController = self.xyGraphController;
 		self.plotInspectorController.graphController = self.xyGraphController;

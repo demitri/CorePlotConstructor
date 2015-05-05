@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
@@ -65,7 +65,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="pwD-qV-EJN"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.xAxis.minorTicksPerInterval" previousBinding="pwD-qV-EJN" id="Thh-z9-YRl">
+                        <binding destination="-2" name="value" keyPath="self.xAxis.minorTicksPerInterval" previousBinding="pwD-qV-EJN" id="6ev-lZ-43K">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -96,7 +96,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="3ns-Te-mKH"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.yAxis.minorTicksPerInterval" previousBinding="3ns-Te-mKH" id="76U-5C-XQn">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.minorTicksPerInterval" previousBinding="3ns-Te-mKH" id="kHg-Wz-dBB">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -127,7 +127,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="rAq-R9-pSb"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.xAxis.minorTickLabelOffset" previousBinding="rAq-R9-pSb" id="NBo-mw-fta">
+                        <binding destination="-2" name="value" keyPath="self.xAxis.minorTickLabelOffset" previousBinding="rAq-R9-pSb" id="phn-Rl-LDB">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -158,7 +158,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="BMb-TI-MSn"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.yAxis.minorTickLabelOffset" previousBinding="BMb-TI-MSn" id="lnL-H2-T6e">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.minorTickLabelOffset" previousBinding="BMb-TI-MSn" id="Oil-dn-vTb">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -189,7 +189,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="M3o-Tb-AgY"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.xAxis.preferredNumberOfMajorTicks" previousBinding="M3o-Tb-AgY" id="pOk-yP-O7I">
+                        <binding destination="-2" name="value" keyPath="self.xAxis.preferredNumberOfMajorTicks" previousBinding="M3o-Tb-AgY" id="M9v-tc-rh7">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -220,7 +220,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="cFv-YX-oh1"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.yAxis.preferredNumberOfMajorTicks" previousBinding="cFv-YX-oh1" id="ooo-Rk-nlf">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.preferredNumberOfMajorTicks" previousBinding="cFv-YX-oh1" id="1WJ-ck-bQ3">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -251,7 +251,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="xHY-js-KCg"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.xAxis.majorTickLength" previousBinding="xHY-js-KCg" id="k1x-ic-P0Z">
+                        <binding destination="-2" name="value" keyPath="self.xAxis.majorTickLength" previousBinding="xHY-js-KCg" id="LIB-mO-CeZ">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -282,7 +282,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="fu0-Xf-8fQ"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.yAxis.majorTickLength" previousBinding="fu0-Xf-8fQ" id="VSc-Uo-oXs">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.majorTickLength" previousBinding="fu0-Xf-8fQ" id="ZFV-pj-9Jf">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -313,7 +313,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="ubO-oB-lnV"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.xAxis.minorTickLength" previousBinding="ubO-oB-lnV" id="Ea5-wm-Tl5">
+                        <binding destination="-2" name="value" keyPath="self.xAxis.minorTickLength" previousBinding="ubO-oB-lnV" id="e3V-X7-3GM">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -344,7 +344,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="minValue" keyPath="self.zeroValue" id="Vzp-Mp-l5J"/>
-                        <binding destination="-2" name="value" keyPath="self.graph.yAxis.minorTickLength" previousBinding="Vzp-Mp-l5J" id="v4D-rY-v0q">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.minorTickLength" previousBinding="Vzp-Mp-l5J" id="Btk-PF-ru0">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -414,7 +414,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LLu-fb-TCs">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="yOR-vL-Tdv"/>
@@ -434,7 +434,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kRq-k1-Yjq">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="IpS-rE-1dY"/>
@@ -445,7 +445,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wu2-a2-Q1O">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="qTb-5r-DTC"/>
@@ -465,7 +465,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p7C-2s-rJA">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="0HW-Ii-99n"/>
@@ -485,7 +485,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3jr-15-ob4">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="xd4-LB-dPq"/>
@@ -496,7 +496,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CeP-OV-5YX">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="N6d-Sa-ni3"/>
@@ -525,7 +525,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nBx-6W-AqS">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="PhD-eE-zZH"/>
@@ -536,7 +536,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sCX-Ql-3MW">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="s7Z-sd-cMf"/>
@@ -565,7 +565,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DEh-Io-Ta3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="533-UA-4w5"/>
@@ -576,7 +576,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Row-EY-pOD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="titleBar" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
                     <connections>
                         <action selector="editLineStyle:" target="-2" id="jwi-wA-Bkw"/>

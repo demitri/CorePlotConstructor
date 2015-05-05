@@ -7,39 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6CFE4941AEC78C10078D13D /* CorePlotInspectorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4931AEC78C10078D13D /* CorePlotInspectorFramework.h */; };
+		A68F151F1AF846260042E7D7 /* CPIGraphPaddingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68F151E1AF846260042E7D7 /* CPIGraphPaddingView.xib */; };
+		A6CFE4941AEC78C10078D13D /* CorePlotInspectorFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4931AEC78C10078D13D /* CorePlotInspectorFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE49A1AEC78C10078D13D /* CorePlotInspectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CFE48E1AEC78C10078D13D /* CorePlotInspectorFramework.framework */; };
 		A6CFE4A11AEC78C10078D13D /* CorePlotInspectorFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4A01AEC78C10078D13D /* CorePlotInspectorFrameworkTests.m */; };
-		A6CFE4B41AEC79370078D13D /* IntegerSpaceFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4B01AEC79370078D13D /* IntegerSpaceFormatter.h */; };
+		A6CFE4B41AEC79370078D13D /* IntegerSpaceFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4B01AEC79370078D13D /* IntegerSpaceFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4B51AEC79370078D13D /* IntegerSpaceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4B11AEC79370078D13D /* IntegerSpaceFormatter.m */; };
-		A6CFE4B61AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4B21AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h */; };
+		A6CFE4B61AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4B21AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4B71AEC79370078D13D /* ContinuousBindingFixNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4B31AEC79370078D13D /* ContinuousBindingFixNumberFormatter.m */; };
-		A6CFE4E31AEC7C010078D13D /* CPIConstraintViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4E01AEC7C010078D13D /* CPIConstraintViewController.h */; };
+		A6CFE4E31AEC7C010078D13D /* CPIConstraintViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4E01AEC7C010078D13D /* CPIConstraintViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4E41AEC7C010078D13D /* CPIConstraintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4E11AEC7C010078D13D /* CPIConstraintViewController.m */; };
 		A6CFE4E51AEC7C010078D13D /* CPIConstraintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE4E21AEC7C010078D13D /* CPIConstraintView.xib */; };
-		A6CFE4E91AEC7C120078D13D /* CPILineStyleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4E61AEC7C120078D13D /* CPILineStyleViewController.h */; };
+		A6CFE4E91AEC7C120078D13D /* CPILineStyleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4E61AEC7C120078D13D /* CPILineStyleViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4EA1AEC7C120078D13D /* CPILineStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4E71AEC7C120078D13D /* CPILineStyleViewController.m */; };
 		A6CFE4EB1AEC7C120078D13D /* CPILineStyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE4E81AEC7C120078D13D /* CPILineStyleView.xib */; };
 		A6CFE4EF1AEC7C1B0078D13D /* CPITextStyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE4EC1AEC7C1B0078D13D /* CPITextStyleView.xib */; };
-		A6CFE4F01AEC7C1B0078D13D /* CPITextStyleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4ED1AEC7C1B0078D13D /* CPITextStyleViewController.h */; };
+		A6CFE4F01AEC7C1B0078D13D /* CPITextStyleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4ED1AEC7C1B0078D13D /* CPITextStyleViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4F11AEC7C1B0078D13D /* CPITextStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4EE1AEC7C1B0078D13D /* CPITextStyleViewController.m */; };
-		A6CFE4FD1AEC7C540078D13D /* CPIXYGraphAxesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F41AEC7C540078D13D /* CPIXYGraphAxesViewController.h */; };
+		A6CFE4FD1AEC7C540078D13D /* CPIXYGraphAxesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F41AEC7C540078D13D /* CPIXYGraphAxesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE4FE1AEC7C540078D13D /* CPIXYGraphAxesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4F51AEC7C540078D13D /* CPIXYGraphAxesViewController.m */; };
-		A6CFE4FF1AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F61AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h */; };
+		A6CFE4FF1AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F61AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE5001AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4F71AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.m */; };
-		A6CFE5011AEC7C540078D13D /* CPIGraphPaddingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F81AEC7C540078D13D /* CPIGraphPaddingViewController.h */; };
+		A6CFE5011AEC7C540078D13D /* CPIGraphPaddingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE4F81AEC7C540078D13D /* CPIGraphPaddingViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE5021AEC7C540078D13D /* CPIGraphPaddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE4F91AEC7C540078D13D /* CPIGraphPaddingViewController.m */; };
-		A6CFE5101AEC7D1B0078D13D /* CPIInspectorWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE50D1AEC7D1B0078D13D /* CPIInspectorWindowController.h */; };
+		A6CFE5101AEC7D1B0078D13D /* CPIInspectorWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE50D1AEC7D1B0078D13D /* CPIInspectorWindowController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE5111AEC7D1B0078D13D /* CPIInspectorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE50E1AEC7D1B0078D13D /* CPIInspectorWindowController.m */; };
 		A6CFE5121AEC7D1B0078D13D /* CPIInspectorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE50F1AEC7D1B0078D13D /* CPIInspectorWindow.xib */; };
-		A6CFE5191AEC803A0078D13D /* CPCDashPatternValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5171AEC803A0078D13D /* CPCDashPatternValueTransformer.h */; };
+		A6CFE5191AEC803A0078D13D /* CPCDashPatternValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5171AEC803A0078D13D /* CPCDashPatternValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE51A1AEC803A0078D13D /* CPCDashPatternValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE5181AEC803A0078D13D /* CPCDashPatternValueTransformer.m */; };
 		A6CFE51C1AEC810B0078D13D /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CFE51B1AEC810B0078D13D /* CorePlot.framework */; };
-		A6CFE5261AEC925B0078D13D /* CPIPlotInspectorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5241AEC925B0078D13D /* CPIPlotInspectorViewController.h */; };
+		A6CFE5261AEC925B0078D13D /* CPIPlotInspectorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5241AEC925B0078D13D /* CPIPlotInspectorViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE5271AEC925B0078D13D /* CPIPlotInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE5251AEC925B0078D13D /* CPIPlotInspectorViewController.m */; };
-		A6CFE52B1AEC9E340078D13D /* CPIXYGraphController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5291AEC9E340078D13D /* CPIXYGraphController.h */; };
+		A6CFE52B1AEC9E340078D13D /* CPIXYGraphController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE5291AEC9E340078D13D /* CPIXYGraphController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE52C1AEC9E340078D13D /* CPIXYGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE52A1AEC9E340078D13D /* CPIXYGraphController.m */; };
-		A6CFE52F1AECA1080078D13D /* CPIGraphController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE52D1AECA1080078D13D /* CPIGraphController.h */; };
+		A6CFE52F1AECA1080078D13D /* CPIGraphController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFE52D1AECA1080078D13D /* CPIGraphController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CFE5301AECA1080078D13D /* CPIGraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE52E1AECA1080078D13D /* CPIGraphController.m */; };
 		A6CFE5381AEDA5B70078D13D /* CPIXYGraphAxesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE5371AEDA5B70078D13D /* CPIXYGraphAxesView.xib */; };
 		A6CFE53B1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE53A1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A68F151E1AF846260042E7D7 /* CPIGraphPaddingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPIGraphPaddingView.xib; sourceTree = "<group>"; };
 		A6CFE48E1AEC78C10078D13D /* CorePlotInspectorFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CorePlotInspectorFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CFE4921AEC78C10078D13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6CFE4931AEC78C10078D13D /* CorePlotInspectorFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CorePlotInspectorFramework.h; sourceTree = "<group>"; };
@@ -118,6 +120,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A68F151D1AF845FD0042E7D7 /* CPIGraphPaddingView */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFE4F81AEC7C540078D13D /* CPIGraphPaddingViewController.h */,
+				A6CFE4F91AEC7C540078D13D /* CPIGraphPaddingViewController.m */,
+				A68F151E1AF846260042E7D7 /* CPIGraphPaddingView.xib */,
+			);
+			name = CPIGraphPaddingView;
+			sourceTree = "<group>";
+		};
 		A6CFE4841AEC78C10078D13D = {
 			isa = PBXGroup;
 			children = (
@@ -286,8 +298,7 @@
 			children = (
 				A6CFE5241AEC925B0078D13D /* CPIPlotInspectorViewController.h */,
 				A6CFE5251AEC925B0078D13D /* CPIPlotInspectorViewController.m */,
-				A6CFE4F81AEC7C540078D13D /* CPIGraphPaddingViewController.h */,
-				A6CFE4F91AEC7C540078D13D /* CPIGraphPaddingViewController.m */,
+				A68F151D1AF845FD0042E7D7 /* CPIGraphPaddingView */,
 			);
 			name = "Common Inspectors";
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CFE4941AEC78C10078D13D /* CorePlotInspectorFramework.h in Headers */,
 				A6CFE5101AEC7D1B0078D13D /* CPIInspectorWindowController.h in Headers */,
 				A6CFE4E91AEC7C120078D13D /* CPILineStyleViewController.h in Headers */,
 				A6CFE5191AEC803A0078D13D /* CPCDashPatternValueTransformer.h in Headers */,
@@ -330,9 +342,8 @@
 				A6CFE4FF1AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h in Headers */,
 				A6CFE52B1AEC9E340078D13D /* CPIXYGraphController.h in Headers */,
 				A6CFE4FD1AEC7C540078D13D /* CPIXYGraphAxesViewController.h in Headers */,
-				A6CFE4941AEC78C10078D13D /* CorePlotInspectorFramework.h in Headers */,
-				A6CFE4B61AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h in Headers */,
 				A6CFE4B41AEC79370078D13D /* IntegerSpaceFormatter.h in Headers */,
+				A6CFE4B61AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +430,7 @@
 				A6CFE5381AEDA5B70078D13D /* CPIXYGraphAxesView.xib in Resources */,
 				A6CFE53B1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib in Resources */,
 				A6CFE4EB1AEC7C120078D13D /* CPILineStyleView.xib in Resources */,
+				A68F151F1AF846260042E7D7 /* CPIGraphPaddingView.xib in Resources */,
 				A6CFE4E51AEC7C010078D13D /* CPIConstraintView.xib in Resources */,
 				A6CFE4EF1AEC7C1B0078D13D /* CPITextStyleView.xib in Resources */,
 			);

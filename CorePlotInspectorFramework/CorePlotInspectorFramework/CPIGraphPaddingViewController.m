@@ -21,7 +21,7 @@
 	NSString *frameworkBundleID = FRAMEWORK_BUNDLE_ID;
 	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
 
-	self = [super initWithNibName:nibNameOrNil bundle:frameworkBundle];
+	self = [super initWithNibName:@"CPIGraphPaddingView" bundle:frameworkBundle];
     if (self) {
         // Initialization code here.
     }
@@ -35,6 +35,11 @@
 		[self commonInit];
 	}
 	return self;
+}
+
+- (instancetype)init
+{
+	return [self initWithNibName:nil bundle:nil];
 }
 
 - (void)commonInit
