@@ -11,7 +11,6 @@
 
 
 @interface CPIXYGraphAxesViewController ()
-- (void)commonInit;
 @end
 
 #pragma mark -
@@ -31,24 +30,16 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-	self = [super initWithCoder:coder];
-	if (self) {
-		[self commonInit];
-	}
-	return self;
-}
-
 - (void)commonInit
 {
-	zibInitialized = NO;
+	[super commonInit];
+	self.title = @"XYGraph Axes";
 	self.lineStyleViewController = nil; //[[CorePlotLineStyleViewController alloc] init];
 }
 
 - (void)awakeFromNib
 {
-	if (zibInitialized)
+	if (xibInitialized)
 		return;
 	
 	NSArray *cptSignLabels = @[@"No Offset", @"Positive Offset", @"Negative Offset"];

@@ -8,24 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
-#import "CPIXYGraphAxisLabelsViewController.h"
+//#import "CPIXYGraphAxisLabelsViewController.h"
 #import "CPIGraphController.h"
 
 //@class XYGraphAxisLabelsViewController;
 
 @interface CPIPlotInspectorViewController : NSViewController
 {
-	IBOutlet NSPopUpButton *themePopup;
-	IBOutlet NSPopUpButton *graphTitleFrameAnchorPopup;
-	BOOL initialized;
+	BOOL xibInitialized;
 }
 
 @property (nonatomic, weak) CPTGraph *graph;
 @property (nonatomic, weak) CPTPlot *plot;
 @property (nonatomic, weak) CPIGraphController *graphController;
-@property (nonatomic, weak) IBOutlet CPIXYGraphAxisLabelsViewController *axisLabelsController;
+//@property (nonatomic, weak) IBOutlet CPIXYGraphAxisLabelsViewController *axisLabelsController;
 
-- (IBAction)changeTheme:(id)sender;
-- (IBAction)changeTitleAnchorStyle:(id)sender;
-
+- (void)commonInit;
 @end

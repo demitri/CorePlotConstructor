@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
+#import "CPIPlotInspectorViewController.h"
 #import "CPILineStyleViewController.h"
 
 // Text fields
@@ -38,14 +39,13 @@ enum {
 	EDIT_LINE_STYLE_MINOR_TICK_Y
 };
 
-@interface CPIXYGraphAxesViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
+@interface CPIXYGraphAxesViewController : CPIPlotInspectorViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-	BOOL zibInitialized;
 	IBOutlet NSPopUpButton *tickDirectionXPopupButton;
 	IBOutlet NSPopUpButton *tickDirectionYPopupButton;
 }
 
-@property (nonatomic, weak) CPTXYGraph *graph;
+//@property (nonatomic, weak) CPTXYGraph *graph;
 
 // convenience properties
 @property (nonatomic, readonly) CPTXYAxis *xAxis;

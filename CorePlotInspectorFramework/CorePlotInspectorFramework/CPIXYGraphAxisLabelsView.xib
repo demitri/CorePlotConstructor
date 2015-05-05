@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.xAxis.title" id="kZz-3R-2Xe">
+                        <binding destination="-2" name="value" keyPath="self.yAxis.title" id="FQ7-JC-V2R">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -197,7 +197,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.yAxis.titleOffset" id="i6I-3O-V9q"/>
+                        <binding destination="-2" name="value" keyPath="self.yAxis.titleOffset" id="s3f-Ed-4ut">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="delegate" destination="-2" id="QAW-7f-Nyj"/>
                     </connections>
                 </textField>
@@ -209,7 +213,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="xAxis.labelOffset" id="zbO-C6-4wV"/>
+                        <binding destination="-2" name="value" keyPath="xAxis.labelOffset" id="5en-Zv-YoF">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                         <outlet property="delegate" destination="-2" id="4Fh-DB-wAk"/>
                     </connections>
                 </textField>
@@ -250,6 +258,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.xAxis.tickLabelDirection" id="ahp-mj-8Ur"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCa-YS-vAj">
                     <rect key="frame" x="26" y="342" width="22" height="14"/>
@@ -272,6 +283,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.yAxis.tickLabelDirection" id="vXw-V5-tdF"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0My-eH-a9W">
                     <rect key="frame" x="157" y="342" width="22" height="14"/>
@@ -294,6 +308,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.xAxis.minorTickLabelDirection" id="Q5j-q5-ZSV"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-gq-VLu">
                     <rect key="frame" x="26" y="297" width="22" height="14"/>
@@ -316,6 +333,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.yAxis.minorTickLabelDirection" id="2fT-cX-Aao"/>
+                    </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44w-8V-lyL">
                     <rect key="frame" x="157" y="297" width="22" height="14"/>

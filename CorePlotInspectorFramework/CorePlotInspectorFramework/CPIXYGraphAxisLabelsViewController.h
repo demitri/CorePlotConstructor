@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
+#import "CPIPlotInspectorViewController.h"
 #import "CPITextStyleViewController.h"
 //#import "CPIXYGraphController.h"
 //#import "CPIInspectorWindowController.h"
@@ -33,16 +34,15 @@ enum LABEL_TEXT_STYLE_BUTTONS {
 
 @class CPIXYGraphController;
 
-@interface CPIXYGraphAxisLabelsViewController : NSViewController <NSTextFieldDelegate, NSPopoverDelegate>
+@interface CPIXYGraphAxisLabelsViewController : CPIPlotInspectorViewController <NSTextFieldDelegate, NSPopoverDelegate>
 {
-	BOOL xibInitialized;
 	IBOutlet NSPopUpButton *tickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *tickLabelDirYPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirXPopupButton;
 	IBOutlet NSPopUpButton *minorTickLabelDirYPopupButton;
 }
 
-@property (nonatomic, weak) CPTXYGraph *graph;
+//@property (nonatomic, weak) CPTXYGraph *graph;
 
 // convenience properties
 @property (nonatomic, readonly) CPTXYAxis *xAxis;

@@ -393,6 +393,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.xAxis.tickDirection" id="yV4-t8-txB"/>
+                    </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" id="EA5-Kf-UKt">
                     <rect key="frame" x="187" y="176" width="97" height="15"/>
@@ -408,6 +411,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedTag" keyPath="self.yAxis.tickDirection" id="dt9-dg-NhJ"/>
+                    </connections>
                 </popUpButton>
                 <button verticalHuggingPriority="750" tag="3" id="Y6c-uS-Bys">
                     <rect key="frame" x="136" y="434" width="70" height="17"/>

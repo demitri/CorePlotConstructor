@@ -17,6 +17,7 @@
 #import "CPIGraphPaddingViewController.h"
 #import "CPIXYGraphAxisLabelsViewController.h"
 #import "CPIXYGraphAxesViewController.h"
+#import "CPIGraphPropertiesController.h"
 
 #define kScatterPlot @"scatter plot"
 #define kInitialFont @"Helvetica"
@@ -26,6 +27,7 @@
 
 // access the CPTGraph being inspected via self.currentGraphController.graph
 
+/*
 // text fields in view
 enum {
 	GRAPH_BORDER_LINE_WIDTH = 1,
@@ -40,15 +42,18 @@ enum {
 	EDIT_LINE_STYLE_DATA,
 	EDIT_TEXT_STYLE_TITLE
 };
+*/
 
 @interface CPIInspectorWindowController : NSWindowController <NSPopoverDelegate, NSTextViewDelegate, NSControlTextEditingDelegate
 >
 {
 	BOOL nibInitialized;
 	IBOutlet NSTabView *inspectorTabView;
+	IBOutlet NSPopUpButton *inspectorPopupButton;
 }
 
 // Controllers applicable to all graphs
+@property (nonatomic, strong) CPIGraphPropertiesController *graphPropertiesController;
 @property (nonatomic, strong) IBOutlet CPIPlotInspectorViewController *plotInspectorController;
 @property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
 
@@ -72,8 +77,8 @@ enum {
 @property (nonatomic, assign) NSInteger lineStyleBeingEdited;
 
 // properties for editing CPTTextStyle objects
-@property (strong, nonatomic) NSPopover *textStylePopover;
-@property (strong, nonatomic) CPITextStyleViewController *textStyleViewController;
+//@property (strong, nonatomic) NSPopover *textStylePopover;
+//@property (strong, nonatomic) CPITextStyleViewController *textStyleViewController;
 
 // Graph title properties
 @property (strong, nonatomic) NSColor *titleColor;
@@ -86,7 +91,7 @@ enum {
 - (void)updateForNewGraph:(CPTGraph*)graph;
 - (IBAction)inspectorPopupAction:(id)sender;
 
-- (IBAction)editLineStyle:(id)sender;
-- (IBAction)editTextStyle:(id)sender;
+//- (IBAction)editLineStyle:(id)sender;
+//- (IBAction)editTextStyle:(id)sender;
 
 @end

@@ -10,8 +10,9 @@
 #import "CPIPrivateHeader.h"
 
 @interface CPIPlotInspectorViewController ()
-- (void)commonInit;
 @end
+
+#pragma mark -
 
 @implementation CPIPlotInspectorViewController
 
@@ -37,9 +38,15 @@
 	return self;
 }
 
+- (instancetype)init
+{
+	return [self initWithNibName:nil bundle:nil];
+}
+
 - (void)commonInit
 {
-	initialized = NO;
+	xibInitialized = NO;
+	self.title = @"Untitled!";
 }
 
 //- (void)viewDidLoad {
@@ -47,35 +54,8 @@
 
 - (void)awakeFromNib {
 
-	if (initialized)
+	if (xibInitialized)
 		return;
-	
-#pragma mark setup inspector
-	[themePopup removeAllItems];
-	for ( Class c in [CPTTheme themeClasses] )
-		[themePopup addItemWithTitle:[c name]];
-	[themePopup selectItemWithTitle:kCPTPlainWhiteTheme];
-	
-	
-	// set up frame anchor popup
-	[graphTitleFrameAnchorPopup removeAllItems];
-	NSArray *anchorArray = @[@"CPTRectAnchorTop", @"CPTRectAnchorTopLeft", @"CPTRectAnchorTopRight",
-							 @"CPTRectAnchorBottom", @"CPTRectAnchorBottomLeft", @"CPTRectAnchorBottomRight",
-							 @"CPTRectAnchorLeft", @"CPTRectAnchorRight", @"CPTRectAnchorCenter"];
-	[graphTitleFrameAnchorPopup addItemsWithTitles:anchorArray];
-	
-#pragma mark setup title anchor policy
-	// set the tag value to the policy (both integers)
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTop"].tag = CPTRectAnchorTop;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTopLeft"].tag = CPTRectAnchorTopLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorTopRight"].tag = CPTRectAnchorTopRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottom"].tag = CPTRectAnchorBottom;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottomLeft"].tag = CPTRectAnchorBottomLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorBottomRight"].tag = CPTRectAnchorBottomRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorLeft"].tag = CPTRectAnchorLeft;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorRight"].tag = CPTRectAnchorRight;
-	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorCenter"].tag = CPTRectAnchorCenter;
-
 }
 
 - (CPTPlot*)plot
@@ -87,22 +67,5 @@
 	return _plot;
 }
 
-- (IBAction)changeTheme:(id)sender
-{
-	NSString *themeName = themePopup.titleOfSelectedItem;
-	[self.graph applyTheme:[CPTTheme themeNamed:themeName]];
-	
-	// Most themes reset the axis labeling policy, so these need to be reset after changing themes.
-	// Send an array of tag values, one for each index. This isn't the cleanest method,
-	// but am striving for encapsulation.
-	[self.graphController resetLabelingPolicy:@[[NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag],
-																 [NSNumber numberWithLong:self.axisLabelsController.xAxisLabelingPolicyPopup.selectedItem.tag]]];
-}
-
-- (IBAction)changeTitleAnchorStyle:(id)sender
-{
-	NSAssert(self.graph != nil, @"The graph property was not set.");
-	self.graph.titlePlotAreaFrameAnchor = [(NSPopUpButton*)sender selectedItem].tag;
-}
 
 @end

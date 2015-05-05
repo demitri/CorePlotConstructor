@@ -65,7 +65,8 @@
 	_decimalNumberFormatter = decimalNF;
 	
 	self.lineStyleViewController = nil;
-	
+
+	/*
 	// create the text style popover
 	self.textStylePopover = [[NSPopover alloc] init];
 	self.textStylePopover.behavior = NSPopoverBehaviorTransient;
@@ -74,6 +75,7 @@
 	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
 	self.textStylePopover.contentViewController = self.textStyleViewController;
 	
+*/
 	// set up observing
 	// ----------------
 	for (NSString *property in [self propertiesToObserve]) {
@@ -83,10 +85,12 @@
 				  context:nil];
 	}
 
+	/*
 	[self.textStyleViewController addObserver:self
 								   forKeyPath:@"currentTextStyle"
 									  options:NSKeyValueObservingOptionNew
 									  context:nil];
+*/
 }
 
 - (void)dealloc
@@ -94,8 +98,8 @@
 	for (NSString *property in [self propertiesToObserve])
 		[self removeObserver:self forKeyPath:property];
 	
-	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
-	[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
+//	[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
+//	[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
 }
 
 
@@ -126,32 +130,60 @@
 	// This gets called when the "graph" property is updated
 	// - set things up for a new graph.
 	
+	[inspectorPopupButton removeAllItems];
+
 	if ([graph isKindOfClass:CPTXYGraph.class]) {
 		
 		CPTXYGraph *xyGraph = (CPTXYGraph*)graph;
 		
 		NSTabViewItem *tabViewItem;
-
+		unsigned int i = 0;
+		
 		// select appropriate inspectors
 		// -----------------------------
+		
+		for (NSTabViewItem *item in inspectorTabView.tabViewItems)
+			[inspectorTabView removeTabViewItem:item];
+		
+		self.graphPropertiesController = [[CPIGraphPropertiesController alloc] init];
+		self.graphPropertiesController.graph = xyGraph;
+		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"GraphProperties"];
+		[tabViewItem setView:self.graphPropertiesController.view];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
+		[inspectorPopupButton addItemWithTitle:self.graphPropertiesController.title];
+		[inspectorPopupButton itemAtIndex:(i)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
+		[inspectorPopupButton itemAtIndex:(i)].tag = i;
+		i++;
 		
 		self.xyGraphAxesController = [[CPIXYGraphAxesViewController alloc] init];
 		self.xyGraphAxesController.graph = xyGraph;
 		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxes"];
 		[tabViewItem setView:self.xyGraphAxesController.view];
-		[inspectorTabView insertTabViewItem:tabViewItem atIndex:2];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
+		[inspectorPopupButton addItemWithTitle:self.xyGraphAxesController.title];
+		[inspectorPopupButton itemAtIndex:(i)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
+		[inspectorPopupButton itemAtIndex:(i)].tag = i;
+		i++;
 		
 		self.xyGraphAxisLabelsController = [[CPIXYGraphAxisLabelsViewController alloc] init];
 		self.xyGraphAxisLabelsController.graph = xyGraph;
-		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxesLabels"];
+		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxisLabels"];
 		[tabViewItem setView:self.xyGraphAxisLabelsController.view];
-		[inspectorTabView insertTabViewItem:tabViewItem atIndex:3];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
+		[inspectorPopupButton addItemWithTitle:self.xyGraphAxisLabelsController.title];
+		[inspectorPopupButton itemAtIndex:(i-1)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
+		[inspectorPopupButton itemAtIndex:(i)].tag = i;
+		i++;
 		
 		self.graphPaddingController = [[CPIGraphPaddingViewController alloc] init];
 		self.graphPaddingController.graph = xyGraph;
 		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"GraphPadding"];
 		tabViewItem.view = self.graphPaddingController.view;
-		[inspectorTabView insertTabViewItem:tabViewItem atIndex:4];
+		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
+		[inspectorPopupButton addItemWithTitle:self.graphPaddingController.title];
+		[inspectorPopupButton itemAtIndex:(i-1)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
+		[inspectorPopupButton itemAtIndex:(i)].tag = i;
+		i++;
 		
 		if (self.xyGraphController == nil)
 			self.xyGraphController = [[CPIXYGraphController alloc] initWithGraph:xyGraph];
@@ -178,49 +210,8 @@
 	[inspectorTabView selectTabViewItemAtIndex:popupButton.selectedItem.tag];
 }
 
-- (IBAction)editLineStyle:(id)sender
-{
-	self.lineStyleBeingEdited = [sender tag];
-	
-	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
-	
-	CPTLineStyle *lineStyleToEdit = nil;
-	switch (self.lineStyleBeingEdited) {
-		case EDIT_LINE_STYLE_GRAPH_BORDER:
-			lineStyleToEdit = self.graph.plotAreaFrame.borderLineStyle;
-			break;
-		case EDIT_LINE_STYLE_DATA:
-			lineStyleToEdit = plot.dataLineStyle;
-			break;
-	}
-	
-	// create the popover
-	self.lineStylePopover = [[NSPopover alloc] init];
-	
-	if (self.lineStyleViewController == nil) {
-		self.lineStyleViewController = [[CPILineStyleViewController alloc] init];
-	} else {
-		// don't want messages while it's being set up
-		[self.lineStyleViewController removeObserver:self forKeyPath:@"currentLineStyle"];
-	}
-	
-	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
-	
-	self.lineStylePopover.contentViewController = self.lineStyleViewController;
-	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
-	self.lineStylePopover.delegate = self;
-	
-	[self.lineStyleViewController addObserver:self
-								   forKeyPath:@"currentLineStyle"
-									  options:NSKeyValueObservingOptionNew
-									  context:nil];
-	
-	NSButton *targetButton = (NSButton *)sender;
-	[self.lineStylePopover showRelativeToRect:targetButton.bounds
-									   ofView:sender
-								preferredEdge:NSMinYEdge]; // display on top of button
-}
 
+/*
 - (IBAction)editTextStyle:(id)sender
 {
 	CPTTextStyle *textStyleToEdit = self.graph.titleTextStyle;
@@ -232,6 +223,7 @@
 									   ofView:sender
 								preferredEdge:NSMinYEdge];
 }
+*/
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -267,9 +259,9 @@
 				case EDIT_LINE_STYLE_GRAPH_BORDER:
 					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
 					break;
-				case EDIT_LINE_STYLE_DATA:
-					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
-					break;
+//				case EDIT_LINE_STYLE_DATA:
+//					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
+//					break;
 				default:
 					break;
 			}
@@ -277,10 +269,12 @@
 			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
 		}
 		
-	} else if (object == self.textStyleViewController) {
+	/* }
+	   else if (object == self.textStyleViewController) {
 		
 		if ([keyPath isEqualToString:@"currentTextStyle"])
 			self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
+	   */
 		
 	} else
 		DLog(@"Uncaught object: %@", object);
@@ -302,18 +296,18 @@
 			case EDIT_LINE_STYLE_GRAPH_BORDER:
 				self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
 				break;
-			case EDIT_LINE_STYLE_DATA:
-				plot.dataLineStyle = newLineStyle;
-				break;
+//			case EDIT_LINE_STYLE_DATA:
+//				plot.dataLineStyle = newLineStyle;
+//				break;
 			default:
 				break;
 		}
 		self.lineStylePopover = nil;
 		
-	} else if (popover == self.textStylePopover) {
+	} /* else if (popover == self.textStylePopover) {
 		
 		self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
-	}
+	}*/
 }
 
 #pragma mark -

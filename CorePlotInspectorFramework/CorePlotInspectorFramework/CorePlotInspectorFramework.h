@@ -17,8 +17,8 @@ FOUNDATION_EXPORT const unsigned char CorePlotInspectorFrameworkVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <CorePlotInspectorFramework/PublicHeader.h>
 
 #import <CorePlotInspectorFramework/CPIInspectorWindowController.h>
-#import <CorePlotInspectorFramework/IntegerSpaceFormatter.h>
-#import <CorePlotInspectorFramework/ContinuousBindingFixNumberFormatter.h>
+//#import <CorePlotInspectorFramework/IntegerSpaceFormatter.h>
+//#import <CorePlotInspectorFramework/ContinuousBindingFixNumberFormatter.h>
 
 // To enable this, under Build Settings -> Other C Flags, add: "-DDLOG_DEBUG=1" under "debug"
 #ifdef DLOG_DEBUG

@@ -9,14 +9,16 @@
 // This class is an abstract superclass for specific graph-type controllers.
 
 #import <Cocoa/Cocoa.h>
-#import "CPIGraphPaddingViewController.h"
+#import <CorePlot/CorePlot.h>
+//#import "CPTXYGraph.h"
+//#import "CPIGraphPaddingViewController.h"
 
-@class CPIGraphPaddingViewController;
+//@class CPIGraphPaddingViewController;
 
 @interface CPIGraphController : NSObjectController
 
 @property (nonatomic, weak) CPTXYGraph *graph;
-@property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
+//@property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
 
 - (void)resetLabelingPolicy:(NSArray*)axesPolices;
 

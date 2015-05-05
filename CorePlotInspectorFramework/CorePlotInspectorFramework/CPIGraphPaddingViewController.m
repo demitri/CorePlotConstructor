@@ -23,28 +23,15 @@
 
 	self = [super initWithNibName:@"CPIGraphPaddingView" bundle:frameworkBundle];
     if (self) {
-        // Initialization code here.
+		[self commonInit];
     }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-	self = [super initWithCoder:coder];
-	if (self) {
-		[self commonInit];
-	}
-	return self;
-}
-
-- (instancetype)init
-{
-	return [self initWithNibName:nil bundle:nil];
-}
-
 - (void)commonInit
 {
-	xibInitialized = NO;
+	[super commonInit];
+	self.title = @"Graph Padding";
 }
 
 - (void)awakeFromNib

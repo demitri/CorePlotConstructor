@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CPIInspectorWindowController">
             <connections>
                 <outlet property="graphPaddingController" destination="v95-S2-Ts3" id="Cn2-yl-O2T"/>
+                <outlet property="inspectorPopupButton" destination="bYF-tw-Kb1" id="E5X-Uw-iOJ"/>
                 <outlet property="inspectorTabView" destination="qqf-GD-QlO" id="L6R-FG-g3k"/>
                 <outlet property="plotInspectorController" destination="hW4-ZV-OWe" id="vZx-ju-pyX"/>
             </connections>
@@ -304,302 +305,12 @@
                                                 <binding destination="hW4-ZV-OWe" name="value" keyPath="self.graph.defaultPlotSpace.allowsUserInteraction" id="A6M-T6-xCx"/>
                                             </connections>
                                         </button>
-                                    </subviews>
-                                </view>
-                            </tabViewItem>
-                            <tabViewItem label="Padding" identifier="1" id="DxZ-tu-ms6">
-                                <view key="view" id="5py-yb-lZC">
-                                    <rect key="frame" x="0.0" y="0.0" width="302" height="496"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qSy-8e-cnl">
-                                            <rect key="frame" x="18" y="462" width="101" height="14"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7Nj-yM-Q9T">
+                                            <rect key="frame" x="218" y="208" width="32" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Graph Padding" id="f37-Wn-r7h">
-                                                <font key="font" metaFont="smallSystemBold"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="4" id="Bn7-w7-QlN">
-                                            <rect key="frame" x="56" y="418" width="43" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aHA-UQ-305">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="pGi-IH-o4T">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.paddingRight" id="gRV-JW-ct3">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="1Ap-GE-zmi"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="3" id="wBt-RD-9oN">
-                                            <rect key="frame" x="56" y="440" width="43" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="B1x-VN-Ecy">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="3eP-nF-LzD">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.paddingLeft" id="f4e-do-HqZ">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="8EE-H2-ots"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="1" id="MvN-bo-tdy">
-                                            <rect key="frame" x="167" y="439" width="51" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="55y-IO-PnP">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="pEi-5o-ZM3">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.paddingTop" id="av1-DK-Izy">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="fNx-JB-FyH"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="2" id="FfP-Y2-Fwp">
-                                            <rect key="frame" x="167" y="418" width="51" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ctZ-cW-W4t">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="u9r-Wb-624">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.paddingBottom" id="10s-Zq-gGK">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="N8H-8c-9Gg"/>
-                                            </connections>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NgF-WL-g1r">
-                                            <rect key="frame" x="18" y="440" width="25" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Left" id="LFl-Ue-dGW">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sk3-RO-XUZ">
-                                            <rect key="frame" x="18" y="418" width="32" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Right" id="59p-65-vez">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wXV-6B-yNm">
-                                            <rect key="frame" x="118" y="441" width="24" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Top" id="wPP-0m-9jV">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qLN-Na-Ztd">
-                                            <rect key="frame" x="118" y="419" width="43" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bottom" id="mN6-iu-iUh">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eSb-u9-2Ci">
-                                            <rect key="frame" x="18" y="390" width="145" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Plot Area Frame Padding" id="BSD-Yi-5bq">
-                                                <font key="font" metaFont="smallSystemBold"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="8" id="Pv4-rB-9rA">
-                                            <rect key="frame" x="56" y="344" width="43" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="J5t-z3-ddg">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="gna-7z-bEJ">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.plotAreaFrame.paddingRight" id="0AF-cd-yMu">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="PMh-oE-HR0"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="7" allowsExpansionToolTips="YES" id="oqz-Li-Rhd">
-                                            <rect key="frame" x="56" y="366" width="43" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gvv-D1-2qk">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="wWp-oW-J50">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.plotAreaFrame.paddingLeft" id="D7T-FN-GxJ">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="phu-ze-icS"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="5" id="aEZ-hu-V03">
-                                            <rect key="frame" x="167" y="365" width="51" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aiX-te-2Xd">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="Van-ps-jjO">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.plotAreaFrame.paddingTop" id="4rE-mr-JHG">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="Esr-GT-Z7s"/>
-                                            </connections>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" tag="6" id="pew-RL-GAw">
-                                            <rect key="frame" x="167" y="344" width="51" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Lnr-em-3Pt">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="sqO-Rg-rab">
-                                                    <real key="minimum" value="0.0"/>
-                                                    <real key="maximum" value="500"/>
-                                                    <metadata>
-                                                        <real key="inspectorSampleValue" value="1"/>
-                                                    </metadata>
-                                                </numberFormatter>
-                                                <font key="font" metaFont="miniSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <binding destination="v95-S2-Ts3" name="value" keyPath="graph.plotAreaFrame.paddingBottom" id="KD1-fJ-y6X">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                    </dictionary>
-                                                </binding>
-                                                <outlet property="delegate" destination="v95-S2-Ts3" id="6UG-r9-MII"/>
-                                            </connections>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uNr-wl-aoC">
-                                            <rect key="frame" x="18" y="366" width="25" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Left" id="Ij2-dg-mWV">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4KC-0P-rdP">
-                                            <rect key="frame" x="18" y="344" width="32" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Right" id="wgf-wj-AbS">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="f5c-Y4-kk9">
-                                            <rect key="frame" x="118" y="367" width="24" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Top" id="3bn-BX-OfD">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="P1f-1d-dJ9">
-                                            <rect key="frame" x="118" y="345" width="43" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bottom" id="DJI-TO-Dca">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="odp-Jp-KTM">
-                                            <rect key="frame" x="104" y="273" width="32" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OLD" id="9aA-Qi-TWS">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OLD" id="Cf5-nj-ds6">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" red="1" green="0.18518518519999999" blue="0.18518518519999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
@@ -660,13 +371,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTicksPerInterval" previousBinding="fY6-Nk-i23" id="ZQj-Km-lTS">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTicksPerInterval" id="sRc-zp-udC">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="fY6-Nk-i23"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="yVL-N6-fEx"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="43P-J6-JbP">
@@ -691,13 +400,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTicksPerInterval" previousBinding="dlH-jR-80q" id="PtN-fj-Dti">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTicksPerInterval" id="gd2-l6-kRU">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="dlH-jR-80q"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="Ryl-0h-tb7"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Q0J-u3-HPw">
@@ -722,13 +429,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTickLabelOffset" previousBinding="uxy-nR-a9j" id="8JT-YP-Mt5">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTickLabelOffset" id="JYS-rm-69l">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="uxy-nR-a9j"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="Bmm-Rg-GCI"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uIb-sB-foy">
@@ -753,13 +458,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTickLabelOffset" previousBinding="peu-Mo-wNc" id="QKV-z3-OIP">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTickLabelOffset" id="GFC-KN-KDJ">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="peu-Mo-wNc"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="Xap-2G-tpI"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7Ut-0L-7xA">
@@ -784,13 +487,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.preferredNumberOfMajorTicks" previousBinding="ZNt-6s-Mv5" id="wq3-Wo-cZv">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.preferredNumberOfMajorTicks" id="XM9-dX-gcd">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="ZNt-6s-Mv5"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="kFj-EI-GQ4"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="pVs-m3-GhH">
@@ -815,13 +516,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.preferredNumberOfMajorTicks" previousBinding="wS5-Ka-ZOu" id="zsT-VZ-uWG">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.preferredNumberOfMajorTicks" id="cvm-71-l7d">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="wS5-Ka-ZOu"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="6OA-HO-7df"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iXl-gy-Kja">
@@ -846,13 +545,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.majorTickLength" previousBinding="VO9-lA-EwO" id="Ybs-13-JPV">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.majorTickLength" id="iHW-bd-w4Q">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="VO9-lA-EwO"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="9TC-hb-Ik9"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6gg-r1-seC">
@@ -877,13 +574,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.majorTickLength" previousBinding="rfB-b0-aM9" id="bOJ-do-Sms">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.majorTickLength" id="qTn-jO-Vdf">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="rfB-b0-aM9"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="eY6-qa-s83"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1gu-Z6-lqM">
@@ -908,13 +603,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTickLength" previousBinding="XpT-X3-gha" id="lb9-NA-xBD">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="xAxis.minorTickLength" id="XNE-IF-5Aq">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="XpT-X3-gha"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="7BV-Jx-qBf"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gYQ-HB-PMu">
@@ -939,13 +632,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTickLength" previousBinding="EQH-tQ-lsk" id="c8s-Za-WeG">
+                                                <binding destination="9rg-QF-WsF" name="value" keyPath="yAxis.minorTickLength" id="ttg-3w-OlB">
                                                     <dictionary key="options">
                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                     </dictionary>
                                                 </binding>
-                                                <binding destination="fiT-Fd-CRQ" name="minValue" keyPath="zeroValue" id="EQH-tQ-lsk"/>
-                                                <outlet property="delegate" destination="fiT-Fd-CRQ" id="lIu-Jf-i0S"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eAH-Vl-CRi">
@@ -1018,9 +709,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="TbE-Tb-FF9"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hTN-bW-bVK">
                                             <rect key="frame" x="15" y="436" width="115" height="14"/>
@@ -1038,9 +726,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="0Rk-Ih-EOf"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" tag="5" id="Eej-jH-ymT">
                                             <rect key="frame" x="137" y="411" width="70" height="17"/>
@@ -1049,9 +734,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="tRx-dL-toC"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="tT1-KB-svJ">
                                             <rect key="frame" x="15" y="413" width="115" height="14"/>
@@ -1069,9 +751,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="nhi-nt-Xoh"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="grt-sc-Kw4">
                                             <rect key="frame" x="15" y="459" width="81" height="14"/>
@@ -1089,9 +768,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="GYd-h7-u9U"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" tag="2" id="eXV-Q3-1wR">
                                             <rect key="frame" x="215" y="457" width="70" height="17"/>
@@ -1100,9 +776,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="o6B-yw-5pH"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="O3e-qJ-sWx" userLabel="Text Field - Grid Lines label">
                                             <rect key="frame" x="15" y="339" width="67" height="14"/>
@@ -1129,9 +802,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="KSI-Ug-Zxg"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" tag="8" id="7Qo-i3-wRT">
                                             <rect key="frame" x="215" y="389" width="70" height="17"/>
@@ -1140,9 +810,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="pIp-9c-RYd"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="PA2-lg-25x">
                                             <rect key="frame" x="15" y="317" width="100" height="14"/>
@@ -1169,9 +836,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="isb-Y1-XB4"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" tag="10" id="sH2-qq-94P">
                                             <rect key="frame" x="215" y="367" width="70" height="17"/>
@@ -1180,9 +844,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="editLineStyle:" target="fiT-Fd-CRQ" id="wOA-nZ-ZyO"/>
-                                            </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="tlP-bD-byn">
                                             <rect key="frame" x="15" y="296" width="100" height="14"/>
@@ -1682,6 +1343,15 @@
                                                 <action selector="editTextStyle:" target="X1i-7c-Sdi" id="vrd-lO-nI5"/>
                                             </connections>
                                         </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="WY4-GA-yX7">
+                                            <rect key="frame" x="173" y="361" width="33" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OLD" id="ocI-vp-vFb">
+                                                <font key="font" metaFont="systemBold"/>
+                                                <color key="textColor" red="1" green="0.18518518519999999" blue="0.18518518519999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -1730,17 +1400,17 @@
                     <popUpButton verticalHuggingPriority="750" id="bYF-tw-Kb1">
                         <rect key="frame" x="83" y="398" width="136" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" title="Axes" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="T9T-P8-i5V" id="xJS-93-Hhk">
+                        <popUpButtonCell key="cell" type="push" title="Legend" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="5" imageScaling="proportionallyDown" inset="2" selectedItem="DgU-qi-5Qo" id="xJS-93-Hhk">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                             <menu key="menu" title="OtherViews" id="4gg-U0-G3a">
                                 <items>
                                     <menuItem title="Plot" keyEquivalent="1" id="T6e-sA-EWq"/>
                                     <menuItem title="Padding" tag="1" keyEquivalent="2" id="w57-bR-2hv"/>
-                                    <menuItem title="Axes" state="on" tag="2" keyEquivalent="3" id="T9T-P8-i5V"/>
+                                    <menuItem title="Axes" tag="2" keyEquivalent="3" id="T9T-P8-i5V"/>
                                     <menuItem title="Axis Labels" tag="3" keyEquivalent="4" id="eXW-xR-aOw"/>
                                     <menuItem title="Data" tag="4" keyEquivalent="5" id="MX3-Q1-uP0"/>
-                                    <menuItem title="Legend" tag="5" keyEquivalent="6" id="DgU-qi-5Qo"/>
+                                    <menuItem title="Legend" state="on" tag="5" keyEquivalent="6" id="DgU-qi-5Qo"/>
                                 </items>
                             </menu>
                         </popUpButtonCell>
@@ -1761,13 +1431,7 @@
             </connections>
         </objectController>
         <viewController id="v95-S2-Ts3" customClass="CPIGraphPaddingViewController"/>
-        <viewController id="fiT-Fd-CRQ" userLabel="XYGraph Axes View Controller" customClass="CPIXYGraphAxesViewController">
-            <connections>
-                <outlet property="tickDirectionXPopupButton" destination="CHL-Q6-R4x" id="Uya-bG-cbm"/>
-                <outlet property="tickDirectionYPopupButton" destination="h2F-d4-fDO" id="fmC-6N-i0y"/>
-            </connections>
-        </viewController>
-        <viewController id="X1i-7c-Sdi" userLabel="XYGraph Axis Labels View Controller" customClass="XYGraphAxisLabelsViewController">
+        <viewController id="X1i-7c-Sdi" userLabel="XYGraph Axis Labels View Controller" customClass="CPIXYGraphAxisLabelsViewController">
             <connections>
                 <outlet property="minorTickLabelDirXPopupButton" destination="A3z-xQ-6zb" id="g0E-Ov-Uu6"/>
                 <outlet property="minorTickLabelDirYPopupButton" destination="3Wz-Xe-EWJ" id="OoY-KJ-bW2"/>

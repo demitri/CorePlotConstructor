@@ -28,23 +28,11 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)decoder
-{
-	self = [super initWithCoder:decoder];
-	[self commonInit];
-	return self;
-}
-
-- (instancetype)init
-{
-	self = [self initWithNibName:nil bundle:nil];
-	return self;
-}
-
-
 - (void)commonInit
 {
-	xibInitialized = YES;
+	[super commonInit];
+	self.title = @"XYGraph Axis Labels";
+	
 	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
 
 	// set up text style popover inspector
@@ -54,16 +42,18 @@
 	
 	self.textStylePopover.contentViewController = self.textStyleViewController;
 	
+	// TODO: FIX!!!
+	/*
 	[self.textStyleViewController addObserver:self
 								   forKeyPath:@"currentTextStyle"
 									  options:NSKeyValueObservingOptionNew
 									  context:nil];
-	
+	*/
 }
 
 - (void)dealloc
 {
-	[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
+	//[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
 }
 
 - (void)awakeFromNib

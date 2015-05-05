@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
+#import "CPIPlotInspectorViewController.h"
 
-@class CPIGraphViewController, CPIInspectorWindowController;
+//@class CPIGraphViewController, CPIInspectorWindowController;
 
 enum {
 	GRAPH_PADDING_TOP = 1,
@@ -22,11 +23,21 @@ enum {
 	PLOT_AREA_FRAME_RIGHT
 };
 
-@interface CPIGraphPaddingViewController : NSViewController <NSTextFieldDelegate>
-{
-	BOOL xibInitialized;
-}
+// text fields in view
+enum {
+	GRAPH_BORDER_LINE_WIDTH = 1,
+	GRAPH_TITLE_SIZE,
+	GRAPH_TITLE_DISPLACEMENT_X,
+	GRAPH_TITLE_DISPLACEMENT_Y
+};
 
-@property (nonatomic, weak) IBOutlet CPTGraph *graph;
+// line styles that could be edited
+enum {
+	EDIT_LINE_STYLE_GRAPH_BORDER = 1
+};
+
+@interface CPIGraphPaddingViewController : CPIPlotInspectorViewController <NSTextFieldDelegate>
+
+//@property (nonatomic, weak) IBOutlet CPTGraph *graph;
 
 @end

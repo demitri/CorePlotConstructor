@@ -13,6 +13,7 @@
 
 @interface CPITextStyleViewController ()
 @property (nonatomic, strong, readwrite) CPTTextStyle *currentTextStyle;
+- (void)commonInit;
 - (NSArray*)propertiesToObserve;
 - (CPTTextStyle*)textStyleFromCurrentView;
 @end
@@ -27,7 +28,7 @@
 	NSBundle *frameworkBundle = [NSBundle bundleWithIdentifier:frameworkBundleID];
 	self = [super initWithNibName:@"CPITextStyleView" bundle:frameworkBundle];
 	if (self) {
-		self.textColor = [NSColor blackColor]; // can't be nil when nib loads
+		[self commonInit];
 	}
 	return self;
 }
@@ -35,6 +36,28 @@
 - (id)init
 {
     return [self initWithNibName:nil bundle:nil];
+}
+
+- (void)commonInit
+{
+	self.textColor = [NSColor blackColor]; // can't be nil when nib loads
+
+	for (NSString *property in self.propertiesToObserve)
+		[self addObserver:self
+			   forKeyPath:property
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+}
+
+- (NSArray*)propertiesToObserve
+{
+	return @[@"fontSize", @"textColor"];
+}
+
+- (void)dealloc
+{
+	for (NSString *property in self.propertiesToObserve)
+		[self removeObserver:self forKeyPath:property];
 }
 
 - (void)awakeFromNib
@@ -63,24 +86,6 @@
 	[lineBreakModePopupButton itemWithTitle:@"Truncating Head"].tag = NSLineBreakByTruncatingHead;
 	[lineBreakModePopupButton itemWithTitle:@"Truncating Tail"].tag = NSLineBreakByTruncatingTail;
 	[lineBreakModePopupButton itemWithTitle:@"Truncating Middle"].tag = NSLineBreakByTruncatingMiddle;
-	
-
-	for (NSString *property in self.propertiesToObserve)
-		[self addObserver:self
-			   forKeyPath:property
-				  options:NSKeyValueObservingOptionNew
-				  context:nil];
-}
-
-- (NSArray*)propertiesToObserve
-{
-	return @[@"fontSize", @"textColor"];
-}
-
-- (void)dealloc
-{
-	for (NSString *property in self.propertiesToObserve)
-		[self removeObserver:self forKeyPath:property];
 }
 
 - (void)updateWithTextStyle:(CPTTextStyle *)newTextStyle
@@ -126,7 +131,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	//DLog(@"%@ changed", keyPath);
+	// if any of the properties change, create a new CPTTextStyle object based on the view
 	if ([self.propertiesToObserve containsObject:keyPath])
 		self.currentTextStyle = [self textStyleFromCurrentView];
 }
