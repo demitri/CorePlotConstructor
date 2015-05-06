@@ -213,7 +213,7 @@
 	// Label y with an automatic label policy.
 	self.yAxis = axisSet.yAxis;
 	self.yAxis.labelingPolicy                  = CPTAxisLabelingPolicyAutomatic;
-	self.yAxis.orthogonalCoordinateDecimal	  = CPTDecimalFromFloat([[self minYValue] floatValue] - 50);  // where to draw the y axis (x=...)
+	self.yAxis.orthogonalCoordinateDecimal	  = CPTDecimalFromFloat(self.minYValue.floatValue);// - 50);  // where to draw the y axis (x=...)
 	//	self.yAxis.minorTicksPerInterval           = 4;
 	//	self.yAxis.preferredNumberOfMajorTicks	  = 8;
 	self.yAxis.majorGridLineStyle              = majorGridLineStyle;
