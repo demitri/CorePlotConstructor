@@ -85,23 +85,6 @@
 				  options:NSKeyValueObservingOptionNew
 				  context:nil];
 	}
-	
-	/*
-	// Set up text style popover
-	// -------------------------
-	// create the text style popover
-	self.textStylePopover = [[NSPopover alloc] init];
-	self.textStylePopover.behavior = NSPopoverBehaviorTransient;
-	self.textStylePopover.delegate = self;
-	
-	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
-	self.textStylePopover.contentViewController = self.textStyleViewController;
-	
-	[self.textStyleViewController addObserver:self
-								   forKeyPath:@"currentTextStyle"
-									  options:NSKeyValueObservingOptionNew
-									  context:nil];
-	 */
 }
 
 - (void)dealloc

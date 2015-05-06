@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+// This class handles the display of dash pattern values (e.g. the line style editor).
+
 // model: NSArray of NSDecimalNumber values
 // display: NSString representing decimal values separated by single spaces
 

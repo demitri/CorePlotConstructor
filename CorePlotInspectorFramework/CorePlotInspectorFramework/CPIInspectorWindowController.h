@@ -22,30 +22,12 @@
 #define kScatterPlot @"scatter plot"
 #define kInitialFont @"Helvetica"
 
-@class CPIPlotInspectorViewController, CPIGraphPaddingViewController;
-@class CPIGraphController; //, XYGraphAxisLabelsViewController; //, CPIXYGraphAxesViewController;
+//@class CPIPlotInspectorViewController, CPIGraphPaddingViewController;
+//@class CPIGraphController;
 
 // access the CPTGraph being inspected via self.currentGraphController.graph
 
-/*
-// text fields in view
-enum {
-	GRAPH_BORDER_LINE_WIDTH = 1,
-	GRAPH_TITLE_SIZE,
-	GRAPH_TITLE_DISPLACEMENT_X,
-	GRAPH_TITLE_DISPLACEMENT_Y
-};
-
-// line styles that could be edited
-enum {
-	EDIT_LINE_STYLE_GRAPH_BORDER = 1,
-	EDIT_LINE_STYLE_DATA,
-	EDIT_TEXT_STYLE_TITLE
-};
-*/
-
-@interface CPIInspectorWindowController : NSWindowController <NSPopoverDelegate, NSTextViewDelegate, NSControlTextEditingDelegate
->
+@interface CPIInspectorWindowController : NSWindowController
 {
 	BOOL nibInitialized;
 	IBOutlet NSTabView *inspectorTabView;
@@ -55,43 +37,23 @@ enum {
 // Controllers applicable to all graphs
 @property (nonatomic, strong) CPIGraphPropertiesController *graphPropertiesController;
 @property (nonatomic, strong) IBOutlet CPIPlotInspectorViewController *plotInspectorController;
-@property (nonatomic, strong) IBOutlet CPIGraphPaddingViewController *graphPaddingController;
+@property (nonatomic, strong) CPIGraphPaddingViewController *graphPaddingController;
 
 // Graph-specific controllers
 // --------------------------
 // CPTXYGraph
-@property (nonatomic, weak) CPIGraphController *currentGraphController;
-@property (nonatomic, strong) CPIXYGraphController *xyGraphController;
-@property (nonatomic, strong) IBOutlet CPIXYGraphAxisLabelsViewController *xyGraphAxisLabelsController;
-@property (nonatomic, strong) IBOutlet CPIXYGraphAxesViewController *xyGraphAxesController;
-
-//@property (nonatomic, strong) IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
-//@property (nonatomic, strong) IBOutlet XYGraphPaddingViewController *graphPaddingController;
+//@property (nonatomic, weak) CPIGraphController *currentGraphController;
+//@property (nonatomic, strong) CPIXYGraphController *xyGraphController;
+@property (nonatomic, strong) CPIXYGraphAxisLabelsViewController *xyGraphAxisLabelsController;
+@property (nonatomic, strong) CPIXYGraphAxesViewController *xyGraphAxesController;
 
 @property (nonatomic, strong, readonly) NSNumberFormatter *decimalNumberFormatter;
-//@property (nonatomic, readonly) CPTXYGraph *graph;
-
-// properties for editing CPTLineStyle objects
-@property (strong, nonatomic) NSPopover *lineStylePopover;
-@property (strong, nonatomic) CPILineStyleViewController *lineStyleViewController;
-@property (nonatomic, assign) NSInteger lineStyleBeingEdited;
-
-// properties for editing CPTTextStyle objects
-//@property (strong, nonatomic) NSPopover *textStylePopover;
-//@property (strong, nonatomic) CPITextStyleViewController *textStyleViewController;
-
-// Graph title properties
-@property (strong, nonatomic) NSColor *titleColor;
-@property (assign) CGFloat graphTitleDisplacementX;
-@property (assign) CGFloat graphTitleDisplacementY;
+@property (nonatomic, weak) CPTGraph *graph;
 
 @property (nonatomic, strong, readonly) NSNumber *zeroValue;
 
 - (instancetype)initWithGraph:(CPTGraph*)graph;
 - (void)updateForNewGraph:(CPTGraph*)graph;
 - (IBAction)inspectorPopupAction:(id)sender;
-
-//- (IBAction)editLineStyle:(id)sender;
-//- (IBAction)editTextStyle:(id)sender;
 
 @end

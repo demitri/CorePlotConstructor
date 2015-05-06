@@ -48,6 +48,9 @@
 		A6CFE5381AEDA5B70078D13D /* CPIXYGraphAxesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE5371AEDA5B70078D13D /* CPIXYGraphAxesView.xib */; };
 		A6CFE53B1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6CFE53A1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib */; };
 		A6FDA39D1AF99374009C8136 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDA39C1AF99374009C8136 /* Cocoa.framework */; };
+		A6FDA3A11AF9E110009C8136 /* CPIXYGraphDataViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FDA39E1AF9E110009C8136 /* CPIXYGraphDataViewController.h */; };
+		A6FDA3A21AF9E110009C8136 /* CPIXYGraphDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FDA39F1AF9E110009C8136 /* CPIXYGraphDataViewController.m */; };
+		A6FDA3A31AF9E110009C8136 /* CPIXYGraphDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6FDA3A01AF9E110009C8136 /* CPIXYGraphDataView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		A6CFE5371AEDA5B70078D13D /* CPIXYGraphAxesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPIXYGraphAxesView.xib; sourceTree = "<group>"; };
 		A6CFE53A1AEDF7270078D13D /* CPIXYGraphAxisLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPIXYGraphAxisLabelsView.xib; sourceTree = "<group>"; };
 		A6FDA39C1AF99374009C8136 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A6FDA39E1AF9E110009C8136 /* CPIXYGraphDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPIXYGraphDataViewController.h; sourceTree = "<group>"; };
+		A6FDA39F1AF9E110009C8136 /* CPIXYGraphDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPIXYGraphDataViewController.m; sourceTree = "<group>"; };
+		A6FDA3A01AF9E110009C8136 /* CPIXYGraphDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPIXYGraphDataView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +295,7 @@
 				A6CFE52A1AEC9E340078D13D /* CPIXYGraphController.m */,
 				A6CFE5361AEDA58C0078D13D /* XYGraph Axes */,
 				A6CFE5391AEDF6DF0078D13D /* XYGraph Axis Labels */,
+				A6FDA3A41AF9E115009C8136 /* XYGraph Data */,
 			);
 			name = XYGraph;
 			sourceTree = "<group>";
@@ -344,6 +351,16 @@
 			name = "XYGraph Axis Labels";
 			sourceTree = "<group>";
 		};
+		A6FDA3A41AF9E115009C8136 /* XYGraph Data */ = {
+			isa = PBXGroup;
+			children = (
+				A6FDA39E1AF9E110009C8136 /* CPIXYGraphDataViewController.h */,
+				A6FDA39F1AF9E110009C8136 /* CPIXYGraphDataViewController.m */,
+				A6FDA3A01AF9E110009C8136 /* CPIXYGraphDataView.xib */,
+			);
+			name = "XYGraph Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -363,6 +380,7 @@
 				A6CFE4FF1AEC7C540078D13D /* CPIXYGraphAxisLabelsViewController.h in Headers */,
 				A6CFE52B1AEC9E340078D13D /* CPIXYGraphController.h in Headers */,
 				A6CFE4FD1AEC7C540078D13D /* CPIXYGraphAxesViewController.h in Headers */,
+				A6FDA3A11AF9E110009C8136 /* CPIXYGraphDataViewController.h in Headers */,
 				A6CFE4B41AEC79370078D13D /* IntegerSpaceFormatter.h in Headers */,
 				A6CFE4B61AEC79370078D13D /* ContinuousBindingFixNumberFormatter.h in Headers */,
 				A68F15271AF88DCB0042E7D7 /* CPIGraphPropertiesController.h in Headers */,
@@ -456,6 +474,7 @@
 				A6CFE4E51AEC7C010078D13D /* CPIConstraintView.xib in Resources */,
 				A6CFE4EF1AEC7C1B0078D13D /* CPITextStyleView.xib in Resources */,
 				A68F15291AF88DCB0042E7D7 /* CPIGraphProperties.xib in Resources */,
+				A6FDA3A31AF9E110009C8136 /* CPIXYGraphDataView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +496,7 @@
 				A6CFE5021AEC7C540078D13D /* CPIGraphPaddingViewController.m in Sources */,
 				A6CFE4E41AEC7C010078D13D /* CPIConstraintViewController.m in Sources */,
 				A6CFE52C1AEC9E340078D13D /* CPIXYGraphController.m in Sources */,
+				A6FDA3A21AF9E110009C8136 /* CPIXYGraphDataViewController.m in Sources */,
 				A6CFE4B71AEC79370078D13D /* ContinuousBindingFixNumberFormatter.m in Sources */,
 				A6CFE5111AEC7D1B0078D13D /* CPIInspectorWindowController.m in Sources */,
 				A6CFE5271AEC925B0078D13D /* CPIPlotInspectorViewController.m in Sources */,

@@ -33,6 +33,7 @@
 	[super commonInit];
 	self.title = @"XYGraph Axis Labels";
 	
+	/*
 	self.textStyleViewController = [[CPITextStyleViewController alloc] init];
 
 	// set up text style popover inspector
@@ -41,7 +42,7 @@
 	self.textStylePopover.delegate = self;
 	
 	self.textStylePopover.contentViewController = self.textStyleViewController;
-	
+	*/
 	// TODO: FIX!!!
 	/*
 	[self.textStyleViewController addObserver:self
@@ -119,6 +120,8 @@
 {
 	self.textStyleBeingEdited = [sender tag];
 	
+	// get text style to edit
+	// ----------------------
 	CPTTextStyle *textStyleToEdit = nil;
 	switch (self.textStyleBeingEdited) {
 		case EDIT_TEXT_STYLE_LABEL_X:
@@ -142,7 +145,27 @@
 	}
 	NSAssert(textStyleToEdit != nil, @"need to create a default text style?");
 
+	// create the popover
+	self.textStylePopover = [[NSPopover alloc] init];
+	
+	if (self.textStyleViewController == nil)
+		self.textStyleViewController = [[CPITextStyleViewController alloc] init];
+	else {
+		// don't want messages while it's being set up
+		[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
+	}
+	
 	[self.textStyleViewController updateWithTextStyle:textStyleToEdit];
+
+	// configure the popover
+	self.textStylePopover.contentViewController = self.textStyleViewController;
+	self.textStylePopover.behavior = NSPopoverBehaviorSemitransient;
+	self.textStylePopover.delegate = self;
+	
+	[self.textStyleViewController addObserver:self
+								   forKeyPath:@"currentTextStyle"
+									  options:NSKeyValueObservingOptionNew
+									  context:nil];
 	
 	[self.textStylePopover showRelativeToRect:((NSButton*)sender).bounds
 									   ofView:sender
@@ -213,6 +236,7 @@
 				self.yAxis.minorTickLabelTextStyle = self.textStyleViewController.currentTextStyle;
 				break;
 		}
+		self.textStylePopover = nil;
 	}
 }
 

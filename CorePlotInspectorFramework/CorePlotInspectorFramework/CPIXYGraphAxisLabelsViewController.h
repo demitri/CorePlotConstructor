@@ -10,10 +10,6 @@
 #import <CorePlot/CorePlot.h>
 #import "CPIPlotInspectorViewController.h"
 #import "CPITextStyleViewController.h"
-//#import "CPIXYGraphController.h"
-//#import "CPIInspectorWindowController.h"
-
-//@class CPIInspectorWindowController;
 
 // text fields
 enum AXIS_LABELS_VIEW_TEXT_FIELDS {
