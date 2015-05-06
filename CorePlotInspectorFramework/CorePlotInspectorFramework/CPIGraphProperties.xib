@@ -98,6 +98,7 @@
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
                         </binding>
+                        <outlet property="delegate" destination="-2" id="kUz-tz-MCy"/>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-Pv-UaK">
@@ -126,12 +127,12 @@
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xg-iZ-Zgn" userLabel="Popup Button - title anchor pos">
                     <rect key="frame" x="99" y="386" width="184" height="15"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="G0d-5H-2q3">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="G0d-5H-2q3">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="miniSystem"/>
                         <menu key="menu" title="OtherViews" id="Y6A-sA-tQ6">
                             <items>
-                                <menuItem title="Item 1" state="on" id="bfl-Eb-cnV"/>
+                                <menuItem title="Item 1" id="bfl-Eb-cnV"/>
                                 <menuItem title="Item 2" id="T4n-bb-qrd"/>
                                 <menuItem title="Item 3" id="5In-7I-chX"/>
                             </items>
@@ -166,6 +167,7 @@
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
                         </binding>
+                        <outlet property="delegate" destination="-2" id="X0O-y7-Nj2"/>
                     </connections>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="p7v-5Y-B3B">
@@ -174,6 +176,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="editLineStyle:" target="-2" id="lSf-kC-4Ar"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="haO-ft-XhO">
                     <rect key="frame" x="107" y="433" width="94" height="17"/>

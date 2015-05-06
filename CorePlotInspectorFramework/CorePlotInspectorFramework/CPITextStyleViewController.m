@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Demitri Muna. All rights reserved.
 //
 
+#import <CorePlot/CorePlot.h>
 #import "CPITextStyleViewController.h"
 #import "CPIPrivateHeader.h"
 
@@ -132,8 +133,10 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	// if any of the properties change, create a new CPTTextStyle object based on the view
-	if ([self.propertiesToObserve containsObject:keyPath])
+	if ([self.propertiesToObserve containsObject:keyPath]) {
 		self.currentTextStyle = [self textStyleFromCurrentView];
+		//DLog(@"%@", keyPath);
+	}
 }
 
 #pragma mark -
@@ -162,6 +165,9 @@
 				else
 					self.fontSize += delta;
 				handled = YES;
+				break;
+			default:
+				NSAssert(FALSE, @"unhandled tag");
 				break;
 				
 		}

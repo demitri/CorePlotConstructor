@@ -23,19 +23,6 @@ enum {
 	PLOT_AREA_FRAME_RIGHT
 };
 
-// text fields in view
-enum {
-	GRAPH_BORDER_LINE_WIDTH = 1,
-	GRAPH_TITLE_SIZE,
-	GRAPH_TITLE_DISPLACEMENT_X,
-	GRAPH_TITLE_DISPLACEMENT_Y
-};
-
-// line styles that could be edited
-enum {
-	EDIT_LINE_STYLE_GRAPH_BORDER = 1
-};
-
 @interface CPIGraphPaddingViewController : CPIPlotInspectorViewController <NSTextFieldDelegate>
 
 //@property (nonatomic, weak) IBOutlet CPTGraph *graph;

@@ -41,6 +41,11 @@
     // Do view setup here.
 }
 
+- (NSArray*)propertiesToObserve
+{
+	return @[@"graphTitleDisplacementX", @"graphTitleDisplacementY"]; //, @"titleColor"];
+}
+
 - (void)awakeFromNib
 {
 #pragma mark setup inspector
@@ -49,6 +54,9 @@
 		[themePopup addItemWithTitle:[c name]];
 	[themePopup selectItemWithTitle:kCPTPlainWhiteTheme];
 	
+	// initialize values
+	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
+	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
 	
 	// set up frame anchor popup
 	[graphTitleFrameAnchorPopup removeAllItems];
@@ -69,6 +77,16 @@
 	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorRight"].tag = CPTRectAnchorRight;
 	[graphTitleFrameAnchorPopup itemWithTitle:@"CPTRectAnchorCenter"].tag = CPTRectAnchorCenter;
 
+	// set up observing
+	// ----------------
+	for (NSString *property in [self propertiesToObserve]) {
+		[self addObserver:self
+			   forKeyPath:property
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+	}
+	
+	/*
 	// Set up text style popover
 	// -------------------------
 	// create the text style popover
@@ -83,6 +101,7 @@
 								   forKeyPath:@"currentTextStyle"
 									  options:NSKeyValueObservingOptionNew
 									  context:nil];
+	 */
 }
 
 - (void)dealloc
@@ -95,7 +114,7 @@
 {
 	self.lineStyleBeingEdited = [sender tag];
 	
-	CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
+	//CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
 	
 	CPTLineStyle *lineStyleToEdit = nil;
 	switch (self.lineStyleBeingEdited) {
@@ -119,6 +138,7 @@
 	
 	[self.lineStyleViewController updateWithLineStyle:lineStyleToEdit];
 	
+	// configure the popover
 	self.lineStylePopover.contentViewController = self.lineStyleViewController;
 	self.lineStylePopover.behavior = NSPopoverBehaviorTransient;
 	self.lineStylePopover.delegate = self;
@@ -138,10 +158,31 @@
 {
 	CPTTextStyle *textStyleToEdit = self.graph.titleTextStyle;
 	NSAssert(textStyleToEdit != nil, @"need to create a default text style");
+
+	// create the popover
+	self.textStylePopover = [[NSPopover alloc] init];
+	
+	if (self.textStyleViewController == nil)
+		self.textStyleViewController = [[CPITextStyleViewController alloc] init];
+	else {
+		// don't want messages while it's being set up
+		[self.textStyleViewController removeObserver:self forKeyPath:@"currentTextStyle"];
+	}
 	
 	[self.textStyleViewController updateWithTextStyle:textStyleToEdit];
 	
-	[self.textStylePopover showRelativeToRect:((NSButton*)sender).bounds
+	// configure the popover
+	self.textStylePopover.contentViewController = self.textStyleViewController;
+	self.textStylePopover.behavior = NSPopoverBehaviorTransient;
+	self.textStylePopover.delegate = self;
+
+	[self.textStyleViewController addObserver:self
+								   forKeyPath:@"currentTextStyle"
+									  options:NSKeyValueObservingOptionNew
+									  context:nil];
+	
+	NSButton *targetButton = (NSButton*)sender;
+	[self.textStylePopover showRelativeToRect:targetButton.bounds
 									   ofView:sender
 								preferredEdge:NSMinYEdge];
 }
@@ -174,29 +215,96 @@
 	if (popover == self.lineStylePopover) {
 		
 		CPTLineStyle *newLineStyle = self.lineStyleViewController.currentLineStyle;
-		
-		switch (self.lineStyleBeingEdited) {
-			case EDIT_LINE_STYLE_GRAPH_BORDER:
-				self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
-				break;
-			default:
-				break;
-		}
+		self.graph.plotAreaFrame.borderLineStyle = newLineStyle;
 		self.lineStylePopover = nil;
 		
 	} else if (popover == self.textStylePopover) {
+		
 		self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
+		self.textStylePopover = nil;
 	}
+}
+
+#pragma mark -
+#pragma mark NSTextViewDelegate methods
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
+{
+	if (command == @selector(moveUp:) || command == @selector(moveDown:)) {
+		
+		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+		NSNumber *number = [formatter numberFromString:textView.string];
+		if (number == nil)
+			return NO; // not a number
+		
+		CGFloat delta = command == @selector(moveUp:) ? +1. : -1.;
+		
+		switch (control.tag) {
+				
+			case GRAPH_TITLE_DISPLACEMENT_X:
+				self.graphTitleDisplacementX = [[NSNumber numberWithFloat:[number floatValue] + delta] floatValue];
+				return YES;
+				break;
+				
+			case GRAPH_TITLE_DISPLACEMENT_Y:
+				self.graphTitleDisplacementY = [[NSNumber numberWithFloat:[number floatValue] + delta] floatValue];
+				return YES;
+				break;
+				
+			default:
+				NSAssert(FALSE, @"Unknown tag detected.");
+				break;
+				
+		}
+		
+		return NO;
+	}
+	
+	return NO;
 }
 
 #pragma mark -
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	if (object == self.textStyleViewController) {
+	if (object == self) {
 		
-		if ([keyPath isEqualToString:@"currentTextStyle"])
+		if ([keyPath isEqualToString:@"graphTitleDisplacementX"]) {
+			CGFloat y = self.graph.titleDisplacement.y; // current value
+			self.graph.titleDisplacement = (CGPoint){ self.graphTitleDisplacementX, y };
+		
+		} else if ([keyPath isEqualToString:@"graphTitleDisplacementY"]) {
+			CGFloat x = self.graph.titleDisplacement.x; // current value
+			self.graph.titleDisplacement = (CGPoint){ x, self.graphTitleDisplacementY };
+		} else {
+			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
+		}
+		
+	} else if (object == self.textStyleViewController) {
+		
+		if ([keyPath isEqualToString:@"currentTextStyle"]) {
 			self.graph.titleTextStyle = self.textStyleViewController.currentTextStyle;
+		}
+	
+	} else if (object == self.lineStyleViewController) {
+		
+		if ([keyPath isEqualToString:@"currentLineStyle"]) {
+			
+			//CPTScatterPlot *plot = (CPTScatterPlot*)[self.graph plotWithIdentifier:kScatterPlot];
+			
+			switch (self.lineStyleBeingEdited) {
+				case EDIT_LINE_STYLE_GRAPH_BORDER:
+					self.graph.plotAreaFrame.borderLineStyle = self.lineStyleViewController.currentLineStyle;
+					break;
+					//				case EDIT_LINE_STYLE_DATA:
+					//					plot.dataLineStyle = self.lineStyleViewController.currentLineStyle;
+					//					break;
+				default:
+					break;
+			}
+		} else {
+			NSLog(@"Uncaught keyPath on %@ observed: %@", object, keyPath);
+		}
 	}
 	
 }

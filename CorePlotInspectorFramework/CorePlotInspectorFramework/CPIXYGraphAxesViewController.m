@@ -201,7 +201,7 @@
 					self.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MINOR_GRID_Y:
-					self.xAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
+					self.yAxis.minorGridLineStyle = self.lineStyleViewController.currentLineStyle;;
 					break;
 				case EDIT_LINE_STYLE_MAJOR_TICK_X:
 					self.xAxis.majorTickLineStyle = self.lineStyleViewController.currentLineStyle;;

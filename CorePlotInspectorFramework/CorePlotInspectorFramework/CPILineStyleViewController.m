@@ -7,8 +7,8 @@
 //
 
 #import "CPILineStyleViewController.h"
-//#import "IntegerSpaceFormatter.h"
-#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+#import "IntegerSpaceFormatter.h"
+//#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
 #import "CPIPrivateHeader.h"
 
 @interface CPCDashPattern ()
@@ -243,6 +243,8 @@
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
 {
+	BOOL handled = NO;
+
 	//DLog(@"command: %@", NSStringFromSelector(command));
 	if (command == @selector(moveUp:) || command == @selector(moveDown:)) {
 		
@@ -252,8 +254,6 @@
 			return NO; // not a number
 
 		float delta = command == @selector(moveUp:) ? +1.0 : -1.0;
-		
-		BOOL handled = NO;
 		
 		switch (control.tag) {
 				
@@ -284,13 +284,11 @@
 				handled = YES;
 				break;
 		}
-		if (handled)
-			return YES;
 		
-		return NO;
+		return handled;
 	}
 	
-	return NO;
+	return handled;
 }
 
 @end

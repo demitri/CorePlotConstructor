@@ -6,11 +6,21 @@
 //  Copyright (c) 2015 Demitri Muna. All rights reserved.
 //
 
-#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+//#import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+#import <CorePlot/CorePlot.h>
+#import "CPIPlotInspectorViewController.h"
 #import "CPITextStyleViewController.h"
 #import "CPILineStyleViewController.h"
 
-@interface CPIGraphPropertiesController : CPIPlotInspectorViewController <NSTextFieldDelegate, NSPopoverDelegate>
+// text fields in view
+enum {
+	GRAPH_BORDER_LINE_WIDTH = 1,
+	GRAPH_TITLE_SIZE,
+	GRAPH_TITLE_DISPLACEMENT_X,
+	GRAPH_TITLE_DISPLACEMENT_Y
+};
+
+@interface CPIGraphPropertiesController : CPIPlotInspectorViewController <NSTextFieldDelegate, NSTextViewDelegate, NSPopoverDelegate>
 {
 	IBOutlet NSPopUpButton *themePopup;
 	IBOutlet NSPopUpButton *graphTitleFrameAnchorPopup;

@@ -148,7 +148,7 @@
 		self.graphPropertiesController = [[CPIGraphPropertiesController alloc] init];
 		self.graphPropertiesController.graph = xyGraph;
 		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"GraphProperties"];
-		[tabViewItem setView:self.graphPropertiesController.view];
+		tabViewItem.view = self.graphPropertiesController.view;
 		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
 		[inspectorPopupButton addItemWithTitle:self.graphPropertiesController.title];
 		[inspectorPopupButton itemAtIndex:(i)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
@@ -158,7 +158,7 @@
 		self.xyGraphAxesController = [[CPIXYGraphAxesViewController alloc] init];
 		self.xyGraphAxesController.graph = xyGraph;
 		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxes"];
-		[tabViewItem setView:self.xyGraphAxesController.view];
+		tabViewItem.view = self.xyGraphAxesController.view;
 		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
 		[inspectorPopupButton addItemWithTitle:self.xyGraphAxesController.title];
 		[inspectorPopupButton itemAtIndex:(i)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
@@ -168,7 +168,7 @@
 		self.xyGraphAxisLabelsController = [[CPIXYGraphAxisLabelsViewController alloc] init];
 		self.xyGraphAxisLabelsController.graph = xyGraph;
 		tabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"XYGraphAxisLabels"];
-		[tabViewItem setView:self.xyGraphAxisLabelsController.view];
+		tabViewItem.view = self.xyGraphAxisLabelsController.view;
 		[inspectorTabView insertTabViewItem:tabViewItem atIndex:i];
 		[inspectorPopupButton addItemWithTitle:self.xyGraphAxisLabelsController.title];
 		[inspectorPopupButton itemAtIndex:(i-1)].keyEquivalent = [NSString stringWithFormat:@"%d", i+1];
@@ -318,6 +318,7 @@
 	//DLog(@"%@", notification);
 }
 
+/*
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
 {
 	if (command == @selector(moveUp:) || command == @selector(moveDown:)) {
@@ -348,6 +349,7 @@
 	
 	return NO;
 }
+*/
 
 #pragma mark -
 
