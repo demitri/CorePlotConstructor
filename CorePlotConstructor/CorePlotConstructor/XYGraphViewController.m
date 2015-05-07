@@ -81,6 +81,30 @@
 
 }
 
+- (void)createGraph2
+{
+	CGRect bounds = NSRectToCGRect(self.graphView.bounds);
+	self.graph = [[CPTXYGraph alloc] initWithFrame:bounds];
+
+	CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
+	[self.graph applyTheme:theme];
+	self.graphView.hostedGraph = self.graph;
+	
+	CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+	dataSourceLinePlot.delegate = self;
+	dataSourceLinePlot.dataSource = self;
+	dataSourceLinePlot.identifier = kScatterPlot;
+	dataSourceLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
+
+	[self.graph addPlot:dataSourceLinePlot];
+
+	CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
+	plotSpace.delegate = self;
+	plotSpace.allowsUserInteraction = YES;
+	[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSourceLinePlot]];
+
+}
+
 - (void)createGraph
 {
 	// ===========
@@ -293,7 +317,6 @@
 	return minValue;
 	
 }
-
 
 #pragma mark -
 #pragma mark Plot Data Source Methods

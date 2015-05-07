@@ -248,7 +248,7 @@
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="288-hm-4eO">
                     <rect key="frame" x="17" y="206" width="201" height="20"/>
-                    <buttonCell key="cell" type="check" title="Show Labels" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="qx3-Lv-aMn">
+                    <buttonCell key="cell" type="check" title="Show Data Labels" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="qx3-Lv-aMn">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
