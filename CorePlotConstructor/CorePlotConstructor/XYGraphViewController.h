@@ -9,12 +9,18 @@
 #import <Cocoa/Cocoa.h>
 #import <CorePlot/CorePlot.h>
 #import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+#import "DMScatterPlotGraph.h"
+#import "DMScatterPlotGraph2.h"
 
 #define kScatterPlot @"scatter plot"
 
 //@class XYGraphAxisLabelsViewController;
 
-@interface XYGraphViewController : NSViewController <CPTPlotDataSource, CPTPlotSpaceDelegate, NSTextFieldDelegate, NSPopoverDelegate>
+@interface XYGraphViewController : NSViewController <CPTPlotDataSource,
+													 CPTPlotSpaceDelegate,
+													 NSTextFieldDelegate,
+													 NSPopoverDelegate,
+													 CPTBarPlotDataSource>
 {
 	// Plot Inspector
 	// --------------
@@ -37,13 +43,15 @@
 //	IBOutlet XYGraphAxisLabelsViewController *axisLabelsController;
 }
 
+//@property (nonatomic, strong) DMHistogramGraph *graph;
+
 @property (strong, nonatomic) CPTXYGraph *graph;
 @property (weak, nonatomic) CPTPlot *plot;
 @property (weak) IBOutlet CPTGraphHostingView *graphView;
 
 // Data containers
-@property (strong, nonatomic) NSMutableArray *xData;
-@property (strong, nonatomic) NSMutableArray *yData;
+@property (strong, nonatomic) NSArray *xData;
+@property (strong, nonatomic) NSArray *yData;
 @property (strong, nonatomic) NSMutableArray *xyData;
 
 @property (strong) CPTMutableLineStyle *majorGridLineStyle;

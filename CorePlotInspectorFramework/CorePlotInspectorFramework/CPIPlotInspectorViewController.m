@@ -62,7 +62,7 @@
 {
 	if (_plot == nil) {
 		_plot = [[self.graph allPlots] objectAtIndex:0];
-		DLog(@"plot was not found"); // NSAssert(_plot != nil, @"the plot was not found");
+		NSAssert(_plot != nil, @"the plot was not found"); // DLog(@"plot was not found");
 	}
 	return _plot;
 }

@@ -11,6 +11,7 @@
 #import "CPIPrivateHeader.h"
 
 #define kInitialFont @"Helvetica"
+#define MIN_FONT_SIZE 4.0f
 
 @interface CPITextStyleViewController ()
 @property (nonatomic, strong, readwrite) CPTTextStyle *currentTextStyle;
@@ -140,6 +141,22 @@
 }
 
 #pragma mark -
+#pragma mark Property validation methods
+
+- (BOOL)validateFontSize:(id *)ioValue error:(NSError * __autoreleasing *)returnedError
+{
+	// if the field becomes nil (value deleted), program will immediately crash
+	
+	if (*ioValue == nil || ![*ioValue isKindOfClass:NSNumber.class])
+		*ioValue = [NSNumber numberWithFloat:MIN_FONT_SIZE];
+	else if ([*ioValue isKindOfClass:NSNumber.class]) {
+		if ([*ioValue floatValue] <= MIN_FONT_SIZE) // minimum allowable font size
+			*ioValue = [NSNumber numberWithFloat:MIN_FONT_SIZE];
+	}
+	return YES;
+}
+
+#pragma mark -
 #pragma mark NSTextViewDelegate methods
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
@@ -160,8 +177,8 @@
 				
 			case 1: // font size
 				// min value = 5
-				if ((self.fontSize += delta) < 5)
-					self.fontSize = 5;
+				if ((self.fontSize += delta) <= MIN_FONT_SIZE)
+					self.fontSize = MIN_FONT_SIZE;
 				else
 					self.fontSize += delta;
 				handled = YES;

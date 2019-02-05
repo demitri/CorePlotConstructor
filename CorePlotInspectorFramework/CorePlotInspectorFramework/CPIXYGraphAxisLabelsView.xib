@@ -45,7 +45,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW8-w3-R9t">
+                <textField toolTip="xAxis.title" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW8-w3-R9t">
                     <rect key="frame" x="61" y="457" width="202" height="16"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Lih-32-eAF">
                         <font key="font" metaFont="miniSystem"/>
@@ -60,7 +60,7 @@
                         </binding>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xR-UB-TrF">
+                <textField toolTip="yAxis.title" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xR-UB-TrF">
                     <rect key="frame" x="61" y="434" width="202" height="16"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dMl-fb-LlQ">
                         <font key="font" metaFont="miniSystem"/>
@@ -173,7 +173,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-Pg-y51">
+                <textField toolTip="xAxis.titleOffset" verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-Pg-y51">
                     <rect key="frame" x="127" y="386" width="44" height="15"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="vF2-S8-hhn">
                         <font key="font" metaFont="miniSystem"/>
@@ -189,7 +189,7 @@
                         <outlet property="delegate" destination="-2" id="b6s-Mv-u58"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-fS-X40">
+                <textField toolTip="yAxis.titleOffset" verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="qcG-fS-X40">
                     <rect key="frame" x="218" y="386" width="44" height="15"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="IpC-ma-0Qh">
                         <font key="font" metaFont="miniSystem"/>
@@ -205,7 +205,7 @@
                         <outlet property="delegate" destination="-2" id="QAW-7f-Nyj"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="cty-zB-rY5">
+                <textField toolTip="xAxis.labelOffset" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="cty-zB-rY5">
                     <rect key="frame" x="128" y="409" width="44" height="15"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zZ1-73-NPL">
                         <font key="font" metaFont="miniSystem"/>
@@ -221,7 +221,7 @@
                         <outlet property="delegate" destination="-2" id="4Fh-DB-wAk"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="WqI-wL-puM">
+                <textField toolTip="yAxis.labelOffset" verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="WqI-wL-puM">
                     <rect key="frame" x="219" y="409" width="44" height="15"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lAC-8b-IIw">
                         <font key="font" metaFont="miniSystem"/>
@@ -361,7 +361,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="9wn-jm-kgP">
+                <button toolTip="xAxis.labelTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="9wn-jm-kgP">
                     <rect key="frame" x="144" y="250" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XHp-pl-VXj">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -379,7 +379,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-7Y-fME">
+                <button toolTip="yAxis.labelTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="Fse-7Y-fME">
                     <rect key="frame" x="217" y="250" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HQi-aP-GAs">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -389,7 +389,7 @@
                         <action selector="editTextStyle:" target="-2" id="dAA-2P-kin"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="23S-Vj-mN8">
+                <button toolTip="xAxis.titleTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="23S-Vj-mN8">
                     <rect key="frame" x="144" y="227" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ew-Ue-Sxw">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -407,7 +407,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="eMX-9F-U4H">
+                <button toolTip="yAxis.titleTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="eMX-9F-U4H">
                     <rect key="frame" x="217" y="227" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H3D-VG-c7q">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -417,7 +417,7 @@
                         <action selector="editTextStyle:" target="-2" id="ncd-4T-7hj"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="GtD-Xe-KT0">
+                <button toolTip="xAxis.minorTickLabelTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="GtD-Xe-KT0">
                     <rect key="frame" x="144" y="204" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="X Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IVN-7Q-3s1">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -435,7 +435,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-bV-63d">
+                <button toolTip="yAxis.minorTickLabelTextStyle" verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-bV-63d">
                     <rect key="frame" x="217" y="204" width="65" height="17"/>
                     <buttonCell key="cell" type="roundRect" title="Y Axis" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V0y-dH-2nq">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

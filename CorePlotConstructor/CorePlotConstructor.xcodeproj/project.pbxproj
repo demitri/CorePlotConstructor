@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61E17121B472AFB00DC51E1 /* DMXYGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A61E17111B472AFB00DC51E1 /* DMXYGraph.m */; };
+		A61E17231B472BC400DC51E1 /* DMScatterPlotGraph2.m in Sources */ = {isa = PBXBuildFile; fileRef = A61E17221B472BC400DC51E1 /* DMScatterPlotGraph2.m */; };
+		A61E17261B4754C500DC51E1 /* DMHistogramGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A61E17251B4754C500DC51E1 /* DMHistogramGraph.m */; };
+		A61E17291B4955F500DC51E1 /* DMHistogram.m in Sources */ = {isa = PBXBuildFile; fileRef = A61E17281B4955F500DC51E1 /* DMHistogram.m */; };
+		A61E172C1B496EAC00DC51E1 /* HistogramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A61E172B1B496EAC00DC51E1 /* HistogramViewController.m */; };
+		A668922B1AFFFF2F006C0CE0 /* DMCorePlotUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A668922A1AFFFF2F006C0CE0 /* DMCorePlotUtilities.m */; };
+		A6A3428D1B082A200062EA24 /* DMCPTHistogramTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3428C1B082A200062EA24 /* DMCPTHistogramTheme.m */; };
 		A6BA395E1809A1920092D6BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C2FBE717F805D9002BA46A /* MainMenu.xib */; };
 		A6BA39681809A4BE0092D6BC /* xy_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6BA39671809A4BE0092D6BC /* xy_data.plist */; };
 		A6C2FBD317F805D9002BA46A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C2FBD217F805D9002BA46A /* Cocoa.framework */; };
@@ -25,11 +32,43 @@
 		A6CFE5331AECA9B20078D13D /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6FEA74C199AE6F10007ED35 /* CorePlot.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6CFE5341AECA9B20078D13D /* CorePlotInspectorFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6CFE4BE1AEC79BB0078D13D /* CorePlotInspectorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6CFE5351AECAA000078D13D /* CorePlotInspectorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CFE4BE1AEC79BB0078D13D /* CorePlotInspectorFramework.framework */; };
+		A6DB4E321B1676A800239E4F /* DMScatterPlotGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DB4E311B1676A800239E4F /* DMScatterPlotGraph.m */; };
+		A6DB4E421B17ACE600239E4F /* CPTMutableLineStyle+Copies.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DB4E411B17ACE600239E4F /* CPTMutableLineStyle+Copies.m */; };
+		A6DB4E451B17B20600239E4F /* CPTTextStyle+Copies.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DB4E441B17B20600239E4F /* CPTTextStyle+Copies.m */; };
+		A6E1A6061AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6051AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.m */; };
 		A6FEA753199AE8040007ED35 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FEA74C199AE6F10007ED35 /* CorePlot.framework */; };
 		A6FEA756199AE9C50007ED35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FEA755199AE9C50007ED35 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A61E17191B472AFC00DC51E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09781A46185200D45436;
+			remoteInfo = CorePlot_iOS;
+		};
+		A61E171B1B472AFC00DC51E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09821A46185300D45436;
+			remoteInfo = CorePlot_iOSTests;
+		};
+		A61E171D1B472AFC00DC51E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09BA1A4619A900D45436;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		A61E171F1B472AFC00DC51E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C38A09C41A4619A900D45436;
+			remoteInfo = "CorePlot-CocoaTouchTests";
+		};
 		A6C2FBF417F805DA002BA46A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6C2FBC717F805D9002BA46A /* Project object */;
@@ -96,6 +135,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A61E17101B472AFB00DC51E1 /* DMXYGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMXYGraph.h; path = DMCorePlotAdditions/DMXYGraph.h; sourceTree = "<group>"; };
+		A61E17111B472AFB00DC51E1 /* DMXYGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMXYGraph.m; path = DMCorePlotAdditions/DMXYGraph.m; sourceTree = "<group>"; };
+		A61E17211B472BC400DC51E1 /* DMScatterPlotGraph2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMScatterPlotGraph2.h; path = DMCorePlotAdditions/DMScatterPlotGraph2.h; sourceTree = "<group>"; };
+		A61E17221B472BC400DC51E1 /* DMScatterPlotGraph2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMScatterPlotGraph2.m; path = DMCorePlotAdditions/DMScatterPlotGraph2.m; sourceTree = "<group>"; };
+		A61E17241B4754C500DC51E1 /* DMHistogramGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHistogramGraph.h; path = DMCorePlotAdditions/DMHistogramGraph.h; sourceTree = "<group>"; };
+		A61E17251B4754C500DC51E1 /* DMHistogramGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHistogramGraph.m; path = DMCorePlotAdditions/DMHistogramGraph.m; sourceTree = "<group>"; };
+		A61E17271B4955F500DC51E1 /* DMHistogram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHistogram.h; path = DMCorePlotAdditions/DMHistogram.h; sourceTree = "<group>"; };
+		A61E17281B4955F500DC51E1 /* DMHistogram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHistogram.m; path = DMCorePlotAdditions/DMHistogram.m; sourceTree = "<group>"; };
+		A61E172A1B496EAC00DC51E1 /* HistogramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistogramViewController.h; sourceTree = "<group>"; };
+		A61E172B1B496EAC00DC51E1 /* HistogramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistogramViewController.m; sourceTree = "<group>"; };
+		A66892291AFFFF2F006C0CE0 /* DMCorePlotUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCorePlotUtilities.h; path = DMCorePlotAdditions/DMCorePlotUtilities.h; sourceTree = "<group>"; };
+		A668922A1AFFFF2F006C0CE0 /* DMCorePlotUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCorePlotUtilities.m; path = DMCorePlotAdditions/DMCorePlotUtilities.m; sourceTree = "<group>"; };
+		A6A3428B1B082A200062EA24 /* DMCPTHistogramTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCPTHistogramTheme.h; sourceTree = "<group>"; };
+		A6A3428C1B082A200062EA24 /* DMCPTHistogramTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCPTHistogramTheme.m; sourceTree = "<group>"; };
 		A6BA39671809A4BE0092D6BC /* xy_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xy_data.plist; sourceTree = "<group>"; };
 		A6C2FBCF17F805D9002BA46A /* CorePlotConstructor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CorePlotConstructor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C2FBD217F805D9002BA46A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -122,6 +175,14 @@
 		A6CFE51F1AEC87870078D13D /* XYGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGraphViewController.h; sourceTree = "<group>"; };
 		A6CFE5201AEC87870078D13D /* XYGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGraphViewController.m; sourceTree = "<group>"; };
 		A6CFE5211AEC87870078D13D /* XYGraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYGraphViewController.xib; sourceTree = "<group>"; };
+		A6DB4E301B1676A800239E4F /* DMScatterPlotGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMScatterPlotGraph.h; path = DMCorePlotAdditions/DMScatterPlotGraph.h; sourceTree = "<group>"; };
+		A6DB4E311B1676A800239E4F /* DMScatterPlotGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMScatterPlotGraph.m; path = DMCorePlotAdditions/DMScatterPlotGraph.m; sourceTree = "<group>"; };
+		A6DB4E401B17ACE600239E4F /* CPTMutableLineStyle+Copies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTMutableLineStyle+Copies.h"; sourceTree = "<group>"; };
+		A6DB4E411B17ACE600239E4F /* CPTMutableLineStyle+Copies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTMutableLineStyle+Copies.m"; sourceTree = "<group>"; };
+		A6DB4E431B17B20600239E4F /* CPTTextStyle+Copies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CPTTextStyle+Copies.h"; sourceTree = "<group>"; };
+		A6DB4E441B17B20600239E4F /* CPTTextStyle+Copies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CPTTextStyle+Copies.m"; sourceTree = "<group>"; };
+		A6E1A6041AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CPTXYGraph+SensibleDefaults.h"; path = "DMCorePlotAdditions/CPTXYGraph+SensibleDefaults.h"; sourceTree = "<group>"; };
+		A6E1A6051AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CPTXYGraph+SensibleDefaults.m"; path = "DMCorePlotAdditions/CPTXYGraph+SensibleDefaults.m"; sourceTree = "<group>"; };
 		A6FEA745199AE6F10007ED35 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "../../core-plot/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
 		A6FEA755199AE9C50007ED35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -150,6 +211,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A61E17081B47170E00DC51E1 /* Old Theme Attempt */ = {
+			isa = PBXGroup;
+			children = (
+				A6A3428B1B082A200062EA24 /* DMCPTHistogramTheme.h */,
+				A6A3428C1B082A200062EA24 /* DMCPTHistogramTheme.m */,
+			);
+			name = "Old Theme Attempt";
+			sourceTree = "<group>";
+		};
+		A61E170C1B47172C00DC51E1 /* Core Plot Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A6DB4E401B17ACE600239E4F /* CPTMutableLineStyle+Copies.h */,
+				A6DB4E411B17ACE600239E4F /* CPTMutableLineStyle+Copies.m */,
+				A6DB4E431B17B20600239E4F /* CPTTextStyle+Copies.h */,
+				A6DB4E441B17B20600239E4F /* CPTTextStyle+Copies.m */,
+			);
+			name = "Core Plot Categories";
+			sourceTree = "<group>";
+		};
+		A61E170D1B47176300DC51E1 /* Old Code */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1A6041AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.h */,
+				A6E1A6051AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.m */,
+			);
+			name = "Old Code";
+			sourceTree = "<group>";
+		};
 		A6BA39661809A4AE0092D6BC /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,10 +300,13 @@
 				A6CFE51F1AEC87870078D13D /* XYGraphViewController.h */,
 				A6CFE5201AEC87870078D13D /* XYGraphViewController.m */,
 				A6CFE5211AEC87870078D13D /* XYGraphViewController.xib */,
+				A61E172A1B496EAC00DC51E1 /* HistogramViewController.h */,
+				A61E172B1B496EAC00DC51E1 /* HistogramViewController.m */,
 				A6C2FBE717F805D9002BA46A /* MainMenu.xib */,
 				A6BA39661809A4AE0092D6BC /* data */,
 				A6C2FBEA17F805D9002BA46A /* Images.xcassets */,
 				A6C2FBD917F805D9002BA46A /* Supporting Files */,
+				A6E1A6181AFF9FF300FD12E8 /* DM Core Plot Additions */,
 			);
 			path = CorePlotConstructor;
 			sourceTree = "<group>";
@@ -257,11 +350,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A6E1A6181AFF9FF300FD12E8 /* DM Core Plot Additions */ = {
+			isa = PBXGroup;
+			children = (
+				A61E17101B472AFB00DC51E1 /* DMXYGraph.h */,
+				A61E17111B472AFB00DC51E1 /* DMXYGraph.m */,
+				A61E17211B472BC400DC51E1 /* DMScatterPlotGraph2.h */,
+				A61E17221B472BC400DC51E1 /* DMScatterPlotGraph2.m */,
+				A61E17241B4754C500DC51E1 /* DMHistogramGraph.h */,
+				A61E17251B4754C500DC51E1 /* DMHistogramGraph.m */,
+				A61E17271B4955F500DC51E1 /* DMHistogram.h */,
+				A61E17281B4955F500DC51E1 /* DMHistogram.m */,
+				A6DB4E301B1676A800239E4F /* DMScatterPlotGraph.h */,
+				A6DB4E311B1676A800239E4F /* DMScatterPlotGraph.m */,
+				A66892291AFFFF2F006C0CE0 /* DMCorePlotUtilities.h */,
+				A668922A1AFFFF2F006C0CE0 /* DMCorePlotUtilities.m */,
+				A61E170C1B47172C00DC51E1 /* Core Plot Categories */,
+				A61E17081B47170E00DC51E1 /* Old Theme Attempt */,
+				A61E170D1B47176300DC51E1 /* Old Code */,
+			);
+			name = "DM Core Plot Additions";
+			sourceTree = "<group>";
+		};
 		A6FEA746199AE6F10007ED35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A6FEA74C199AE6F10007ED35 /* CorePlot.framework */,
 				A6FEA74E199AE6F10007ED35 /* UnitTests.xctest */,
+				A61E171A1B472AFC00DC51E1 /* CorePlot_iOS.framework */,
+				A61E171C1B472AFC00DC51E1 /* CorePlot_iOSTests.xctest */,
+				A61E171E1B472AFC00DC51E1 /* libCorePlot-CocoaTouch.a */,
+				A61E17201B472AFC00DC51E1 /* CorePlot-CocoaTouchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,6 +470,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A61E171A1B472AFC00DC51E1 /* CorePlot_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot_iOS.framework;
+			remoteRef = A61E17191B472AFC00DC51E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A61E171C1B472AFC00DC51E1 /* CorePlot_iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CorePlot_iOSTests.xctest;
+			remoteRef = A61E171B1B472AFC00DC51E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A61E171E1B472AFC00DC51E1 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = A61E171D1B472AFC00DC51E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A61E17201B472AFC00DC51E1 /* CorePlot-CocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CorePlot-CocoaTouchTests.xctest";
+			remoteRef = A61E171F1B472AFC00DC51E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A6CFE4BE1AEC79BB0078D13D /* CorePlotInspectorFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -410,10 +557,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A3428D1B082A200062EA24 /* DMCPTHistogramTheme.m in Sources */,
+				A6DB4E421B17ACE600239E4F /* CPTMutableLineStyle+Copies.m in Sources */,
+				A61E17231B472BC400DC51E1 /* DMScatterPlotGraph2.m in Sources */,
+				A61E17261B4754C500DC51E1 /* DMHistogramGraph.m in Sources */,
 				A6CFE5221AEC87870078D13D /* XYGraphViewController.m in Sources */,
+				A61E17291B4955F500DC51E1 /* DMHistogram.m in Sources */,
+				A6DB4E451B17B20600239E4F /* CPTTextStyle+Copies.m in Sources */,
 				A6C2FC0B17F80770002BA46A /* MainWindowController.m in Sources */,
 				A6C2FBE617F805D9002BA46A /* AppDelegate.m in Sources */,
+				A668922B1AFFFF2F006C0CE0 /* DMCorePlotUtilities.m in Sources */,
 				A6C2FBDF17F805D9002BA46A /* main.m in Sources */,
+				A61E17121B472AFB00DC51E1 /* DMXYGraph.m in Sources */,
+				A6DB4E321B1676A800239E4F /* DMScatterPlotGraph.m in Sources */,
+				A61E172C1B496EAC00DC51E1 /* HistogramViewController.m in Sources */,
+				A6E1A6061AFF9FEC00FD12E8 /* CPTXYGraph+SensibleDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

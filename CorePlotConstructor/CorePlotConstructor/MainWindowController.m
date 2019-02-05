@@ -26,6 +26,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+	[self.window makeKeyAndOrderFront:nil];
 	
 	/*
 	// set up graph
@@ -43,24 +44,6 @@
 	}
 	 */
 }
-
-/*
-- (IBAction)inspectorPopupAction:(id)sender
-{
-	NSPopUpButton *popupButton = (NSPopUpButton*)sender;
-	[inspectorTabView selectTabViewItemAtIndex:popupButton.selectedItem.tag];
-	
-	/*
-	switch (popupButton.selectedItem.tag) {
-		case PLOT_INSPECTOR_PANEL:
-			break;
-		case AXES_INSPECTOR_PANEL:
-			break;
-		case PADDING_INSPECTOR_PANEL;
-			break;
-	}
-	 */
-//}
 
 - (IBAction)exportPlotDescription:(id)sender
 {

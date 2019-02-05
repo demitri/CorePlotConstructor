@@ -206,8 +206,13 @@
 	if (*ioValue == nil || ![*ioValue isKindOfClass:NSNumber.class])
 		*ioValue = [NSNumber numberWithFloat:0.0f];
 	else if ([*ioValue isKindOfClass:NSNumber.class]) {
-		if ([*ioValue floatValue] < 0)
+		float value = [*ioValue floatValue];
+		if (value < 0)
 			*ioValue = [NSNumber numberWithFloat:0.0f];
+		else {
+			// round values to nearst 0.5
+			*ioValue = [NSNumber numberWithFloat:roundf(value*2.0f)/2.0f];
+		}
 	}
 	return YES;
 }

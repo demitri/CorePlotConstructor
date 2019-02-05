@@ -9,6 +9,8 @@
 #import "XYGraphViewController.h"
 //#import "ContinuousBindingFixNumberFormatter.h"
 #import <CorePlotInspectorFramework/CorePlotInspectorFramework.h>
+//#import "CPTXYGraph+SensibleDefaults.h"
+#import "DMCorePlotUtilities.h"
 
 #pragma mark -
 
@@ -55,9 +57,17 @@
 	NSAssert(plistPath != nil, @"The data file was not found!");
 	NSDictionary *data = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 	
-	// Convert string array to NSNumber arrays
-	self.xData = [data objectForKey:@"x_points"];
-	self.yData = [data objectForKey:@"y_points"];
+	BOOL useSimpleData = NO;
+	
+	if (useSimpleData) {
+		self.xData = @[@10, @20, @30, @40, @50, @60, @70, @80];
+		self.yData = @[@10, @20, @30,  @5, @15, @60, @70, @0];
+	} else {
+		// Convert string array to NSNumber arrays
+		self.xData = [data objectForKey:@"x_points"];
+		self.yData = [data objectForKey:@"y_points"];
+	}
+
 	self.xyData = [NSMutableArray array];
 	
 	for (unsigned int i=0; i < [self.yData count]; i++) {
@@ -78,24 +88,47 @@
 //	self.graphTitleDisplacementX = self.graph.titleDisplacement.x;
 //	self.graphTitleDisplacementY = self.graph.titleDisplacement.y;
 
-
 }
 
-- (void)createGraph2
+- (void)createGraph
+{
+	DMScatterPlotGraph2 *graph = [[DMScatterPlotGraph2 alloc] initWithFrame:self.graphView.bounds];
+	graph.delegate = self;
+	graph.dataSource = self;
+//	[graph setXData:self.xData yData:self.yData];
+	[graph initializeGraphWithXData:self.xData yData:self.yData];
+
+	// connect graph to view
+	self.graphView.hostedGraph = graph;
+	
+	graph.xAxis.title = @"x axis title";
+	graph.yAxis.title = @"y axis title";
+	graph.title = @"plot title";
+
+	self.graph = graph;
+}
+
+- (void)createGraph1
 {
 	CGRect bounds = NSRectToCGRect(self.graphView.bounds);
 	self.graph = [[CPTXYGraph alloc] initWithFrame:bounds];
 
-	CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
-	[self.graph applyTheme:theme];
+	[self.graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
 	self.graphView.hostedGraph = self.graph;
 	
+	((CPTXYAxisSet *)(self.graph.axisSet)).xAxis.title = @"x axis title";
+	((CPTXYAxisSet *)(self.graph.axisSet)).yAxis.title = @"y axis title";
+
+	[DMCorePlotUtilities setupXYGraph:self.graph
+					   withDataSource:self
+						  andDelegate:self];
+	
+	/*
 	CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
 	dataSourceLinePlot.delegate = self;
 	dataSourceLinePlot.dataSource = self;
 	dataSourceLinePlot.identifier = kScatterPlot;
 	dataSourceLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
-
 	[self.graph addPlot:dataSourceLinePlot];
 
 	CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
@@ -103,9 +136,12 @@
 	plotSpace.allowsUserInteraction = YES;
 	[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSourceLinePlot]];
 
+	[plotSpace setupDefaultIntervalsWithXRange:[DMCorePlotUtilities minMax:self.xData]
+											  andYRange:[DMCorePlotUtilities minMax:self.yData]];
+	*/
 }
 
-- (void)createGraph
+- (void)createGraph2
 {
 	// ===========
 	// Setup graph
@@ -222,7 +258,7 @@
 	CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
 	self.xAxis = axisSet.xAxis;
 	self.xAxis.labelingPolicy					= CPTAxisLabelingPolicyAutomatic;
-	self.xAxis.orthogonalCoordinateDecimal		= CPTDecimalFromUnsignedInteger(0); // where to draw the x axis (y=...)
+	self.xAxis.orthogonalPosition				= @0; // CPTDecimalFromUnsignedInteger(0); // where to draw the x axis (y=...)
 	//	self.xAxis.minorTicksPerInterval        = 4;
 	//	self.xAxis.preferredNumberOfMajorTicks	= 8;
 	self.xAxis.majorGridLineStyle              = majorGridLineStyle;
@@ -237,7 +273,7 @@
 	// Label y with an automatic label policy.
 	self.yAxis = axisSet.yAxis;
 	self.yAxis.labelingPolicy                  = CPTAxisLabelingPolicyAutomatic;
-	self.yAxis.orthogonalCoordinateDecimal	  = CPTDecimalFromFloat(self.minYValue.floatValue);// - 50);  // where to draw the y axis (x=...)
+	self.yAxis.orthogonalPosition			   = @0; //CPTDecimalFromFloat(self.minYValue.floatValue);// - 50);  // where to draw the y axis (x=...)
 	//	self.yAxis.minorTicksPerInterval           = 4;
 	//	self.yAxis.preferredNumberOfMajorTicks	  = 8;
 	self.yAxis.majorGridLineStyle              = majorGridLineStyle;
@@ -308,8 +344,8 @@
 - (NSNumber*)minYValue
 {
 	//	return [self.wavelengths valueForKeyPath:@"@min.x"];
-	NSNumber *minValue = [self.xData objectAtIndex:0];
-	for (NSNumber *n in self.xData)
+	NSNumber *minValue = [self.yData objectAtIndex:0];
+	for (NSNumber *n in self.yData)
 		if ([n floatValue] < [minValue floatValue])
 			minValue = n;
 	
@@ -321,7 +357,7 @@
 #pragma mark -
 #pragma mark Plot Data Source Methods
 
--(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
+- (NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
 	if ([(NSString*)[plot identifier] isEqualToString:kScatterPlot])
 		return [self.xyData count];
@@ -331,7 +367,7 @@
 	}
 }
 
--(NSNumber *)numberForPlot:(CPTPlot *)plot
+- (NSNumber *)numberForPlot:(CPTPlot *)plot
 					 field:(NSUInteger)fieldEnum
 			   recordIndex:(NSUInteger)index
 {
@@ -349,7 +385,16 @@
 }
 
 #pragma mark -
+#pragma mark Additional Plot Data Source Methods
 
+- (NSArray*)xRange
+{
+	return [DMCorePlotUtilities minMax:self.xData];
+}
 
+- (NSArray*)yRange
+{
+	return [DMCorePlotUtilities minMax:self.yData];
+}
 
 @end
